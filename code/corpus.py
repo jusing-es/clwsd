@@ -280,11 +280,12 @@ class MsiAnnotation(object):
 
 
 class AlignmentCollector(object):
-    __slots__ = ['documents', 'sentences', 'words']
-    def __init__(self, documents={}, sentences={}, words={}):
+    __slots__ = ['documents', 'sentences', 'words', 'concepts']
+    def __init__(self, documents={}, sentences={}, words={}, concepts={}):
         self.documents = documents
         self.sentences = sentences
         self.words = words
+        self.concepts = concepts
 
     def add_document_alignment(self, doc_id, alignment):
         """Adds alignment to the proper subcollector. Duplicates (same type, source_id, target_id, origin) are skipped.
@@ -312,12 +313,15 @@ class AlignmentCollector(object):
             self.sentences[alignment.source_id] = self.sentences.get(alignment.source_id, []) + [alignment]
         elif alignment.type == 'word'  and alignment not in self.words.get(alignment.source_id, []):
             self.words[alignment.source_id] = self.words.get(alignment.source_id, []) + [alignment]
+        elif alignment.type == 'concept'  and alignment not in self.concepts.get(alignment.source_id, []):
+            self.concepts[alignment.source_id] = self.concepts.get(alignment.source_id, []) + [alignment]
 
     def to_json(self):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'documents': self.documents,
                            'sentences': self.sentences,
-                           'words': self.words},
+                           'words': self.words,
+                           'concepts': self.concepts},
                 '__args__': []}
 
 

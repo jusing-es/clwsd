@@ -40,12 +40,18 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
 
         # add alignments to Word objects
         source_word = source_doc.get_word(source_sid, source_wid)
-        target_word = source_doc.get_word(source_sid, target_wid)
+        target_word = target_doc.get_word(source_sid, target_wid)
 
         if source_word and target_word: #FIXME necessary as long as I don't have also the grammatical words as well
             source_word.add_alignment(target_lang, target_word)
             target_word.add_alignment(source_lang, source_word)
+            if source_word.sense and target_word.sense and source_word.sense == target_word.sense:
+                source_concept_alignment = Alignment(type='concept', source_id=source_doc.lang + '_' + source_wid.replace("t", "c"),
+                                                  target_id=target_doc.lang + '_' + target_wid.replace("t", "c"), origin='manual')
+                target_concept_alignment = Alignment(type='concept', source_id=target_doc.lang + '_' + target_wid.replace("t", "c"),
+                                                  target_id=source_doc.lang + '_' + source_wid.replace("t", "c"), origin='manual')
 
+                multilingual_corpus.add_alignment(source_concept_alignment, target_concept_alignment)
 
         if (source_sid, source_sid) not in sent_pairs:
             sent_pairs.add((source_sid, source_sid))

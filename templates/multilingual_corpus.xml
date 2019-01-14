@@ -30,5 +30,11 @@
             <WordAlignment wid_from="{{source_id}}" wid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
             {% endfor -%}
         {% endfor -%}
-</Alignment>
+        {% for source_id, concept_alignments in multicorpus.alignment_collector.concepts.items() -%}
+            {% for target_alignment in concept_alignments -%}
+            <ConceptAlignment cid_from="{{source_id}}" cid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
+            {% endfor -%}
+        {% endfor -%}
+
+    </Alignment>
 </Corpus>
