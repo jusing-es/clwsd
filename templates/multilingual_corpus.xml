@@ -1,0 +1,34 @@
+<Corpus corpusID="{{multicorpus.id}}" title="{{multicorpus.title}}" linguality="multilingual">
+    {% for _, corpus in multicorpus.corpora.items() -%}
+        {% for key, doc in corpus.documents.items() -%}
+        <Document docID="{{doc.lang + '_' + doc.id}}" doc="text" language="{{doc.lang}}" title="{{key}}">
+            {% for sid, sent in doc.sentences.items() -%}
+            <Sentence sid="{{doc.lang + '_' +sid}}" sent="{{sent.text}}">
+                {% for wid, word in sent.tokens.items() -%}
+                <Word wid="{{doc.lang + '_' + wid}}" pos="{{word.pos}}" lemma="{{word.lemma}}" surface_form="{{word.surface_form}}"/>
+                {% endfor -%}
+                {% for wid, word in sent.tokens.items() if word.sense -%}
+                <Concept cid="{{(doc.lang + '_' + wid).replace('t', 'c')}}" wid="{{doc.lang + '_' + wid}}" synset_tag="{{word.sense}}" clemma="{{word.lemma}}"/>
+                {% endfor -%}
+            </Sentence>
+            {% endfor -%}
+        </Document>
+        {% endfor -%}
+    {% endfor -%}
+    <Alignment>
+        {% for doc_id, doc_alignments in multicorpus.alignment_collector.documents.items() -%}
+        <DocAlignment docID="{{doc_alignments|join(' ')}}"/>
+        {% endfor -%}
+        <!--             self.sentences[alignment.source_id] = self.sentences.get(alignment.source_id, []) + [alignment]-->
+        {% for source_id, sent_alignments in multicorpus.alignment_collector.sentences.items() -%}
+            {% for target_alignment in sent_alignments -%}
+            <SentAlignment sid_from="{{source_id}}" sid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
+            {% endfor -%}
+        {% endfor -%}
+        {% for source_id, word_alignments in multicorpus.alignment_collector.words.items() -%}
+            {% for target_alignment in word_alignments -%}
+            <WordAlignment wid_from="{{source_id}}" wid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
+            {% endfor -%}
+        {% endfor -%}
+</Alignment>
+</Corpus>

@@ -1,0 +1,6 @@
+*.xml
+*.json
+*.tab
+code/__pycache__/
+alignments/*
+code/*
