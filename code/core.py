@@ -6,6 +6,7 @@ import sys
 from render2xml import render_monolingual_corpus, render_multilingual_corpus
 from nltk.corpus import wordnet as wn
 from pprint import pprint
+from msi import msi
 
 from corpus import Corpus, Document, Sentence, Word, MultilingualCorpus
 from corpus import Alignment, AlignmentCollector
@@ -69,9 +70,6 @@ def choose_majority_tag(word):
     #iterates over self.annotations
     pass
 
-def show_supported_languages(input_lang):
-    print(wn.langs())
-    sys.exit(f'{input_lang} is not supported by Wordnet.')
 
 def dump_to_file(corpus):
     with open (f'{corpus.title}.json', 'w') as so:
@@ -116,9 +114,9 @@ if __name__ == '__main__':
     source_lang= sys.argv[1]
     target_lang=sys.argv[2]
     if source_lang not in wn.langs():
-        show_supported_languages(source_lang)
+        msi.show_supported_languages(source_lang)
     if target_lang not in wn.langs():
-        show_supported_languages(target_lang)
+        msi.show_supported_languages(target_lang)
 
     source_folder = sys.argv[3]
     target_folder = sys.argv[4]
@@ -141,6 +139,7 @@ if __name__ == '__main__':
     multilingual_corpus.add(source_corpus, target_corpus)
     alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
 
-    print(render_multilingual_corpus(multilingual_corpus))
-    dump_multilingual_corpus_to_xml(multilingual_corpus)
+    msi(multilingual_corpus)
+    #print(render_multilingual_corpus(multilingual_corpus))
+    #dump_multilingual_corpus_to_xml(multilingual_corpus)
 

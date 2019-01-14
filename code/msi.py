@@ -1,63 +1,35 @@
 import sys
-import getopt
+import json_files_reader as jfr
 import argparse
 from nltk.corpus import wordnet as wn
 import json
 
 
-def folder_instructions():
-    print("""
-    Expected folder structure for a multilingual corpus in English (eng), Italian (ita), Romanian (rom) and Japanese (jpn):
-    corpus/
-          eng/
-            corpus.json
-          ita/
-            corpus.json
-          rom/
-            corpus.json
-          jpn/
-            corpus.json
-          alignments/
-             eng2ita.json
-             eng2rom.json
-             eng2jpn.json
-             ita2eng.json
-             ita2rom.json
-             ita2jpn.json
-             rom2eng.json
-             rom2ita.json
-             rom2jpn.json
-             jpn2eng.json
-             jpn2ita.json
-             jpn2rom.json
-    """)
 
-def msi(*args, **kwargs):
-    import pdb; pdb.set_trace()
+def msi(multilingual_corpus, sense_frequencies=False):
+    for _, corpus in multilingual_corpus.corpora.items():
+        for _, document in corpus.documents.items():
+            for _, sentence in document.sentences.items():
+                for _, word in sentence.tokens.items():
+                    if word.sense and word.alignments:
+                        import pdb; pdb.set_trace()
 
-    source_corpus = kwargs.pop('eng')
-    target_corpus = kwargs.pop('ita')
-    if kwargs:
-        raise TypeError('Unepxected kwargs provided: %s' % list(kwargs.keys()))
 
-def read_input_files(input_folder, langs):
 
-    # print(f'Input languages are {", ".join(langs)}')
-    # print(f'Word alignment choice is {alignment}')
 
-    with open('../files/training/corpus/eng/a01.json', 'r') as si:
-        eng = json.loads(si.read())
 
-    with open('../files/training/corpus/ita/a01.json', 'r') as si:
-        ita = json.loads(si.read())
 
-    msi(l1=eng, l2=ita)
+def show_supported_languages(input_lang):
+    print(wn.langs())
+    sys.exit(f'{input_lang} is not supported by Wordnet.')
+
 
 if __name__ == "__main__":
 
     usage = "Correct usage: python msi.py -i <path_to_input_folder> [-s]"
     parser = argparse.ArgumentParser(description="Performs Multilingual Sense Intersection ")
-    parser.add_argument("-i", "--input_folder", help="")
+    parser.add_argument("-i", "--json_input_folder", help="")
+    parser.add_argument("-x", "--xml_input_file", help="")
     parser.add_argument("-l", "--languages", help="""Indicate valid ISO-639-2 language codes. 
                                                    Input corpora must be in languages having a wordnet in 
                                                    Open Multilingual Wordnet.
@@ -68,11 +40,11 @@ if __name__ == "__main__":
 
     options = parser.parse_args()
 
-    if options.languages and options.input_folder:
+    if options.languages and options.json_input_folder:
         langs = options.languages.split("_")
         if set(langs).issubset(wn.langs()) is not True:
             print(f"""Admitted languages are: {wn.langs()}""")
-            folder_instructions()
+            jfr.folder_instructions()
             sys.exit()
 
         if options.automatic_alignments not in ["gs", "auto_grow", "auto_int", "sense", "all"]:
@@ -80,14 +52,15 @@ if __name__ == "__main__":
                   'Choose one betweeen "gs", "auto_grow", "auto_int", "sense", "all"')
 
         if options.input_folder:
-            read_input_files(options.input_folder, langs)
-
+            source, target = jfr.read_input_files(options.input_folder, langs)
+            msi()
             if options.sense_frequencies:
                 print("External sense frequencies enabled...")
                 pass
 
         print("Starting MSI...")
+    elif options.languages and options.xml_input_file:
+        pass
     else:
         print(f"""Admitted languages are: {wn.langs()}""")
-        folder_instructions()
         sys.exit()

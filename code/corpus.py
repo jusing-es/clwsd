@@ -9,10 +9,11 @@ def decoder(some_dict):
         return some_dict
 
 class MultilingualCorpus(object):
-    __slots__ = ['id', 'title', 'corpora', 'alignment_collector']
-    def __init__(self, id, title, corpora={}, alignment_collector=None):
+    __slots__ = ['id', 'title', 'languages', 'corpora', 'alignment_collector']
+    def __init__(self, id, title, languages=[], corpora={}, alignment_collector=None):
         self.id = id
         self.title = title
+        self.languages = languages
         self.corpora = corpora
         self.alignment_collector = alignment_collector
 
@@ -27,6 +28,7 @@ class MultilingualCorpus(object):
             assert isinstance(corpus, Corpus)
             if corpus.id not in self.corpora:
                 self.corpora[corpus.id] = corpus
+                self.languages.append(corpus.lang)
 
     def set_alignment_collector(self, alignment_collector):
         assert isinstance(alignment_collector, AlignmentCollector)
@@ -48,6 +50,7 @@ class MultilingualCorpus(object):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'id': self.id,
                            'title' : self.title,
+                           'languages' : self.languages,
                            'corpora': self.corpora,
                            'alignment_collector': self.alignment_collector},
                 '__args__': []}
@@ -437,7 +440,7 @@ if __name__ == '__main__':
     sent.add(word)
 
     corpus2 = Corpus(id='c2', title='title', lang='ita')
-    lr = MultilingualCorpus(id='semcor', title='MPC')
+    lr = MultilingualCorpus(id='semcor', title='MPC', languages=[])
     lr.add(corpus, corpus2)
     print(len(lr))
 
