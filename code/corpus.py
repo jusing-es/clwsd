@@ -29,6 +29,8 @@ class MultilingualCorpus(object):
             if corpus.id not in self.corpora:
                 self.corpora[corpus.id] = corpus
                 self.languages.append(corpus.lang)
+                for _, document in corpus.documents.items():
+                    document.multilingual_corpus = self
 
     def set_alignment_collector(self, alignment_collector):
         assert isinstance(alignment_collector, AlignmentCollector)
@@ -206,13 +208,14 @@ class Sentence(object):
         return json.loads(data_json, object_hook=decoder)
 
 class Word(object):
-    __slots__ = ['id', 'document', 'surface_form', 'lemma', 'pos', 'sense', 'msi_annotation', 'sentence', 'alignments']
-    def __init__(self, document, id, surface_form, lemma, pos=None, sense=None, msi_annotation=None, alignments={}, sentence=None):
+    __slots__ = ['id', 'document', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'msi_annotation', 'sentence', 'alignments']
+    def __init__(self, document, id, surface_form, lemma, pos=None, upos=None, sense=None, msi_annotation=None, alignments={}, sentence=None):
         self.document = document
         self.id = id
         self.surface_form = surface_form
         self.lemma = lemma
         self.pos = pos
+        self.upos = pos
         self.sense = sense
         self.msi_annotation = msi_annotation
         self.sentence = sentence
@@ -235,6 +238,12 @@ class Word(object):
             return self.alignments[lang]
         else:
             return None
+
+    def get_lang(self):
+        return self.sentence.document.lang
+
+    def add_msi_annotation(self, assigned_sense, contributing_languages, assignment_type):
+        self.msi_annotation = MsiAnnotation(assigned_sense, contributing_languages, assignment_type)
 
     def to_string(self):
         return json.dumps(self.__dict__, default=serialization.pretty_print)

@@ -8,7 +8,7 @@
                 <Word wid="{{doc.lang + '_' + wid}}" pos="{{word.pos}}" lemma="{{word.lemma}}" surface_form="{{word.surface_form}}"/>
                 {% endfor -%}
                 {% for wid, word in sent.tokens.items() if word.sense -%}
-                <Concept cid="{{(doc.lang + '_' + wid).replace('t', 'c')}}" wid="{{doc.lang + '_' + wid}}" synset_tag="{{word.sense}}" clemma="{{word.lemma}}"/>
+                <Concept cid="{{(doc.lang + '_' + wid).replace('t_', 'c_')}}" wid="{{doc.lang + '_' + wid}}" synset_tag="{{word.sense}}" clemma="{{word.lemma}}"/>
                 {% endfor -%}
             </Sentence>
             {% endfor -%}

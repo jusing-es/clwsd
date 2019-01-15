@@ -38,8 +38,25 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
                                           target_id=source_doc.lang + '_' + source_wid, origin='manual')
 
         multilingual_corpus.add_alignment(source_word_alignment, target_word_alignment)
-
+        """
+        > /home/giulia/PycharmProjects/clwsd/code/msi.py(13)msi()
+        -> for _, word in sentence.tokens.items():
+        (Pdb) word
+        <corpus.Word object at 0x7fc7c471f438>
+        (Pdb) word.sense
+        '00031264-n'
+        (Pdb) word.alignments
+        {'ita': <corpus.Word object at 0x7fc7bfba7588>, 'eng': <corpus.Word object at 0x7fc7bfbd7358>}
+        (Pdb) word.lemma
+        'group'
+        (Pdb) word.pos
+        'n'
+        (Pdb) word.surface_form
+        'Fulton_County_Grand_Jury'
+        (Pdb)
+        """
         # add alignments to Word objects
+
         source_word = source_doc.get_word(source_sid, source_wid)
         target_word = target_doc.get_word(source_sid, target_wid)
 
@@ -48,9 +65,9 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
             target_word.add_alignment(source_lang, source_word)
             if source_word.sense and target_word.sense and source_word.sense == target_word.sense:
                 source_concept_alignment = Alignment(type='concept', source_id=source_doc.lang + '_' + source_wid.replace("t", "c"),
-                                                  target_id=target_doc.lang + '_' + target_wid.replace("t", "c"), origin='manual')
+                                                  target_id=target_doc.lang + '_' + target_wid.replace("t_", "c_"), origin='manual')
                 target_concept_alignment = Alignment(type='concept', source_id=target_doc.lang + '_' + target_wid.replace("t", "c"),
-                                                  target_id=source_doc.lang + '_' + source_wid.replace("t", "c"), origin='manual')
+                                                  target_id=source_doc.lang + '_' + source_wid.replace("t_", "c_"), origin='manual')
 
                 multilingual_corpus.add_alignment(source_concept_alignment, target_concept_alignment)
 
@@ -97,8 +114,8 @@ def load_document(source_lang, path):
             raw_text = []
             for token in sorted(doc[sent], key=lambda x: int(x.split("_")[1]+x.split("_")[2])):
                 word_in = Word(id=token, surface_form=doc[sent][token][0], lemma=doc[sent][token][1],
-                                pos=doc[sent][token][2], sense=doc[sent][token][3],
-                                document=doc_in.id, sentence=sentence_in.id, )
+                                pos=doc[sent][token][2], upos=None, sense=doc[sent][token][3],
+                                document=doc_in.id, sentence=sentence_in.id, alignments={}, msi_annotation=None)
                 raw_text.append(word_in.surface_form)
                 sentence_in.add(word_in)
             assert len(sentence_in.tokens) == len(doc[sent])
@@ -123,7 +140,7 @@ if __name__ == '__main__':
     with open(sys.argv[5]) as si:
         json_alignments = json.loads(si.read())
 
-    source_corpus = Corpus(id='eng_sc', title='English Semcor', lang=source_lang, documents={},)
+    source_corpus = Corpus(id='eng_sc', title='English Semcor', lang=source_lang, documents={})
     target_corpus = Corpus(id='ita_sc', title='Italian Semcor', lang=target_lang, documents={})
     logger.info('starting')
     # load documents
