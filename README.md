@@ -25,10 +25,13 @@ pip install < requirements.txt
 - [x] Write module to dump ```Corpus```/```MultilingualCorpus``` object to XML 
 - [x] Monolingual corpus template, compliant to NTUMC.dtd
 - [x] Multilingual corpus template, compliant to NTUMC.dtd
-- [x] Loaded sample multilingual corpus for document ```a01``` in English and Italian (cfr. ```examples\MPC.xml```) 
+- [x] Loaded sample multilingual corpus for document ```a01``` in English and Italian (cfr. ```examples\MPC.xml```)
+- [x] basic MSI on EN-IT  
+- [x] include support for external sense frequencies
+- [x] include automatic alignments for each language pair
 - [ ] Load sample corpus with also Romanian and Japanese texts
 - [ ] Load sample corpus for SemCor document ```a01``` for all languages (```eng ita rom jpn```) with also MSI annotations
-- [ ] MSI code porting to Python3.7
+- [ ] MSI code porting to Python3.7 (missing: coarse evaluation)
 - [x] Write JSON reader for MSI
 - [ ] Write XML reader for MSI
 
