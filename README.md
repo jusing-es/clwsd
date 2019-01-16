@@ -26,7 +26,7 @@ pip install < requirements.txt
 - [x] Monolingual corpus template, compliant to NTUMC.dtd
 - [x] Multilingual corpus template, compliant to NTUMC.dtd
 - [x] Loaded sample multilingual corpus for document ```a01``` in English and Italian (cfr. ```examples\MPC.xml```)
-- [x] basic MSI on EN-IT  
+- [x] basic MSI on EN-IT and evaluation
 - [x] include support for external sense frequencies
 - [x] include automatic alignments for each language pair
 - [ ] Load sample corpus with also Romanian and Japanese texts

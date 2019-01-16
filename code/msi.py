@@ -7,6 +7,7 @@ import nltk.corpus
 from nltk.corpus import wordnet as wn
 import json
 import os
+from collections import defaultdict, Counter
 
 general_mfs_statistics = None
 
@@ -217,7 +218,33 @@ def get_aligned_words_synsets(word):
 
 
 def evaluate_msi(multilingual_corpus):
-    pass
+    """"""
+    recap = {lang : defaultdict(lambda: 0) for lang in multilingual_corpus.languages}
+    for _, corpus in multilingual_corpus.corpora.items():
+        recap[corpus.lang]['contributing_languages'] = Counter()
+        recap[corpus.lang]['aligned_languages'] = Counter()
+        for _, document in corpus.documents.items():
+            for _, sentence in document.sentences.items():
+                for _, word in sentence.tokens.items():
+                    if word.sense and word.alignments:
+                        recap[corpus.lang]['counts'] += 1
+                        if word.msi_annotation:
+                            if word.msi_annotation.assigned_sense == word.sense:
+                                recap[corpus.lang]['match'] += 1
+                                recap[corpus.lang][word.msi_annotation.assignment_type] += 1
+                                recap[corpus.lang]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
+                                recap[corpus.lang]['aligned_languages'][len(word.alignments)] += 1
+                            elif word.msi_annotation.assigned_sense is None:
+                                recap[corpus.lang][word.msi_annotation.assignment_type] += 1
+                            elif word.msi_annotation.assigned_sense and word.sense \
+                                    and word.msi_annotation.assigned_sense != word.sense \
+                                    and re.match(r'\d{8}-[avrn]', word.msi_annotation.assigned_sense):
+                                recap[corpus.lang]['mismatch'] += 1
+
+        assert recap[corpus.lang]['mismatch'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
+    from pprint import pprint
+    pprint(recap)
+    import pdb; pdb.set_trace()
 
 
 def check_for_named_entities(word):
