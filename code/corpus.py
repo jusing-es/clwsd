@@ -267,8 +267,8 @@ class Word(object):
 class MsiAnnotation(object):
     __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type']
 
-    possible_assignment_types = ('absolute_mfs_was_in_overlap', 'disambiguated_by_msi', 'mfs',
-                                 'relative_mfs_in_overlap')
+    possible_assignment_types = ('mfs_in_overlap', 'disambiguated_by_msi', 'mfs',
+                                 'rmfs_within_overlap')
 
     def __init__(self, assigned_sense, contributing_languages, assignment_type):
         self.assigned_sense = assigned_sense

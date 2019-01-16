@@ -6,7 +6,7 @@ import sys
 from render2xml import render_monolingual_corpus, render_multilingual_corpus
 from nltk.corpus import wordnet as wn
 from pprint import pprint
-from msi import msi
+import msi
 
 from corpus import Corpus, Document, Sentence, Word, MultilingualCorpus
 from corpus import Alignment, AlignmentCollector
@@ -156,7 +156,8 @@ if __name__ == '__main__':
     multilingual_corpus.add(source_corpus, target_corpus)
     alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
 
-    msi(multilingual_corpus)
+    general_mfs_statistics = msi._load_corpora_sense_frequency_statistics(multilingual_corpus.languages)
+    msi.apply_msi_to_corpus(multilingual_corpus, general_mfs_statistics)
     #print(render_multilingual_corpus(multilingual_corpus))
     #dump_multilingual_corpus_to_xml(multilingual_corpus)
 

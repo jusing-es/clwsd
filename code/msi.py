@@ -10,65 +10,69 @@ import os
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
         path = '../resources/sense_frequencies'
-
+        sfs = {}
         with open(os.path.join(path, 'sfs_eng_wn_glosses.json')) as si:
-            sfs['eng'] = json.loads(si.read())
+            sfs = json.loads(si.read())
 
         return sfs
 
     def _load_semcor_sense_frequency_statistics(lang):
         path = '../resources/sense_frequencies'
-
+        sfs = {}
         if lang == 'ita':
             with open(os.path.join(path, 'sfs_ita.json')) as si:
                 sfs = json.loads(si.read())
-
         elif lang == 'rom':
             with open(os.path.join(path, 'sfs_rom.json')) as si:
                 sfs = json.loads(si.read())
 
         return sfs
 
-
-    sfs ={}
+    sfs = {}
     if 'eng' in languages:
         sfs['eng'] = _load_wn_glosses_eng_sense_frequency_statistics()
     if 'ita' in languages:
-        sfs['ita'] = _load_corpora_sense_frequency_statistics(lang='ita')
+        sfs['ita'] = _load_semcor_sense_frequency_statistics(lang='ita')
     if 'rom' in languages:
-        sfs['rom'] = _load_corpora_sense_frequency_statistics(lang='rom')
+        sfs['rom'] = _load_semcor_sense_frequency_statistics(lang='rom')
 
+    return sfs
 
-def compute_rmfs(word):
+def get_relative_frequent_senses(word):
     """Gives relative MFS by excluding sense occurrences in the current text.
 
     :param word:
-    :return:
+    :returns list:
     """
-    if word.lang in general_mfs_statistics and word.lemma in general_mfs_statistics:
-        # given the input lemma, for each sense s retrieves <sense, sum(occurrences in texts, excluded text)> pairs
-        sid_scores = [(s, sum(general_mfs_statistics[word.lemma][s].values()) -
-                       general_mfs_statistics[word.lemma][s].get(word.document, 0))
-                      for s in general_mfs_statistics[word.lemma]]
-        # assigns to sense the sense with highest number of occurrences
-        sense = sorted(sid_scores, key=lambda x: x[1], reverse=True)[0][0]
+    if word.lang in general_mfs_statistics and word.lang in ('ita', 'rom'):
+        if word.lemma in general_mfs_statistics[word.lang]:
+            # given the input lemma, for each sense s retrieves <sense, sum(occurrences in texts, excluded text)> pairs
+            sid_scores = [(s, sum(general_mfs_statistics[word.lang][word.lemma][s].values()) -
+                           general_mfs_statistics[word.lang][word.lemma][s].get(word.document, 0))
+                          for s in general_mfs_statistics[word.lang][word.lemma]]
+            import pdb;
+            pdb.set_trace()
+            # first one is the sense with highest number of occurrences
+            return sorted(sid_scores, key=lambda x: x[1], reverse=True)
 
-        if sense is not None:
-            return wn._synset_from_pos_and_offset(sense[-1], int(sense[:8]))
+    elif word.lang in general_mfs_statistics and word.lang == 'eng':
+        if word.lemma + '-' + word.pos in general_mfs_statistics[word.lang]:
+            return general_mfs_statistics[word.lang][word.lemma + '-' + word.pos]
 
-    return None
+    return []
 
 
 def get_mfs(word):
     if synset_lookup(word):
         return synset_lookup(word)[0]
-    return set()
+    return []
+
 
 def synset_lookup(word):
     if word.pos in ('a', 'r', 'v', 'n'):
-        return set(wn.synsets(word.lemma, lang=word.lang, pos=word.pos))
+        return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
     else:
-        return set(wn.synsets(word.lemma, lang=word.lang))
+        return wn.synsets(word.lemma, lang=word.lang)
 
 
 def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type):
@@ -87,8 +91,27 @@ def get_synset_in_overlap(overlap):
     assert len(overlap) == 1
     return get_offset(list(overlap)[0])
 
+
 def get_offset(synset):
     return str(synset.offset()).zfill(8) + '_' + synset.pos()
+
+
+def resort_to_mfs(target_word, overlap):
+    mfs = get_mfs(target_word)
+    overlap = overlap.intersection(set([mfs]))
+    if len(overlap) == 1:
+        assigned_sense = get_synset_in_overlap(overlap)
+        assignment_type = 'mfs_in_overlap'
+    else:
+        assert mfs in (synset_lookup(target_word))
+        # check if it was part of the original set
+        import pdb;
+        pdb.set_trace()
+        assigned_sense = mfs
+        assignment_type = 'mfs'
+
+    return assigned_sense, assignment_type
+
 
 def make_decision(target_word, overlap, corpus_sense_frequencies=None):
     """Works with the current overlap set
@@ -103,7 +126,7 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=None):
         assignment_type = 'disambiguated_by_msi'
     else:
         if corpus_sense_frequencies:
-            frequent_sense_bag = get_frequent_sense(corpus_sense_frequencies, target_word)
+            frequent_sense_bag = get_relative_frequent_senses(target_word)
             if overlap.intersection(frequent_sense_bag):
                 overlap = overlap.intersection(frequent_sense_bag)
                 """If resorting to SFS statistics leads to an overlap containing one sense, 
@@ -120,18 +143,10 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=None):
                     # select sense with the highest frequency in frequent_sense_bag
                     assigned_sense = frequent_sense_bag[0]
                     assignment_type = 'rmfs_within_overlap'
-        else:
-            mfs = get_mfs(target_word)
-            overlap = overlap.intersection(mfs)
-            if len(overlap) == 1:
-                assigned_sense = get_synset_in_overlap(overlap)
-                assignment_type = 'mfs_in_overlap'
             else:
-                assert mfs.issubset(synset_lookup(target_word))
-                # check if it was part of the original set
-                import pdb; pdb.set_trace()
-                assigned_sense = mfs
-                assignment_type = 'mfs'
+                assigned_sense, assignment_type = resort_to_mfs(target_word, overlap)
+        else:
+            assigned_sense, assignment_type = resort_to_mfs(target_word, overlap)
 
     return assigned_sense, assignment_type
 
@@ -143,7 +158,7 @@ def perform_intersection(target_word, aligned_synset_bags):
     :param aligned_synset_bags:
     :return:
     """
-    target_synsets = synset_lookup(target_word)
+    target_synsets = set(synset_lookup(target_word))
 
     overlap = target_synsets
     possible_target_synsets = target_synsets
@@ -153,7 +168,8 @@ def perform_intersection(target_word, aligned_synset_bags):
         # don't perform intersection if that leaves the set with no one of the target synsets left
         # it may happen, because other wordnets are more developed - but it's important that the annotation is covered
         # in the target's language WN
-        if overlap.intersection(aligned_synset_bags[lang]) and possible_target_synsets.intersection(aligned_synset_bags[lang]):
+        if overlap.intersection(aligned_synset_bags[lang]) and possible_target_synsets.intersection(
+                aligned_synset_bags[lang]):
             overlap = overlap.intersection(aligned_synset_bags[lang])
             contributing_languages.add(lang)
         else:
@@ -166,18 +182,19 @@ def perform_intersection(target_word, aligned_synset_bags):
 def get_aligned_words_synsets(word):
     aligned_synset_bags = {}
     for lang, aligned_word in word.alignments.items():
-        aligned_synset_bags[lang] = synset_lookup(aligned_word)
+        aligned_synset_bags[lang] = set(synset_lookup(aligned_word))
 
     return aligned_synset_bags
 
 
-def msi(multilingual_corpus, corpus_sense_frequencies=True):
+def apply_msi_to_corpus(multilingual_corpus, corpus_sense_frequencies=None):
     """
 
     :param multilingual_corpus:
-    :param sense_frequencies:
+    :param corpus_sense_frequencies:
     :return:
     """
+    import pdb; pdb.set_trace()
     for _, corpus in multilingual_corpus.corpora.items():
         for _, document in corpus.documents.items():
             for _, sentence in document.sentences.items():
@@ -220,11 +237,11 @@ if __name__ == "__main__":
 
             try:
                 multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
-            except:
+            except BaseException as e:
                 jfr.folder_instructions()
 
         elif options.xml_input_file:
-                multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
+            multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
         else:
             print('Valid input formats are XML compliant to NTUMC DTD or input folder with json files as below')
             jfr.folder_instructions()
@@ -234,13 +251,13 @@ if __name__ == "__main__":
                 options.automatic_alignments not in ["gs", "auto_grow", "auto_int", "sense", "all"]:
             print('Word alignment choice not valid. Choose one beteeen "gs", "auto_grow", "auto_int", "sense", "all"')
 
-       if options.sense_frequencies:
+        if options.sense_frequencies:
             general_mfs_statistics = _load_corpora_sense_frequency_statistics(langs)
             print("External sense frequencies enabled...")
-       else:
-           general_mfs_statistics = None
+        else:
+            general_mfs_statistics = None
 
-    msi(multilingual_corpus, )
+        apply_msi_to_corpus(multilingual_corpus, general_mfs_statistics)
         print("Starting MSI...")
 
     elif options.languages and options.xml_input_file:
