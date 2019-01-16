@@ -240,8 +240,8 @@ class Word(object):
         else:
             return None
 
-    def add_msi_annotation(self, assigned_sense, contributing_languages, assignment_type):
-        self.msi_annotation = MsiAnnotation(assigned_sense, contributing_languages, assignment_type)
+    def add_msi_annotation(self, assigned_sense, contributing_languages, assignment_type, comments=None):
+        self.msi_annotation = MsiAnnotation(assigned_sense, contributing_languages, assignment_type, comments)
 
     def to_string(self):
         return json.dumps(self.__dict__, default=serialization.pretty_print)
@@ -265,16 +265,17 @@ class Word(object):
 
 
 class MsiAnnotation(object):
-    __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type']
+    __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type', 'comments']
 
     possible_assignment_types = ('mfs_in_overlap', 'disambiguated_by_msi', 'mfs',
-                                 'rmfs_within_overlap')
+                                 'rmfs_within_overlap', 'no_sense')
 
-    def __init__(self, assigned_sense, contributing_languages, assignment_type):
+    def __init__(self, assigned_sense, contributing_languages, assignment_type, comments=None):
         self.assigned_sense = assigned_sense
         self.contributing_languages = contributing_languages
         assert assignment_type in MsiAnnotation.possible_assignment_types
         self.assignment_type = assignment_type
+        self.comments = comments
 
     def to_string(self):
         return json.dumps(self.__dict__, default=serialization.pretty_print)
@@ -283,7 +284,8 @@ class MsiAnnotation(object):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'assigned_sense': self.assigned_sense,
                            'contributing_languages': self.contributing_languages,
-                           'assignment_type': self.assignment_type},
+                           'assignment_type': self.assignment_type,
+                           'comments' : self.comments},
                 '__args__': []}
 
     def dumps(self):

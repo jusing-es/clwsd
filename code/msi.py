@@ -1,3 +1,4 @@
+import re
 import sys
 import json_files_reader as jfr
 import xml_file_reader as xr
@@ -12,7 +13,6 @@ general_mfs_statistics = None
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
         path = '../resources/sense_frequencies'
-        sfs = {}
         with open(os.path.join(path, 'sfs_eng_wn_glosses.json')) as si:
             sfs = json.loads(si.read())
 
@@ -55,11 +55,18 @@ def get_relative_frequent_senses(word):
                           for s in general_mfs_statistics[word.lang][word.lemma]]
             # first one is the sense with highest number of occurrences
             rfss = sorted(sid_scores, key=lambda x: x[1], reverse=True)
+            # scores not needed
+            if rfss and isinstance(rfss[0], tuple):
+                rfss = [i for (i, j) in sorted(sid_scores, key=lambda x: x[1], reverse=True)]
 
     elif word.lang in general_mfs_statistics and word.lang == 'eng':
         if word.lemma + '-' + word.pos in general_mfs_statistics[word.lang]:
             rfss = general_mfs_statistics[word.lang][word.lemma + '-' + word.pos]
 
+    try:
+        rfss = [i.replace('-s', '-a') for i in rfss]
+    except:
+        import pdb; pdb.set_trace()
     return rfss
 
 
@@ -73,20 +80,19 @@ def get_mfs_offset(word):
     :param word:
     :return:
     """
-
     if synset_lookup(word):
         return [get_offset(synset_lookup(word)[0])]
     return []
 
 
 def synset_lookup(word):
-    if word.pos in ('a', 'r', 'v', 'n'):
+    if word.pos in ('a', 'r', 'v', 'n', 's'):
         return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
     else:
         return wn.synsets(word.lemma, lang=word.lang)
 
 
-def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type):
+def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type, comments=None):
     """
 
     :param target_word:
@@ -95,7 +101,7 @@ def assign_sense(target_word, assigned_sense, contributing_languages, assignment
     :param assignment_type:
     :return:
     """
-    target_word.add_msi_annotation(assigned_sense, list(contributing_languages), assignment_type)
+    target_word.add_msi_annotation(assigned_sense, list(contributing_languages), assignment_type, comments)
 
 
 def get_only_element_in_overlap(overlap):
@@ -108,7 +114,7 @@ def get_only_element_in_overlap(overlap):
 
 def get_offset(synset):
     try:
-        return str(synset.offset()).zfill(8) + '-' + synset.pos()
+        return str(synset.offset()).zfill(8) + '-' + synset.pos().replace('s', 'a')
     except nltk.corpus.reader.wordnet.WordNetError as e:
         print(e)
         import pdb; pdb.set_trace()
@@ -171,17 +177,15 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=False):
     return assigned_sense, assignment_type
 
 
-def perform_intersection(target_word, aligned_synset_bags):
+def perform_intersection(target_word, possible_target_synsets, aligned_synset_bags):
     """Be aware: compares offsets interally.
 
     :param target_word:
     :param aligned_synset_bags:
     :return:
     """
-    target_synsets = set(map(get_offset, synset_lookup(target_word)))
 
-    overlap = target_synsets
-    possible_target_synsets = target_synsets
+    overlap = possible_target_synsets.copy()
     contributing_languages = set()
     # start overlapping from the most populated synset_bag
     for lang in sorted(aligned_synset_bags, key=lambda k: len(aligned_synset_bags[k]), reverse=True):
@@ -215,6 +219,14 @@ def get_aligned_words_synsets(word):
 def evaluate_msi(multilingual_corpus):
     pass
 
+
+def check_for_named_entities(word):
+    # overlap fails if annotation is in English and corpus in language other than English
+    if word.lemma in ('group', 'location', 'person', 'grand_jury') and word.lang != 'eng':
+        return wn.synsets(word.lemma, pos='n')
+    elif re.match(r'^\d+?$', word.lemma):
+        return wn.synsets(word.lemma)
+
 def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False):
     """
 
@@ -234,7 +246,21 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                 for _, word in sentence.tokens.items():
                     if word.sense and word.alignments and not word.msi_annotation:
                         aligned_synset_bags = get_aligned_words_synsets(word)
-                        overlap, contributing_languages = perform_intersection(word, aligned_synset_bags)
+                        target_synsets = set(map(get_offset, synset_lookup(word)))
+                        if not target_synsets:
+                            if check_for_named_entities(word):
+                                target_synsets = set(map(get_offset, check_for_named_entities(word)))
+                            else:
+                                if word.lang =='ita' and word.sense and not target_synsets:
+                                    assigned_sense = None
+                                    assignment_type = 'no_sense'
+                                    comments = f'No sense in WN3.0 for lemma {word.lemma}'
+                                    print(comments)
+                                    assign_sense(word, assigned_sense, set(word.alignments.keys()), assignment_type)
+                                    continue
+                                else:
+                                    import pdb; pdb.set_trace()
+                        overlap, contributing_languages = perform_intersection(word, target_synsets, aligned_synset_bags)
                         assigned_sense, assignment_type = make_decision(word, overlap, corpus_sense_frequencies)
                         assign_sense(word, assigned_sense, contributing_languages, assignment_type)
 
