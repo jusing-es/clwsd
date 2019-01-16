@@ -1,0 +1,76 @@
+br-a01	s_90	" Non c'è stato il minimo problema " . ||| 
+
+br-a01	90	「 少し も もめ事 は なかっ た 。 」
+
+"" 
+c'è も
+
+0-0 5-5 4-4 9-10 2-2 1-1 10-9
+
+
+from alignments phraoh to match it and jp
+
+given alignments a01, 90, 4-4
+
+look in 
+
+f=open('jsemcor.txt','rb')
+j=json.load(f)
+
+
+# 4 is actually 2, so
+# find key to 
+[y for y in keys if y.split(".")[-1] == str(2)]
+[u'w72.90.2']
+
+
+now access j['a01'][90]['w72.90.2']
+
+>>> for i in k['a01']['90']['w72.90.2']:
+...     print i
+... 
+少し
+少しも <-- lemma
+A.r
+少し副詞.助詞類接続,も助詞.係助詞
+少しも-r <--- link to semcor if available
+
+#      wf | lemma | components > [(lemma,pos)] | synset | link_to_semcor
+
+select synset from sense where wordid=(select wordid from word where lemma LIKE '%少しも%')
+
+db returns
+"00024587-r"
+"00056729-r"
+
+>>> wn._synset_from_pos_and_offset('r',24587)
+Synset('no.r.02')
+>>> wn._synset_from_pos_and_offset('r',56729)
+Synset('at_all.r.01')
+
+>>> wn.synsets('non', lang='ita')
+[Synset('barely.r.01'), Synset('not.r.01'), Synset('never.r.01'), Synset('no.r.02'), Synset('no.r.01')]
+
+FOUND ONE, but no annotation in Italian (no-transfer), so goes wasted
+
+
+
+br-a11	s_30	Era una possibilità remota e una battuta . ||| 
+                 2  3    4             5    6  7  8
+br-a11	30	成功 率 は 低い と みなさ れ 、 適中 。
+0       1    2  3  4   5  6  7   8 9  10  11
+
+0-0 5-7 8-10 1-1 9-11 7-8 2-4
+
+era は
+remota みなさ OK
+una れ
+battuta 適中
+
+same w/ remota, no annotation in Italian though JP synset is found
+
+select synset from sense where wordid=(select wordid from word where lemma LIKE '%みなす%')
+
+>>> wn._synset_from_pos_and_offset('v',301338)
+Synset('disqualify.v.01')
+

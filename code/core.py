@@ -157,6 +157,7 @@ if __name__ == '__main__':
     alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
 
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
+    msi.evaluate_msi(multilingual_corpus)
     #print(render_multilingual_corpus(multilingual_corpus))
     #dump_multilingual_corpus_to_xml(multilingual_corpus)
 

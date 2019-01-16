@@ -47,15 +47,12 @@ def get_relative_frequent_senses(word):
     :returns list:
     """
     rfss = []
-    import pdb; pdb.set_trace()
     if word.lang in general_mfs_statistics and word.lang in ('ita', 'rom'):
         if word.lemma in general_mfs_statistics[word.lang]:
             # given the input lemma, for each sense s retrieves <sense, sum(occurrences in texts, excluded text)> pairs
             sid_scores = [(s, sum(general_mfs_statistics[word.lang][word.lemma][s].values()) -
                            general_mfs_statistics[word.lang][word.lemma][s].get(word.document, 0))
                           for s in general_mfs_statistics[word.lang][word.lemma]]
-            import pdb;
-            pdb.set_trace()
             # first one is the sense with highest number of occurrences
             rfss = sorted(sid_scores, key=lambda x: x[1], reverse=True)
 
@@ -71,8 +68,14 @@ def offset_to_synset(offset_pos):
 
 
 def get_mfs_offset(word):
+    """ Returns list
+
+    :param word:
+    :return:
+    """
+
     if synset_lookup(word):
-        return get_offset(synset_lookup(word)[0])
+        return [get_offset(synset_lookup(word)[0])]
     return []
 
 
@@ -96,14 +99,18 @@ def assign_sense(target_word, assigned_sense, contributing_languages, assignment
 
 
 def get_only_element_in_overlap(overlap):
-    assert len(overlap) == 1
-    return get_offset(list(overlap)[0])
+    try:
+        assert len(overlap) == 1
+    except AssertionError as e:
+        raise e
+    return list(overlap)[0]
 
 
 def get_offset(synset):
     try:
         return str(synset.offset()).zfill(8) + '-' + synset.pos()
     except nltk.corpus.reader.wordnet.WordNetError as e:
+        print(e)
         import pdb; pdb.set_trace()
 
 
@@ -115,16 +122,16 @@ def resort_to_mfs(target_word, overlap):
     :return:
     """
     mfs = get_mfs_offset(target_word)
-    overlap = overlap.intersection(set([mfs]))
+    overlap = overlap.intersection(mfs)
     if len(overlap) == 1:
         assigned_sense = get_only_element_in_overlap(overlap)
         assignment_type = 'mfs_in_overlap'
     else:
-        assert mfs in set(map(get_offset, synset_lookup(target_word)))
+        assert set(mfs).issubset((map(get_offset, synset_lookup(target_word))))
+        if len(mfs) == 0:
+            import pdb; pdb.set_trace()
         # check if it was part of the original set
-        import pdb;
-        pdb.set_trace()
-        assigned_sense = mfs
+        assigned_sense = get_only_element_in_overlap(mfs)
         assignment_type = 'mfs'
 
     return assigned_sense, assignment_type
@@ -181,7 +188,6 @@ def perform_intersection(target_word, aligned_synset_bags):
         # don't perform intersection if that leaves the set with no one of the target synsets left
         # it may happen, because other wordnets are more developed - but it's important that the annotation is covered
         # in the target's language WN
-        import pdb; pdb.set_trace()
         if overlap.intersection(aligned_synset_bags[lang]) and possible_target_synsets.intersection(
                 aligned_synset_bags[lang]):
             overlap = overlap.intersection(aligned_synset_bags[lang])
@@ -206,6 +212,9 @@ def get_aligned_words_synsets(word):
     return aligned_synset_bags
 
 
+def evaluate_msi(multilingual_corpus):
+    pass
+
 def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False):
     """
 
@@ -228,7 +237,6 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                         overlap, contributing_languages = perform_intersection(word, aligned_synset_bags)
                         assigned_sense, assignment_type = make_decision(word, overlap, corpus_sense_frequencies)
                         assign_sense(word, assigned_sense, contributing_languages, assignment_type)
-
 
 def show_supported_languages(input_lang):
     print(wn.langs())
