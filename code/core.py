@@ -156,8 +156,7 @@ if __name__ == '__main__':
     multilingual_corpus.add(source_corpus, target_corpus)
     alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
 
-    general_mfs_statistics = msi._load_corpora_sense_frequency_statistics(multilingual_corpus.languages)
-    msi.apply_msi_to_corpus(multilingual_corpus, general_mfs_statistics)
+    msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
     #print(render_multilingual_corpus(multilingual_corpus))
     #dump_multilingual_corpus_to_xml(multilingual_corpus)
 
