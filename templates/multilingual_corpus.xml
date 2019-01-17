@@ -9,6 +9,11 @@
                 {% endfor -%}
                 {% for wid, word in sent.tokens.items() if word.sense -%}
                 <Concept cid="{{(doc.lang + '_' + wid).replace('t_', 'c_')}}" wid="{{doc.lang + '_' + wid}}" synset_tag="{{word.sense}}" clemma="{{word.lemma}}"/>
+                 {% if word.msi_annotation and word.msi_annotation.assigned_sense -%}
+                <Concept cid="{{(doc.lang + '_' + 'msi' + '_' + wid).replace('t_', 'c_')}}" wid="{{doc.lang + '_' + wid}}" synset_tag="{{word.msi_annotation.assigned_sense}}" clemma="{{word.lemma}}">
+                    <Tag category="msi_annotation" value="{{word.msi_annotation.assigned_sense}}" />
+                </Concept>
+                 {% endif -%}
                 {% endfor -%}
             </Sentence>
             {% endfor -%}
@@ -19,7 +24,6 @@
         {% for doc_id, doc_alignments in multicorpus.alignment_collector.documents.items() -%}
         <DocAlignment docID="{{doc_alignments|join(' ')}}"/>
         {% endfor -%}
-        <!--             self.sentences[alignment.source_id] = self.sentences.get(alignment.source_id, []) + [alignment]-->
         {% for source_id, sent_alignments in multicorpus.alignment_collector.sentences.items() -%}
             {% for target_alignment in sent_alignments -%}
             <SentAlignment sid_from="{{source_id}}" sid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
@@ -35,6 +39,5 @@
             <ConceptAlignment cid_from="{{source_id}}" cid_to="{{target_alignment.target_id}}" type="{{target_alignment.origin}}"/>
             {% endfor -%}
         {% endfor -%}
-
     </Alignment>
 </Corpus>

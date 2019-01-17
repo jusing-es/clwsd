@@ -222,10 +222,6 @@ class Word(object):
         self.sentence = sentence
         self.alignments = alignments
 
-    def add_annotation(self, annotation):
-        assert isinstance(annotation, MsiAnnotation)
-        self.annotation = MsiAnnotation
-
     def add_alignment(self, target_lang, target_word):
         self.alignments[target_lang] = target_word
 
