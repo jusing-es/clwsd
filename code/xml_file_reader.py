@@ -14,7 +14,6 @@ def load_multilingualcorpus_from_xml(xml_file):
     tree = etree.parse(open(xml_file))
 
     root = tree.getroot()
-    import pdb; pdb.set_trace()
 
     if root.attrib['linguality'] != 'multilingual':
         raise InvalidMultilingualCorpusException("Attribute linguality's value is not 'multilingual' ")
@@ -23,25 +22,35 @@ def load_multilingualcorpus_from_xml(xml_file):
     dict_docs = {}
     for doc in root.getchildren():
 
-        doc_element =
+        import pdb; pdb.set_trace()
+        doc_element = Document(id=doc.attrib['title'], lang=doc.attrib['lang'],
+                               sentences={}, corpus=None, multilingual_corpus=mc)
 
-        """
-        class Corpus(object):
-    __slots__ = ['id', 'title', 'lang', 'documents']
+        for sent in doc.getchildren():
+            sent_element = Sentence(id=sent.attrib['id'], document=doc_element, tokens={}, text=None)
 
-    def __init__(self, id, lang, sentences={}, corpus=None, multilingual_corpus=None):
-        self.id = id
-        self.lang = lang
-        self.sentences = sentences
-        self.corpus = None
-        self.multilingual_corpus = None
+            for word in sent.getchildren():
+                #     __slots__ = ['id', 'document', 'lang', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'msi_annotation', 'sentence', 'alignments']
+                word_element = Word(id=word.attrib['id'], document=doc_element, lang=doc_element.lang,
+                                    surface_form=word.attrib['surface_lemma'], pos=word.attrib['pos'],
+                                    sense=None)
 
-
-        """
+                concepts = sent.findall(f'Concept[@wid={word_element.id}]')
+                if concepts:
+                    import pdb; pdb.set_trace()
+                    word.sense = ''
+                    word.msi_annotation = ''
 
         # add document to dictionary to create object Corpus when done
-        dict_docs[doc.attrib['language']] =
+        dict_docs[doc.attrib['language']] = dict_docs.get(doc.attrib['language'], []) + [doc_element]
 
+    corpus_id = 1
+    for lang, documents in dict_docs.items():
+        corpus_object = Corpus(id=f'c{corpus_id}', title='', lang=lang, documents=documents)
+        for _, document in corpus_object.documents:
+            document.corpus = corpus_object
+        mc.add(corpus_object)
+        corpus_id += 1
 
     """
     <Corpus corpusID="{{multicorpus.id}}" title="{{multicorpus.title}}" linguality="multilingual">
