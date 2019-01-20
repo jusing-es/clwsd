@@ -38,23 +38,6 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
                                           target_id=source_doc.lang + '_' + source_wid, origin='manual')
 
         multilingual_corpus.add_alignment(source_word_alignment, target_word_alignment)
-        """
-        > /home/giulia/PycharmProjects/clwsd/code/msi.py(13)msi()
-        -> for _, word in sentence.tokens.items():
-        (Pdb) word
-        <corpus.Word object at 0x7fc7c471f438>
-        (Pdb) word.sense
-        '00031264-n'
-        (Pdb) word.alignments
-        {'ita': <corpus.Word object at 0x7fc7bfba7588>, 'eng': <corpus.Word object at 0x7fc7bfbd7358>}
-        (Pdb) word.lemma
-        'group'
-        (Pdb) word.pos
-        'n'
-        (Pdb) word.surface_form
-        'Fulton_County_Grand_Jury'
-        (Pdb)
-        """
         # add alignments to Word objects
 
         source_word = source_doc.get_word(source_sid, source_wid)
