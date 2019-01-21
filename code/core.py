@@ -97,7 +97,7 @@ def load_document(source_lang, path):
             raw_text = []
             for token in sorted(doc[sent], key=lambda x: int(x.split("_")[1]+x.split("_")[2])):
                 word_in = Word(id=token, lang=doc_in.lang, surface_form=doc[sent][token][0], lemma=doc[sent][token][1],
-                                pos=doc[sent][token][2], upos=None, sense=doc[sent][token][3],
+                                pos=doc[sent][token][2], upos=None, sense=doc[sent][token][3].replace('s', 'a'),
                                 document=doc_in.id, sentence=sentence_in.id, alignments={}, msi_annotation=None)
                 raw_text.append(word_in.surface_form)
                 sentence_in.add(word_in)

@@ -240,6 +240,7 @@ def evaluate_msi(multilingual_corpus):
                                     and word.msi_annotation.assigned_sense != word.sense \
                                     and re.match(r'\d{8}-[avrn]', word.msi_annotation.assigned_sense):
                                 recap[corpus.lang]['mismatch'] += 1
+                                print(word.sense, word.lemma, word.msi_annotation.assigned_sense)
 
         assert recap[corpus.lang]['mismatch'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
     from pprint import pprint

@@ -5,7 +5,7 @@ import json
 f = open('sense_clusters-21.senses', 'r')
 lines = f.readlines()
 
-list = []
+sense_list = []
 
 for l in lines:
     keys = l.strip().split(" ")
@@ -17,21 +17,20 @@ for l in lines:
         except nltk.corpus.reader.wordnet.WordNetError as e:
             continue
         slist.append(str(offset).zfill(8)+'-'+pos)
-    list.append(slist)
+    sense_list.append(slist)
 
+# This produces 29,974 clusters
 with open('sense_clustering_30.json', 'w') as outfile:
-     json.dump(list, outfile)
+     json.dump(sense_list, outfile)
 
-#29,974 clusters
+d = {}
 
-##Usage example
-#with open('sense_clustering_30.json') as data:
-#    clustering = json.load(data)
+# This produces clusters for 44,741 keys
+for elenco in sense_list:
+    for item in elenco:
+        d[item] = elenco
 
-## say the synset found through SI is 'reject.v.04', but the gold standard has 'condemn.v.01' 
-#attempted_offset = '00796976-v'
-#correct_offset = '01774799-v'
+with open('sense_clustering_dict.json', 'w') as outfile:
+    json.dump(d, outfile)
 
-#cluster = [items for items in clustering if attempted_offset in items]
-#if correct_offset in cluster:
-     ## consider attempted_offset correct
+
