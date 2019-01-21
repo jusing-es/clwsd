@@ -352,7 +352,6 @@ if __name__ == "__main__":
             sys.exit()
 
         if options.json_input_folder:
-
             try:
                 multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
             except BaseException as e:

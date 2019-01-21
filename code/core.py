@@ -120,24 +120,29 @@ if __name__ == '__main__':
 
     source_folder = sys.argv[3]
     target_folder = sys.argv[4]
+    rom_folder = '../files/training/rom'
     with open(sys.argv[5]) as si:
         json_alignments = json.loads(si.read())
 
-    source_corpus = Corpus(id='eng_sc', title='English Semcor', lang=source_lang, documents={})
-    target_corpus = Corpus(id='ita_sc', title='Italian Semcor', lang=target_lang, documents={})
+    eng_corpus = Corpus(id='eng_sc', title='English Semcor', lang=source_lang, documents={})
+    ita_corpus = Corpus(id='ita_sc', title='Italian Semcor', lang=target_lang, documents={})
+    rom_corpus = Corpus(id='rom_sc', title='Romanian Semcor', lang='rom', documents={}) #FIXME
     logger.info('starting')
     # load documents
     for doc in os.listdir(source_folder):
         if os.path.isfile(os.path.join(target_folder, doc)):
-            source_doc = load_document(source_lang, os.path.join(source_folder, doc))
-            target_doc = load_document(target_lang, os.path.join(target_folder, doc))
-            source_corpus.add(source_doc)
-            target_corpus.add(target_doc)
+            eng_doc = load_document(source_lang, os.path.join(source_folder, doc))
+            ita_doc = load_document(target_lang, os.path.join(target_folder, doc))
+            rom_doc = load_document('rom', os.path.join(rom_folder, doc))
+            eng_corpus.add(eng_doc)
+            ita_corpus.add(ita_doc)
+            rom_corpus.add(rom_doc)
 
     multilingual_corpus = MultilingualCorpus(id='MPC', title='Multilingual Parallel Corpus', corpora={},
                                              alignment_collector=AlignmentCollector())
-    multilingual_corpus.add(source_corpus, target_corpus)
+    multilingual_corpus.add(eng_corpus, ita_corpus, rom_corpus)
     alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
+
 
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
     msi.evaluate_msi(multilingual_corpus)
