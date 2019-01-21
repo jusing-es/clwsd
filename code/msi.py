@@ -219,6 +219,10 @@ def get_aligned_words_synsets(word):
 
 def evaluate_msi(multilingual_corpus):
     """"""
+
+    with open('../resources/coarse_senses/sense_clustering_dict.json') as infile:
+        coarse_senses_dict = json.loads(infile.read())
+
     recap = {lang : defaultdict(lambda: 0) for lang in multilingual_corpus.languages}
     for _, corpus in multilingual_corpus.corpora.items():
         recap[corpus.lang]['contributing_languages'] = Counter()
@@ -228,6 +232,27 @@ def evaluate_msi(multilingual_corpus):
                 for _, word in sentence.tokens.items():
                     if word.sense and word.alignments:
                         recap[corpus.lang]['counts'] += 1
+
+                        mfs = get_mfs_offset(word)
+                        if mfs:
+                            mfs = get_only_element_in_overlap(mfs)
+                            if mfs == word.sense:
+                                recap[corpus.lang]['mfs_match'] += 1
+                            else:
+                                recap[corpus.lang]['mfs_mismatch'] += 1
+                                if mfs in coarse_senses_dict and word.sense in coarse_senses_dict[mfs]:
+                                    recap[corpus.lang]['coarse_mfs_match'] += 1
+
+                        rmfs = get_relative_frequent_senses(word)
+                        if rmfs:
+                            rmfs = rmfs[0]
+                            if rmfs == word.sense:
+                                recap[corpus.lang]['rmfs_match'] += 1
+                            else:
+                                recap[corpus.lang]['rmfs_mismatch'] += 1
+                                if rmfs in coarse_senses_dict and word.sense in coarse_senses_dict[rmfs]:
+                                    recap[corpus.lang]['coarse_rmfs_match'] += 1
+
                         if word.msi_annotation:
                             if word.msi_annotation.assigned_sense == word.sense:
                                 recap[corpus.lang]['match'] += 1
@@ -240,9 +265,16 @@ def evaluate_msi(multilingual_corpus):
                                     and word.msi_annotation.assigned_sense != word.sense \
                                     and re.match(r'\d{8}-[avrn]', word.msi_annotation.assigned_sense):
                                 recap[corpus.lang]['mismatch'] += 1
-                                print(word.sense, word.lemma, word.msi_annotation.assigned_sense)
+                                if word.msi_annotation.assigned_sense in coarse_senses_dict \
+                                    and word.sense in coarse_senses_dict[word.msi_annotation.assigned_sense]:
+                                    recap[corpus.lang]['coarse_match'] += 1
+                                else:
+                                    recap[corpus.lang]['coarse_mismatch'] += 1
+
+                                print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
 
         assert recap[corpus.lang]['mismatch'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
+        assert recap[corpus.lang]['coarse_mismatch'] + recap[corpus.lang]['coarse_match'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
     from pprint import pprint
     pprint(recap)
     import pdb; pdb.set_trace()
