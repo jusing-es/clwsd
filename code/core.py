@@ -1,3 +1,4 @@
+import codecs
 import json
 import logging
 import os
@@ -64,6 +65,73 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
                                           target_id=source_doc.lang + '_' + source_sent, origin='manual')
 
         multilingual_corpus.add_alignment(source_sent_alignment, target_sent_alignment)
+
+
+def add_automatic_alignment_to_corpus(multilingual_corpus):
+    align = codecs.open("../files/training/corpus/alignments/en_ro_align.align", "rb", "utf-8")
+    aligned_corpus = multilingual_corpus.corpora['eng_sc']
+    rom_corpus = multilingual_corpus.corpora['rom_sc']
+    al_enro = {}
+    for l in align:
+        l = l.split()
+        id_text, id_sent, id_token = l[0][3:6], 's_'+l[0][7:].split('_')[0], 't_'+l[0][7:].split('_')[0] + "_" + 's_'+l[0][7:].split('_')[1]
+
+        target_lemma, target_sense = l[6], l[8]
+
+        target_sentence = aligned_corpus.documents[id_text].sentences[id_sent]
+
+        if target_sentence.get_word_from_lemma_and_sense(target_lemma, target_sense):
+            rom_corpus.get
+
+            source_word_alignment = Alignment(type='word', source_id=source_doc.lang + '_' + source_wid,
+                                              target_id=target_doc.lang + '_' + target_wid, origin='manual')
+            target_word_alignment = Alignment(type='word', source_id=target_doc.lang + '_' + target_wid,
+                                              target_id=source_doc.lang + '_' + source_wid, origin='manual')
+
+            multilingual_corpus.add_alignment(source_word_alignment, target_word_alignment)
+            # add alignments to Word objects
+
+            source_word = source_doc.get_word(source_sid, source_wid)
+            target_word = target_doc.get_word(source_sid, target_wid)
+
+            if source_word and target_word:  # FIXME necessary as long as I don't have also the grammatical words as well
+                source_word.add_alignment(target_lang, target_word)
+                target_word.add_alignment(source_lang, source_word)
+                if source_word.sense and target_word.sense and source_word.sense == target_word.sense:
+                    source_concept_alignment = Alignment(type='concept',
+                                                         source_id=source_doc.lang + '_' + source_wid.replace("t", "c"),
+                                                         target_id=target_doc.lang + '_' + target_wid.replace("t_",
+                                                                                                              "c_"),
+                                                         origin='manual')
+                    target_concept_alignment = Alignment(type='concept',
+                                                         source_id=target_doc.lang + '_' + target_wid.replace("t", "c"),
+                                                         target_id=source_doc.lang + '_' + source_wid.replace("t_",
+                                                                                                              "c_"),
+                                                         origin='manual')
+
+                    multilingual_corpus.add_alignment(source_concept_alignment, target_concept_alignment)
+
+            if (source_sid, source_sid) not in sent_pairs:
+                sent_pairs.add((source_sid, source_sid))
+
+        for source_sent, target_sent in sent_pairs:
+            source_sent_alignment = Alignment(type='sentence', source_id=source_doc.lang + '_' + source_sent,
+                                              target_id=target_doc.lang + '_' + target_sent, origin='manual')
+            target_sent_alignment = Alignment(type='sentence', source_id=target_doc.lang + '_' + target_sent,
+                                              target_id=source_doc.lang + '_' + source_sent, origin='manual')
+
+            multilingual_corpus.add_alignment(source_sent_alignment, target_sent_alignment)
+
+        import pdb; pdb.set_trace()
+
+        if id_text in al_enro:
+            if id_sent in al_enro[id_text]:
+                al_enro[id_text][id_sent].append(l[1:])
+            else:
+                al_enro[id_text].update({id_sent : [l[1:]]})
+        else:
+            al_enro[id_text] = {id_sent : []}
+            al_enro[id_text][id_sent].append(l[1:])
 
 
 def choose_majority_tag(word):
@@ -141,7 +209,11 @@ if __name__ == '__main__':
     multilingual_corpus = MultilingualCorpus(id='MPC', title='Multilingual Parallel Corpus', corpora={},
                                              alignment_collector=AlignmentCollector())
     multilingual_corpus.add(eng_corpus, ita_corpus, rom_corpus)
-    alignments = add_alignments_to_corpus(json_alignments, multilingual_corpus)
+    add_alignments_to_corpus(json_alignments, multilingual_corpus)
+
+    #alignments_en_it = pickle.loads(open('../files/training/corpus/alignments/dict_ro_it_alignments_verified'))
+
+    alignments = add_automatic_alignment_to_corpus(multilingual_corpus)
 
 
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)

@@ -192,6 +192,14 @@ class Sentence(object):
         if self.document.multilingual_corpus:
             self.document.multilingual_corpus.alignment_collector.add(alignment)
 
+
+    def get_word_from_lemma_and_sense(self, lemma, sense):
+        matches = [word for word in self.tokens if word.lemma == lemma and word.sense == sense]
+
+        if len(matches) >= 1:
+            return matches[0]
+        return None
+
     def to_json(self):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'id': self.id,
