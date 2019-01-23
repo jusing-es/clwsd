@@ -313,7 +313,7 @@ class AlignmentCollector(object):
         assert isinstance(alignment, Alignment) and alignment.type == 'document'
         if doc_id in self.documents.keys():
             if alignment.source_id not in self.documents[doc_id]:
-                self.documents[doc_id].append(alignment.source_id)
+                self.documents[doc_id].add(alignment.source_id)
             if alignment.target_id not in self.documents[doc_id]:
                 self.documents[doc_id].add(alignment.target_id)
         else:

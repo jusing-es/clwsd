@@ -87,11 +87,13 @@ def get_mfs_offset(word):
 
 
 def synset_lookup(word):
-    if word.pos in ('a', 'r', 'v', 'n', 's'):
-        return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
-    else:
-        return wn.synsets(word.lemma, lang=word.lang)
-
+    try:
+        if word.pos in ('a', 'r', 'v', 'n', 's'):
+            return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
+        else:
+            return wn.synsets(word.lemma, lang=word.lang)
+    except:
+        import pdb; pdb.set_trace()
 
 def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type, comments=None):
     """
