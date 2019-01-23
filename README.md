@@ -31,9 +31,9 @@ pip install < requirements.txt
 - [x] include automatic alignments for each language pair
 - [ ] Load sample corpus with also Romanian and Japanese texts
 - [ ] Load sample corpus for SemCor document ```a01``` for all languages (```eng ita rom jpn```) with also MSI annotations
-- [ ] MSI code porting to Python3.7 (missing: coarse evaluation)
+- [x] MSI code porting to Python3.7
 - [x] Write JSON reader for MSI
-- [ ] Write XML reader for MSI
+- [x] Write XML reader for MSI
 
 ## Related projects
 
