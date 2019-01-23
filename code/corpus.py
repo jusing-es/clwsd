@@ -194,7 +194,7 @@ class Sentence(object):
 
 
     def get_word_from_lemma_and_sense(self, lemma, sense):
-        matches = [word for word in self.tokens if word.lemma == lemma and word.sense == sense]
+        matches = [word for word in self.tokens.values() if word.lemma == lemma and word.sense == sense]
 
         if len(matches) >= 1:
             return matches[0]

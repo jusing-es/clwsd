@@ -15,9 +15,6 @@ from corpus import Alignment, AlignmentCollector
 logger = logging.getLogger(__name__)
 
 def add_alignments_to_corpus(alignments, multilingual_corpus):
-    #TODO
-    #FIXME alignment_collector should be a variable of CorpusCollector
-
     doc_id = 'a01'
     json_alignments = alignments['a01']
 
@@ -70,69 +67,32 @@ def add_alignments_to_corpus(alignments, multilingual_corpus):
 def add_automatic_alignment_to_corpus(multilingual_corpus):
     align = codecs.open("../files/training/corpus/alignments/en_ro_align.align", "rb", "utf-8")
     aligned_corpus = multilingual_corpus.corpora['eng_sc']
-    rom_corpus = multilingual_corpus.corpora['rom_sc']
     al_enro = {}
+    count=0
+    # {"r04": {"s_52%t_52_8": "t_52_5",
     for l in align:
         l = l.split()
-        id_text, id_sent, id_token = l[0][3:6], 's_'+l[0][7:].split('_')[0], 't_'+l[0][7:].split('_')[0] + "_" + 's_'+l[0][7:].split('_')[1]
+        id_text, source_sid, source_wid = l[0][3:6], 's_'+l[0][7:].split('_')[0], 't_'+l[0][7:].split('_')[0] + '_' + l[0][7:].split('_')[1]
+        if id_text == 'a01':
+            print(l[0], source_sid, source_wid)
 
         target_lemma, target_sense = l[6], l[8]
 
-        target_sentence = aligned_corpus.documents[id_text].sentences[id_sent]
+        if id_text in aligned_corpus.documents:
+            target_sentence = aligned_corpus.documents[id_text].sentences[source_sid]
 
-        if target_sentence.get_word_from_lemma_and_sense(target_lemma, target_sense):
-            rom_corpus.get
+            # found match w/ english
+            target_matched_word = target_sentence.get_word_from_lemma_and_sense(target_lemma, target_sense)
 
-            source_word_alignment = Alignment(type='word', source_id=source_doc.lang + '_' + source_wid,
-                                              target_id=target_doc.lang + '_' + target_wid, origin='manual')
-            target_word_alignment = Alignment(type='word', source_id=target_doc.lang + '_' + target_wid,
-                                              target_id=source_doc.lang + '_' + source_wid, origin='manual')
+            if target_matched_word:
+                count+=1
+                print(id_text, f'{source_sid}%{source_wid}', target_matched_word.id)
+                if id_text in al_enro:
+                    al_enro[id_text].update({f'{source_sid}%{source_wid}' : target_matched_word.id})
+                else:
+                    al_enro[id_text] = {f'{source_sid}%{source_wid}' : target_matched_word.id}
 
-            multilingual_corpus.add_alignment(source_word_alignment, target_word_alignment)
-            # add alignments to Word objects
-
-            source_word = source_doc.get_word(source_sid, source_wid)
-            target_word = target_doc.get_word(source_sid, target_wid)
-
-            if source_word and target_word:  # FIXME necessary as long as I don't have also the grammatical words as well
-                source_word.add_alignment(target_lang, target_word)
-                target_word.add_alignment(source_lang, source_word)
-                if source_word.sense and target_word.sense and source_word.sense == target_word.sense:
-                    source_concept_alignment = Alignment(type='concept',
-                                                         source_id=source_doc.lang + '_' + source_wid.replace("t", "c"),
-                                                         target_id=target_doc.lang + '_' + target_wid.replace("t_",
-                                                                                                              "c_"),
-                                                         origin='manual')
-                    target_concept_alignment = Alignment(type='concept',
-                                                         source_id=target_doc.lang + '_' + target_wid.replace("t", "c"),
-                                                         target_id=source_doc.lang + '_' + source_wid.replace("t_",
-                                                                                                              "c_"),
-                                                         origin='manual')
-
-                    multilingual_corpus.add_alignment(source_concept_alignment, target_concept_alignment)
-
-            if (source_sid, source_sid) not in sent_pairs:
-                sent_pairs.add((source_sid, source_sid))
-
-        for source_sent, target_sent in sent_pairs:
-            source_sent_alignment = Alignment(type='sentence', source_id=source_doc.lang + '_' + source_sent,
-                                              target_id=target_doc.lang + '_' + target_sent, origin='manual')
-            target_sent_alignment = Alignment(type='sentence', source_id=target_doc.lang + '_' + target_sent,
-                                              target_id=source_doc.lang + '_' + source_sent, origin='manual')
-
-            multilingual_corpus.add_alignment(source_sent_alignment, target_sent_alignment)
-
-        import pdb; pdb.set_trace()
-
-        if id_text in al_enro:
-            if id_sent in al_enro[id_text]:
-                al_enro[id_text][id_sent].append(l[1:])
-            else:
-                al_enro[id_text].update({id_sent : [l[1:]]})
-        else:
-            al_enro[id_text] = {id_sent : []}
-            al_enro[id_text][id_sent].append(l[1:])
-
+    import pdb; pdb.set_trace()
 
 def choose_majority_tag(word):
     #iterates over self.annotations
