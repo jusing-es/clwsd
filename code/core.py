@@ -143,6 +143,46 @@ def add_automatic_alignment_to_corpus_ita(multilingual_corpus):
     return al_enro
 
 
+def add_automatic_alignment_to_corpus_jpn(multilingual_corpus):
+    align = codecs.open('../files/training/corpus/jpn/a01.json', "rb", "utf-8")
+    aligned_corpus = multilingual_corpus.corpora['eng_sc']
+    rom_corpus = multilingual_corpus.corpora['jpn_sc']
+    al_jp2en = {}
+    count=0
+    # {"r04": {"s_52%t_52_8": "t_52_5",
+    for l in align:
+        l = l.split()
+        # sentence number is the second number
+        id_text, source_sid = l[0][3:6], 's_'+ l[0].split("_")[-1]
+        rom_lemma, rom_sense = l[2], l[4]
+        target_lemma, target_sense = l[6], l[8]
+
+        if id_text in aligned_corpus.documents:
+            target_sentence = aligned_corpus.documents[id_text].sentences[source_sid]
+            rom_sentence = rom_corpus.documents[id_text].sentences[source_sid]
+
+            # found match w/ english
+            current_word = rom_sentence.get_word_from_lemma_and_sense(rom_lemma, rom_sense)
+            target_matched_word = target_sentence.get_word_from_lemma_and_sense(target_lemma, target_sense)
+
+            if current_word and target_matched_word and current_word.sense == target_matched_word.sense:
+                source_wid = current_word.id
+                count += 1
+                print(id_text, f'{source_sid}%{source_wid}', target_matched_word.id)
+                print(current_word.lemma, current_word.sense, target_matched_word.lemma, target_matched_word.sense)
+                if id_text in al_jp2en:
+                    al_jp2en[id_text].update({f'{source_sid}%{source_wid}' : target_matched_word.id})
+                else:
+                    al_jp2en[id_text] = {f'{source_sid}%{source_wid}' : target_matched_word.id}
+
+    print(len(al_jp2en['a01']))
+
+    with open('../alignments/ro2it.json', 'w') as so:
+        json.dump(al_jp2en, so)
+    return al_jp2en
+
+
+
 def choose_majority_tag(word):
     #iterates over self.annotations
     pass
@@ -175,7 +215,7 @@ def load_document(source_lang, path):
             for token in sorted(doc[sent], key=lambda x: int(x.split("_")[1]+x.split("_")[2])):
                 word_in = Word(id=token, lang=doc_in.lang, surface_form=doc[sent][token][0], lemma=doc[sent][token][1],
                                 pos=doc[sent][token][2], upos=None, sense=doc[sent][token][3].replace('s', 'a'),
-                                document=doc_in.id, sentence=sentence_in.id, alignments={}, msi_annotation=None)
+                                document=doc_in.id, sentence=sentence_in.id, alignments={}, equivalent_wn_synsets = [], msi_annotation=None)
                 raw_text.append(word_in.surface_form)
                 sentence_in.add(word_in)
             assert len(sentence_in.tokens) == len(doc[sent])
@@ -183,6 +223,36 @@ def load_document(source_lang, path):
             doc_in.add(sentence_in)
     return doc_in
 
+
+def load_document_jpn(source_lang, path):
+    # re-read jpn corpus so that sids are sids and not paragraphs sids
+    with open(path) as si:
+        doc = json.loads(si.read())
+        doc_id = Path(path).stem
+        doc_in = Document(id=doc_id, lang=source_lang, sentences={})
+        for sent in sorted(doc, key=lambda x: int(x.split("_")[1])):
+            sentence_in = Sentence(id=sent, document=doc_in.id, tokens={}, text='') #FIXME sentence id and doc_id uniformare
+            raw_text = []
+            for token in doc[sent]:
+                sense, equivalent_wn_synsets = None, []
+                if doc[sent][token]['semcor_tag'] and doc[sent][token]['semcor_tag'] == doc[sent][token]['jwn_annotation']:
+                    sense = doc[sent][token]['semcor_tag']
+                if doc[sent][token]['equivalent_esc_synsets']:
+                    equivalent_wn_synsets = doc[sent][token]['equivalent_esc_synsets']
+
+                word_in = Word(id=token, lang=doc_in.lang,
+                               surface_form=' '.join((i['lemma'] for i in doc[sent][token]['components'])),
+                               lemma=doc[sent][token]['lemma'],
+                               pos=doc[sent][token]['pos'][-1], upos=None, sense=sense,
+                               document=doc_in.id, sentence=sentence_in.id,
+                               equivalent_wn_senses = equivalent_wn_synsets,
+                               alignments={}, msi_annotation=None)
+                raw_text.append(word_in.surface_form)
+                sentence_in.add(word_in)
+            assert len(sentence_in.tokens) == len(doc[sent])
+            sentence_in.text = ' '.join(raw_text)
+            doc_in.add(sentence_in)
+    return doc_in
 
 
 if __name__ == '__main__':
@@ -198,41 +268,48 @@ if __name__ == '__main__':
     source_folder = sys.argv[3]
     target_folder = sys.argv[4]
     rom_folder = '../files/training/rom'
-    with open(sys.argv[5]) as si:
-        en2it_alignments = json.loads(si.read())
+    jpn_folder = '../files/training/corpus/jpn'
+    # with open(sys.argv[5]) as si:
+    #     en2it_alignments = json.loads(si.read())
 
     eng_corpus = Corpus(id='eng_sc', title='English Semcor', lang=source_lang, documents={})
     ita_corpus = Corpus(id='ita_sc', title='Italian Semcor', lang=target_lang, documents={})
     rom_corpus = Corpus(id='rom_sc', title='Romanian Semcor', lang='rom', documents={}) #FIXME
+    jpn_corpus = Corpus(id='jpn_sc', title='Japanese Semcor', lang='jpn', documents={}) #FIXME
+
     logger.info('starting')
     # load documents
     for doc in os.listdir(source_folder):
         if os.path.isfile(os.path.join(target_folder, doc)):
-            eng_doc = load_document(source_lang, os.path.join(source_folder, doc))
-            ita_doc = load_document(target_lang, os.path.join(target_folder, doc))
-            rom_doc = load_document('rom', os.path.join(rom_folder, doc))
-            eng_corpus.add(eng_doc)
-            ita_corpus.add(ita_doc)
-            rom_corpus.add(rom_doc)
+            # eng_doc = load_document(source_lang, os.path.join(source_folder, doc))
+            # ita_doc = load_document(target_lang, os.path.join(target_folder, doc))
+            # rom_doc = load_document('rom', os.path.join(rom_folder, doc))
+            jpn_doc = load_document_jpn('jpn', os.path.join(jpn_folder, doc))
+            # eng_corpus.add(eng_doc)
+            # ita_corpus.add(ita_doc)
+            # rom_corpus.add(rom_doc)
+            jpn_corpus.add(jpn_doc)
 
     multilingual_corpus = MultilingualCorpus(id='MPC', title='Multilingual Parallel Corpus', corpora={},
                                              alignment_collector=AlignmentCollector())
-    multilingual_corpus.add(eng_corpus, ita_corpus, rom_corpus)
-    add_alignments_to_corpus(en2it_alignments, multilingual_corpus, eng_corpus.id, ita_corpus.id)
+
+    multilingual_corpus.add(jpn_corpus)
+    #multilingual_corpus.add(eng_corpus, ita_corpus, rom_corpus)
+    #add_alignments_to_corpus(en2it_alignments, multilingual_corpus, eng_corpus.id, ita_corpus.id)
 
     # produce json - needs whole ENG/ITA corpus to match
     # alignments = add_automatic_alignment_to_corpus(multilingual_corpus)
     # alignments = add_automatic_alignment_to_corpus_ita(multilingual_corpus)
 
-    with open('../alignments/ro2en.json', 'r') as si:
-        ro2en_alignments = json.loads(si.read())
-
-    add_alignments_to_corpus(ro2en_alignments, multilingual_corpus, rom_corpus.id, eng_corpus.id)
-
-    with open('../alignments/ro2en.json', 'r') as si:
-        ro2it_alignments = json.loads(si.read())
-
-    add_alignments_to_corpus(ro2it_alignments, multilingual_corpus, rom_corpus.id, ita_corpus.id)
+    # with open('../alignments/ro2en.json', 'r') as si:
+    #     ro2en_alignments = json.loads(si.read())
+    #
+    # add_alignments_to_corpus(ro2en_alignments, multilingual_corpus, rom_corpus.id, eng_corpus.id)
+    #
+    # with open('../alignments/ro2en.json', 'r') as si:
+    #     ro2it_alignments = json.loads(si.read())
+    #
+    # add_alignments_to_corpus(ro2it_alignments, multilingual_corpus, rom_corpus.id, ita_corpus.id)
 
     import pdb; pdb.set_trace()
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)

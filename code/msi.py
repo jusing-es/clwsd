@@ -1,6 +1,6 @@
 import re
 import sys
-import json_files_reader as jfr
+#import json_files_reader as jfr
 import xml_file_reader as xr
 import argparse
 import nltk.corpus
@@ -352,19 +352,19 @@ if __name__ == "__main__":
         if set(langs).issubset(wn.langs()) is not True:
             print(f"""Admitted languages are: {wn.langs()}""")
             sys.exit()
-
-        if options.json_input_folder:
-            try:
-                multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
-            except BaseException as e:
-                jfr.folder_instructions()
-
-        elif options.xml_input_file:
-            multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
-        else:
-            print('Valid input formats are XML compliant to NTUMC DTD or input folder with json files as below')
-            jfr.folder_instructions()
-            sys.exit()
+        #
+        # if options.json_input_folder:
+        #     try:
+        #         multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
+        #     except BaseException as e:
+        #         jfr.folder_instructions()
+        #
+        # elif options.xml_input_file:
+        #     multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
+        # else:
+        #     print('Valid input formats are XML compliant to NTUMC DTD or input folder with json files as below')
+        #     jfr.folder_instructions()
+        #     sys.exit()
 
         if options.automatic_alignments and \
                 options.automatic_alignments not in ["gs", "auto_grow", "auto_int", "sense", "all"]:

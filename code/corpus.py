@@ -216,8 +216,8 @@ class Sentence(object):
         return json.loads(data_json, object_hook=decoder)
 
 class Word(object):
-    __slots__ = ['id', 'document', 'lang', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'msi_annotation', 'sentence', 'alignments']
-    def __init__(self, document, id, lang, surface_form, lemma, pos=None, upos=None, sense=None, msi_annotation=None, alignments={}, sentence=None):
+    __slots__ = ['id', 'document', 'lang', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'equivalent_wn_senses', 'msi_annotation', 'sentence', 'alignments']
+    def __init__(self, document, id, lang, surface_form, lemma, pos=None, upos=None, sense=None, equivalent_wn_senses= [], msi_annotation=None, alignments={}, sentence=None):
         self.document = document
         self.id = id
         self.lang = lang
@@ -226,6 +226,7 @@ class Word(object):
         self.pos = pos
         self.upos = pos
         self.sense = sense
+        self.equivalent_wn_senses = equivalent_wn_senses
         self.msi_annotation = msi_annotation
         self.sentence = sentence
         self.alignments = alignments
@@ -254,11 +255,12 @@ class Word(object):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'id': self.id,
                            'document': self.document,
-                           'lang' : self.lang,
-                            'surface_form' : self.surface_form,
-                            'lemma' : self.lemma,
-                            'pos' : self.pos,
-                            'sense' : self.sense,
+                           'lang': self.lang,
+                            'surface_form': self.surface_form,
+                            'lemma': self.lemma,
+                            'pos': self.pos,
+                            'sense': self.sense,
+                            'equivalent_wn_senses' : self.equivalent_wn_senses,
                             'msi_annotation' : self.msi_annotation,
                             'sentence' : self.sentence,
                             'alignments' : self.alignments},
