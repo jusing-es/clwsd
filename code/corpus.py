@@ -216,8 +216,8 @@ class Sentence(object):
         return json.loads(data_json, object_hook=decoder)
 
 class Word(object):
-    __slots__ = ['id', 'document', 'lang', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'equivalent_wn_senses', 'msi_annotation', 'sentence', 'alignments']
-    def __init__(self, document, id, lang, surface_form, lemma, pos=None, upos=None, sense=None, equivalent_wn_senses= [], msi_annotation=None, alignments={}, sentence=None):
+    __slots__ = ['id', 'document', 'lang', 'surface_form', 'lemma', 'pos', 'upos', 'sense', 'external_sense', 'equivalent_wn_senses', 'msi_annotation', 'sentence', 'alignments']
+    def __init__(self, document, id, lang, surface_form, lemma, pos=None, upos=None, sense=None, external_sense= None, equivalent_wn_senses= [], msi_annotation=None, alignments={}, sentence=None):
         self.document = document
         self.id = id
         self.lang = lang
@@ -226,6 +226,7 @@ class Word(object):
         self.pos = pos
         self.upos = pos
         self.sense = sense
+        self.external_sense = external_sense
         self.equivalent_wn_senses = equivalent_wn_senses
         self.msi_annotation = msi_annotation
         self.sentence = sentence
@@ -260,6 +261,7 @@ class Word(object):
                             'lemma': self.lemma,
                             'pos': self.pos,
                             'sense': self.sense,
+                            'external_sense': self.external_sense,
                             'equivalent_wn_senses' : self.equivalent_wn_senses,
                             'msi_annotation' : self.msi_annotation,
                             'sentence' : self.sentence,

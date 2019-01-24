@@ -140,7 +140,11 @@ def resort_to_mfs(target_word, overlap):
         if len(mfs) == 0:
             import pdb; pdb.set_trace()
         # check if it was part of the original set
-        assigned_sense = get_only_element_in_overlap(mfs)
+        try:
+            assigned_sense = get_only_element_in_overlap(mfs)
+        except AssertionError:
+            import pdb; pdb.set_trace()
+            assigned_sense = None
         assignment_type = 'mfs'
 
     return assigned_sense, assignment_type
@@ -289,6 +293,10 @@ def check_for_named_entities(word):
     elif re.match(r'^\d+?$', word.lemma):
         return wn.synsets(word.lemma)
 
+
+def is_multiword(lemma):
+    return '_' in lemma
+
 def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False):
     """
 
@@ -313,7 +321,8 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                             if check_for_named_entities(word):
                                 target_synsets = set(map(get_offset, check_for_named_entities(word)))
                             else:
-                                if word.lang =='ita' and word.sense and not target_synsets:
+                                if (word.lang =='ita' and word.sense and not target_synsets) \
+                                        or (word.lang == 'ron' and is_multiword(word.lemma)):
                                     assigned_sense = None
                                     assignment_type = 'no_sense'
                                     comments = f'No sense in WN3.0 for lemma {word.lemma}'
