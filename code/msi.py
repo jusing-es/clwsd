@@ -12,6 +12,16 @@ from collections import defaultdict, Counter
 
 general_mfs_statistics = None
 
+# senses for generic location, group and person
+generic_senses = {'00007846-n': 'person',
+                  '00031264-n': 'group',
+                  '00027167-n': 'location'}
+
+missing_romanian_lemmas = {
+    'căsători' : '[se]_căsători',
+    'teme' : '[se]_teme',
+}
+
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
         path = '../resources/sense_frequencies'
@@ -88,6 +98,8 @@ def get_mfs_offset(word):
 
 
 def synset_lookup(word):
+    if word.lemma in generic_senses.values():
+        return wn.synsets(word.lemma, pos='n', lang='eng')
     try:
         if word.pos in ('a', 'r', 'v', 'n', 's'):
             return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
@@ -192,7 +204,6 @@ def perform_intersection(target_word, possible_target_synsets, aligned_synset_ba
     :param aligned_synset_bags:
     :return:
     """
-
     overlap = possible_target_synsets.copy()
     contributing_languages = set()
     # start overlapping from the most populated synset_bag
@@ -220,6 +231,13 @@ def get_aligned_words_synsets(word):
     aligned_synset_bags = {}
     for lang, aligned_word in word.alignments.items():
         aligned_synset_bags[lang] = set(map(get_offset, synset_lookup(aligned_word)))
+
+    # take advantage of the further alignments of the only aligned word
+    if len(word.alignments) == 1:
+        only_aligned_word = word.alignments[lang]
+        for other_lang, aligned_word in only_aligned_word.alignments.items():
+            if other_lang not in (only_aligned_word.lang, word.lang):
+                aligned_synset_bags[other_lang] = set(map(get_offset, synset_lookup(aligned_word)))
 
     return aligned_synset_bags
 
@@ -278,10 +296,19 @@ def evaluate_msi(multilingual_corpus):
                                 else:
                                     recap[corpus.lang]['coarse_mismatch'] += 1
 
-                                print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
+                                #print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
 
         assert recap[corpus.lang]['mismatch'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
         assert recap[corpus.lang]['coarse_mismatch'] + recap[corpus.lang]['coarse_match'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
+
+        recap[corpus.lang]['precision'] = recap[corpus.lang]['match'] / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+
+        recap[corpus.lang]['precision_mfs'] = recap[corpus.lang]['mfs_match'] / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+
+        recap[corpus.lang]['precision_coarse'] = (recap[corpus.lang]['coarse_match'] + recap[corpus.lang]['match']) / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+
+        recap[corpus.lang]['precision_coarse_mfs'] = (recap[corpus.lang]['mfs_match'] + recap[corpus.lang]['coarse_mfs_match'])/(recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+
     from pprint import pprint
     pprint(recap)
     import pdb; pdb.set_trace()
@@ -323,13 +350,19 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                                 target_synsets = set(map(get_offset, check_for_named_entities(word)))
                             else:
                                 if (word.lang =='ita' and word.sense and not target_synsets) \
-                                        or (word.lang == 'ron' and is_multiword(word.lemma)):
+                                        or (word.lang == 'ron' and is_multiword(word.lemma)) or \
+                                        (word.lang == 'jpn' and not word.equivalent_wn_senses):
                                     assigned_sense = None
                                     assignment_type = 'no_sense'
-                                    comments = f'No sense in WN3.0 for lemma {word.lemma}'
+                                    comments = f'No sense in WN3.0 for lemma {word.lemma}, pos {word.pos}'
                                     print(comments)
                                     assign_sense(word, assigned_sense, set(word.alignments.keys()), assignment_type)
                                     continue
+                                elif (word.lang== 'ron' and word.lemma in missing_romanian_lemmas):
+                                    word.lemma = missing_romanian_lemmas[word.lemma]
+                                    target_synsets = set(map(get_offset, synset_lookup(word)))
+                                elif word.lang == 'jpn' and word.equivalent_wn_senses:
+                                    target_synsets = set(word.equivalent_wn_senses)
                                 else:
                                     import pdb; pdb.set_trace()
                         overlap, contributing_languages = perform_intersection(word, target_synsets, aligned_synset_bags)

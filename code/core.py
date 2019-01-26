@@ -14,6 +14,7 @@ from corpus import Alignment, AlignmentCollector
 
 logger = logging.getLogger(__name__)
 
+
 def add_alignments_to_corpus(alignments, multilingual_corpus, source_corpus_id, target_corpus_id):
     doc_id = 'a01'
     json_alignments = alignments['a01']
@@ -198,6 +199,7 @@ def dump_multilingual_corpus_to_xml(corpus):
         so.write(data)
     print('File', corpus.id + '.xml', 'created')
 
+
 def load_document(source_lang, path):
     with open(path) as si:
         doc = json.loads(si.read())
@@ -210,6 +212,11 @@ def load_document(source_lang, path):
                 word_in = Word(id=token, lang=doc_in.lang, surface_form=doc[sent][token][0], lemma=doc[sent][token][1],
                                 pos=doc[sent][token][2], upos=None, sense=doc[sent][token][3].replace('s', 'a'), external_sense=None,
                                 document=doc_in.id, sentence=sentence_in.id, alignments={}, equivalent_wn_senses= [], msi_annotation=None)
+
+                # change the lemma in generic placeholder if sense is location.n.01/group.n.01/person.n.01
+                if word_in.sense in msi.generic_senses.keys():
+                    word_in.lemma = msi.generic_senses[word_in.sense]
+
                 raw_text.append(word_in.surface_form)
                 sentence_in.add(word_in)
             assert len(sentence_in.tokens) == len(doc[sent])
@@ -310,8 +317,8 @@ if __name__ == '__main__':
 
     add_alignments_to_corpus(en2jp_alignments, multilingual_corpus, eng_corpus.id, jpn_corpus.id)
 
-    #msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
-    #msi.evaluate_msi(multilingual_corpus)
-    print(render_multilingual_corpus(multilingual_corpus))
-    dump_multilingual_corpus_to_xml(multilingual_corpus)
+    msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
+    msi.evaluate_msi(multilingual_corpus)
+    #print(render_multilingual_corpus(multilingual_corpus))
+    #dump_multilingual_corpus_to_xml(multilingual_corpus)
 
