@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
     source_folder = sys.argv[3]
     target_folder = sys.argv[4]
-    ron_folder = '../files/training/rom'
+    ron_folder = '../files/training/corpus/rom'
     jpn_folder = '../files/training/corpus/jpn'
     with open(sys.argv[5]) as si:
         en2it_alignments = json.loads(si.read())
@@ -320,5 +320,5 @@ if __name__ == '__main__':
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
     msi.evaluate_msi(multilingual_corpus)
     #print(render_multilingual_corpus(multilingual_corpus))
-    #dump_multilingual_corpus_to_xml(multilingual_corpus)
+    dump_multilingual_corpus_to_xml(multilingual_corpus)
 
