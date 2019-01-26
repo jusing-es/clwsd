@@ -42,8 +42,8 @@ def add_alignments_to_corpus(alignments, multilingual_corpus, source_corpus_id, 
         target_word = target_doc.get_word(source_sid, target_wid)
 
         if source_word and target_word: #FIXME necessary as long as I don't have also the grammatical words as well
-            source_word.add_alignment(target_lang, target_word)
-            target_word.add_alignment(source_lang, source_word)
+            source_word.add_alignment(target_word.lang, target_word)
+            target_word.add_alignment(source_word.lang, source_word)
             if source_word.sense and target_word.sense and source_word.sense == target_word.sense:
                 source_concept_alignment = Alignment(type='concept', source_id=source_doc.lang + '_' + source_wid.replace("t", "c"),
                                                   target_id=target_doc.lang + '_' + target_wid.replace("t_", "c_"), origin='manual')
@@ -177,15 +177,9 @@ def add_automatic_alignment_to_corpus_jpn(multilingual_corpus):
 
     print(len(al_jp2en['a01']))
 
-    with open('../alignments/ro2it.json', 'w') as so:
+    with open('../alignments/2.json', 'w') as so:
         json.dump(al_jp2en, so)
     return al_jp2en
-
-
-
-def choose_majority_tag(word):
-    #iterates over self.annotations
-    pass
 
 
 def dump_to_file(corpus):
@@ -295,27 +289,29 @@ if __name__ == '__main__':
     multilingual_corpus = MultilingualCorpus(id='MPC', title='Multilingual Parallel Corpus', corpora={},
                                              alignment_collector=AlignmentCollector())
 
-    multilingual_corpus.add(jpn_corpus)
-    multilingual_corpus.add(eng_corpus, ita_corpus, ron_corpus)
+    multilingual_corpus.add(jpn_corpus, eng_corpus, ita_corpus, ron_corpus)
     add_alignments_to_corpus(en2it_alignments, multilingual_corpus, eng_corpus.id, ita_corpus.id)
 
     #produce json - needs whole ENG/ITA corpus to match
-    alignments = add_automatic_alignment_to_corpus(multilingual_corpus)
-    alignments = add_automatic_alignment_to_corpus_ita(multilingual_corpus)
+    #add_automatic_alignment_to_corpus_ita(multilingual_corpus)
 
     with open('../alignments/ro2en.json', 'r') as si:
         ro2en_alignments = json.loads(si.read())
 
     add_alignments_to_corpus(ro2en_alignments, multilingual_corpus, ron_corpus.id, eng_corpus.id)
 
-    with open('../alignments/ro2en.json', 'r') as si:
+    with open('../alignments/ro2it.json', 'r') as si:
         ro2it_alignments = json.loads(si.read())
 
     add_alignments_to_corpus(ro2it_alignments, multilingual_corpus, ron_corpus.id, ita_corpus.id)
 
-    import pdb; pdb.set_trace()
-    msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
-    msi.evaluate_msi(multilingual_corpus)
-    #print(render_multilingual_corpus(multilingual_corpus))
-    #dump_multilingual_corpus_to_xml(multilingual_corpus)
+    with open('../alignments/en2jp_alignments_49.json', 'r') as si:
+        en2jp_alignments = json.loads(si.read())
+
+    add_alignments_to_corpus(en2jp_alignments, multilingual_corpus, eng_corpus.id, jpn_corpus.id)
+
+    #msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
+    #msi.evaluate_msi(multilingual_corpus)
+    print(render_multilingual_corpus(multilingual_corpus))
+    dump_multilingual_corpus_to_xml(multilingual_corpus)
 

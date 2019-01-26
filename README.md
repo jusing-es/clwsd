@@ -29,7 +29,7 @@ pip install < requirements.txt
 - [x] basic MSI on EN-IT and evaluation
 - [x] include support for external sense frequencies
 - [x] include automatic alignments for each language pair
-- [ ] Load sample corpus with also Romanian and Japanese texts
+- [x] Load sample corpus with also Romanian and Japanese texts
 - [ ] Load sample corpus for SemCor document ```a01``` for all languages (```eng ita rom jpn```) with also MSI annotations
 - [x] MSI code porting to Python3.7
 - [x] Write JSON reader for MSI
