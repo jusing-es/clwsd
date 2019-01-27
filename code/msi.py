@@ -323,16 +323,16 @@ def evaluate_msi(multilingual_corpus):
 
                                 #print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
 
-        assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
-        assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
+            assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
+            assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
 
-        recap[corpus.lang][doc_id]['precision'] = recap[corpus.lang][doc_id]['match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            recap[corpus.lang][doc_id]['precision'] = recap[corpus.lang][doc_id]['match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang][doc_id]['precision_mfs'] = recap[corpus.lang][doc_id]['mfs_match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            recap[corpus.lang][doc_id]['precision_mfs'] = recap[corpus.lang][doc_id]['mfs_match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang][doc_id]['precision_coarse'] = (recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['match']) / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            recap[corpus.lang][doc_id]['precision_coarse'] = (recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['match']) / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang][doc_id]['precision_coarse_mfs'] = (recap[corpus.lang][doc_id]['mfs_match'] + recap[corpus.lang][doc_id]['coarse_mfs_match'])/(recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            recap[corpus.lang][doc_id]['precision_coarse_mfs'] = (recap[corpus.lang][doc_id]['mfs_match'] + recap[corpus.lang][doc_id]['coarse_mfs_match'])/(recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
     from pprint import pprint
     pprint(recap)
