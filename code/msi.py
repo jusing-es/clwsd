@@ -307,8 +307,8 @@ def evaluate_msi(multilingual_corpus):
                             if word.msi_annotation.assigned_sense == word.sense:
                                 recap[corpus.lang][doc_id]['match'] += 1
                                 recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
-                                recap[corpus.lang][doc_id]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
-                                recap[corpus.lang][doc_id]['aligned_languages'][len(word.alignments)] += 1
+                                recap[corpus.lang]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
+                                recap[corpus.lang]['aligned_languages'][len(word.alignments)] += 1
                             elif word.msi_annotation.assigned_sense is None:
                                 recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
                             elif word.msi_annotation.assigned_sense and word.sense \
@@ -323,7 +323,6 @@ def evaluate_msi(multilingual_corpus):
 
                                 #print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
 
-        import pdb;pdb.set_trace()
         assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
         assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
 
