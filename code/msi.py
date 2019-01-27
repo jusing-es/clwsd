@@ -271,6 +271,64 @@ def get_aligned_words_synsets(word):
 
     return aligned_synset_bags
 
+def evaluate_at_corpus_level(recap):
+
+    finale = {
+        'eng' : {},
+        'ita': {},
+        'ron' : {},
+        'jpn': {}
+    }
+    for lang in recap:
+        finale[lang]['match'] = 0
+        finale[lang]['mfs_match'] = 0
+        finale[lang]['coarse_match'] = 0
+        finale[lang]['coarse_mfs_match'] = 0
+        finale[lang]['number_annotable_words'] = 0
+        finale[lang]['number_content_words'] = 0
+        finale[lang]['mfs_in_overlap'] = 0
+        finale[lang]['disambiguated_by_msi'] = 0
+        finale[lang]['mfs'] = 0
+        finale[lang]['rmfs_within_overlap'] = 0
+        finale[lang]['no_sense'] = 0
+
+
+        for doc_id in recap[lang]:
+            if doc_id not in ('contributing_languages', 'aligned_languages'):
+                finale[lang]['match'] += recap[lang][doc_id]['match']
+                finale[lang]['mfs_match'] += recap[lang][doc_id]['mfs_match']
+                finale[lang]['coarse_match'] += recap[lang][doc_id]['coarse_match']
+                finale[lang]['coarse_mfs_match'] += recap[lang][doc_id]['coarse_mfs_match']
+                finale[lang]['number_annotable_words'] += recap[lang][doc_id]['number_annotable_words']
+                finale[lang]['number_content_words'] += recap[lang][doc_id]['number_content_words']
+                finale[lang]['mfs_in_overlap'] += recap[lang][doc_id].get('mfs_in_overlap', 0)
+                finale[lang]['disambiguated_by_msi'] += recap[lang][doc_id].get('disambiguated_by_msi', 0)
+                finale[lang]['mfs'] += recap[lang][doc_id].get('mfs', 0)
+                finale[lang]['rmfs_within_overlap']+= recap[lang][doc_id].get('rmfs_within_overlap', 0)
+                finale[lang]['no_sense'] += recap[lang][doc_id].get('no_sense', 0)
+
+        finale[lang]['precision'] = round(finale[lang]['match'] / finale[lang]['number_annotable_words'], 3)
+        finale[lang]['precision_mfs'] = round(finale[lang]['mfs_match'] / finale[lang]['number_annotable_words'], 3)
+        finale[lang]['precision_coarse'] = round((finale[lang]['coarse_match'] + finale[lang]['match']) /
+                                                 finale[lang]['number_annotable_words'], 3)
+
+        finale[lang]['precision_coarse_mfs'] = round((finale[lang]['mfs_match'] + finale[lang]['coarse_mfs_match']) /
+                                                     finale[lang]['number_annotable_words'], 3)
+
+        finale[lang]['coverage'] = round(finale[lang]['number_annotable_words'] /
+                                         finale[lang]['number_content_words'], 3)
+
+        total_counts_possible_scenarios = finale[lang]['mfs_in_overlap'] + finale[lang]['disambiguated_by_msi'] + \
+                                          finale[lang]['mfs'] + finale[lang]['rmfs_within_overlap'] + finale[lang]['no_sense']
+
+        finale[lang]['overlap_scenarios'] = {'mfs_in_overlap': round(finale[lang]['mfs_in_overlap'] / total_counts_possible_scenarios * 100, 3),
+                                             'disambiguated_by_msi': round(finale[lang]['disambiguated_by_msi'] / total_counts_possible_scenarios * 100, 3),
+                                             'mfs' : round(finale[lang]['mfs'] / total_counts_possible_scenarios * 100, 3),
+                                             'rmfs_within_overlap' : round(finale[lang]['rmfs_within_overlap'] / total_counts_possible_scenarios * 100, 3),
+                                             'no_sense' : round(finale[lang]['no_sense']/ total_counts_possible_scenarios * 100, 3)
+                                        }
+
+    pprint(finale)
 
 def evaluate_msi(multilingual_corpus):
     """"""
@@ -336,8 +394,11 @@ def evaluate_msi(multilingual_corpus):
             # content words (that had sense) with alignments, excluding those not having a sense in WN 3.0
             number_annotable_words = recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense']
 
+            recap[corpus.lang][doc_id]['number_annotable_words'] = number_annotable_words
+
             # estimate on words that had sense (non necessarily alignment)
             number_content_words = document.number_content_words_in_document()
+            recap[corpus.lang][doc_id]['number_content_words'] = number_content_words
 
             recap[corpus.lang][doc_id]['precision'] = round(recap[corpus.lang][doc_id]['match'] / number_annotable_words, 3)
 
@@ -352,6 +413,7 @@ def evaluate_msi(multilingual_corpus):
     from pprint import pprint
     pprint(recap)
     print_recap_for_table(recap)
+    evaluate_at_corpus_level(recap)
 
 
 def check_for_named_entities(word):
