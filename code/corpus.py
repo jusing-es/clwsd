@@ -338,9 +338,10 @@ class AlignmentCollector(object):
         :return:
         """
         assert isinstance(alignment, Alignment)
+
         if alignment.type == 'sentence' and alignment not in self.sentences.get(alignment.source_id, []):
             self.sentences[alignment.source_id] = self.sentences.get(alignment.source_id, []) + [alignment]
-        elif alignment.type == 'word'  and alignment not in self.words.get(alignment.source_id, []):
+        elif alignment.type == 'word' and alignment not in self.words.get(alignment.source_id, []):
             self.words[alignment.source_id] = self.words.get(alignment.source_id, []) + [alignment]
         elif alignment.type == 'concept'  and alignment not in self.concepts.get(alignment.source_id, []):
             self.concepts[alignment.source_id] = self.concepts.get(alignment.source_id, []) + [alignment]

@@ -216,14 +216,22 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=False):
     return assigned_sense, assignment_type
 
 def print_recap_for_table(recap):
-    for lang in recap:
-        print(f"doc_id\tLanguage\tMSI Precision\tMFS Precision\tCoarse MSI Precision\tCoarse MFS Precision\tCoverage")
-        for column in recap[lang]:
-            if column not in ('contributing_languages', 'aligned_languages'):
-                print(f"{column}\t{lang}\t{recap[lang][column]['precision']}\t{recap[lang][column]['precision_mfs']}\t"
-                     f"{recap[lang][column]['precision_coarse']}\t{recap[lang][column]['precision_coarse_mfs']}\t"
-                     f"{recap[lang][column]['coverage']}"
-                     f"\n")
+    d= {'eng' : [],
+        'ita' : [],
+        'ron' : [],
+        'jpn': []
+        }
+    with open('results.txt', 'w') as so:
+        for lang in recap:
+            so.write(f"\t{lang}\t\t\t\t\n")
+            d[lang].append(f"doc_id\tMSI Precision\tMFS Precision\tCoarse MSI Precision\tCoarse MFS Precision\tCoverage\n")
+            for column in sorted(recap[lang]):
+                if column not in ('contributing_languages', 'aligned_languages'):
+                    d[lang].append(f"{column}\t{recap[lang][column]['precision']}\t{recap[lang][column]['precision_mfs']}\t"
+                         f"{recap[lang][column]['precision_coarse']}\t{recap[lang][column]['precision_coarse_mfs']}\t"
+                         f"{recap[lang][column]['coverage']}\n")
+        import pdb; pdb.set_trace()
+
 
 def perform_intersection(target_word, possible_target_synsets, aligned_synset_bags):
     """Be aware: compares offsets interally.
@@ -350,7 +358,6 @@ def evaluate_msi(multilingual_corpus):
     from pprint import pprint
     pprint(recap)
     print_recap_for_table(recap)
-    import pdb; pdb.set_trace()
 
 
 def check_for_named_entities(word):

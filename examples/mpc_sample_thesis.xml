@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Corpus SYSTEM "../../NTUMC/ntumc.dtd">
+<Corpus corpusID="MPC" title="Multilingual Parallel Corpus" linguality="multilingual">
+        <Document docID="eng_a01" doc="text" language="eng" title="a01">
+            <Sentence sid="eng_s_1" sent="Fulton_County_Grand_Jury said Friday investigation Atlanta recent primary_election produced evidence irregularities took_place">
+                <Word wid="eng_t_1_2" pos="n" lemma="group" surface_form="Fulton_County_Grand_Jury"/>
+                <Word wid="eng_t_1_3" pos="v" lemma="say" surface_form="said"/>
+                <Word wid="eng_t_1_4" pos="n" lemma="friday" surface_form="Friday"/>
+                <Word wid="eng_t_1_6" pos="n" lemma="investigation" surface_form="investigation"/>
+                <Word wid="eng_t_1_8" pos="n" lemma="atlanta" surface_form="Atlanta"/>
+                <Word wid="eng_t_1_10" pos="a" lemma="recent" surface_form="recent"/>
+                <Word wid="eng_t_1_11" pos="n" lemma="primary_election" surface_form="primary_election"/>
+                <Word wid="eng_t_1_12" pos="v" lemma="produce" surface_form="produced"/>
+                <Word wid="eng_t_1_15" pos="n" lemma="evidence" surface_form="evidence"/>
+                <Word wid="eng_t_1_19" pos="n" lemma="irregularity" surface_form="irregularities"/>
+                <Word wid="eng_t_1_20" pos="v" lemma="take_place" surface_form="took_place"/>
+                <Concept cid="eng_c_1_2" wid="eng_t_1_2" synset_tag="00031264-n" clemma="group"/>
+                 <Concept cid="eng_c_1_3" wid="eng_t_1_3" synset_tag="01009240-v" clemma="say"/>
+                 <Concept cid="eng_msi_c_1_3" wid="eng_t_1_3" synset_tag="01016002-v" clemma="say">
+                    <Tag category="msi_annotation" value="01016002-v" />
+                </Concept>
+                 <Concept cid="eng_c_1_4" wid="eng_t_1_4" synset_tag="15164463-n" clemma="friday"/>
+                 <Concept cid="eng_msi_c_1_4" wid="eng_t_1_4" synset_tag="15164463-n" clemma="friday">
+                    <Tag category="msi_annotation" value="15164463-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_6" wid="eng_t_1_6" synset_tag="05800611-n" clemma="investigation"/>
+                 <Concept cid="eng_msi_c_1_6" wid="eng_t_1_6" synset_tag="00633864-n" clemma="investigation">
+                    <Tag category="msi_annotation" value="00633864-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_8" wid="eng_t_1_8" synset_tag="09076675-n" clemma="atlanta"/>
+                 <Concept cid="eng_msi_c_1_8" wid="eng_t_1_8" synset_tag="09076675-n" clemma="atlanta">
+                    <Tag category="msi_annotation" value="09076675-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_10" wid="eng_t_1_10" synset_tag="01730444-a" clemma="recent"/>
+                 <Concept cid="eng_msi_c_1_10" wid="eng_t_1_10" synset_tag="01642477-a" clemma="recent">
+                    <Tag category="msi_annotation" value="01642477-a" />
+                </Concept>
+                 <Concept cid="eng_c_1_11" wid="eng_t_1_11" synset_tag="00182571-n" clemma="primary_election"/>
+                 <Concept cid="eng_msi_c_1_11" wid="eng_t_1_11" synset_tag="00182571-n" clemma="primary_election">
+                    <Tag category="msi_annotation" value="00182571-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_12" wid="eng_t_1_12" synset_tag="02141146-v" clemma="produce"/>
+                 <Concept cid="eng_msi_c_1_12" wid="eng_t_1_12" synset_tag="01752884-v" clemma="produce">
+                    <Tag category="msi_annotation" value="01752884-v" />
+                </Concept>
+                 <Concept cid="eng_c_1_15" wid="eng_t_1_15" synset_tag="05823932-n" clemma="evidence"/>
+                 <Concept cid="eng_msi_c_1_15" wid="eng_t_1_15" synset_tag="05823932-n" clemma="evidence">
+                    <Tag category="msi_annotation" value="05823932-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_19" wid="eng_t_1_19" synset_tag="00737188-n" clemma="irregularity"/>
+                 <Concept cid="eng_msi_c_1_19" wid="eng_t_1_19" synset_tag="04770211-n" clemma="irregularity">
+                    <Tag category="msi_annotation" value="04770211-n" />
+                </Concept>
+                 <Concept cid="eng_c_1_20" wid="eng_t_1_20" synset_tag="00339934-v" clemma="take_place"/>
+                 <Concept cid="eng_msi_c_1_20" wid="eng_t_1_20" synset_tag="00339934-v" clemma="take_place">
+                    <Tag category="msi_annotation" value="00339934-v" />
+                </Concept>
+                 </Sentence>
+      </Document>
+        <Document docID="ita_a01" doc="text" language="ita" title="a01">
+            <Sentence sid="ita_s_1" sent="Venerdì detto indagine recente Atlanta prodotto prova verificate irregolarità">
+                <Word wid="ita_t_1_1" pos="n" lemma="venerdì" surface_form="Venerdì"/>
+                <Word wid="ita_t_1_5" pos="v" lemma="dire" surface_form="detto"/>
+                <Word wid="ita_t_1_8" pos="n" lemma="indagine" surface_form="indagine"/>
+                <Word wid="ita_t_1_10" pos="a" lemma="recente" surface_form="recente"/>
+                <Word wid="ita_t_1_14" pos="n" lemma="Atlanta" surface_form="Atlanta"/>
+                <Word wid="ita_t_1_17" pos="v" lemma="produrre" surface_form="prodotto"/>
+                <Word wid="ita_t_1_20" pos="n" lemma="prova" surface_form="prova"/>
+                <Word wid="ita_t_1_27" pos="v" lemma="verificare" surface_form="verificate"/>
+                <Word wid="ita_t_1_29" pos="n" lemma="irregolarità" surface_form="irregolarità"/>
+                <Concept cid="ita_c_1_1" wid="ita_t_1_1" synset_tag="15164463-n" clemma="venerdì"/>
+                 <Concept cid="ita_msi_c_1_1" wid="ita_t_1_1" synset_tag="15164463-n" clemma="venerdì">
+                    <Tag category="msi_annotation" value="15164463-n" />
+                </Concept>
+                 <Concept cid="ita_c_1_5" wid="ita_t_1_5" synset_tag="01009240-v" clemma="dire"/>
+                 <Concept cid="ita_msi_c_1_5" wid="ita_t_1_5" synset_tag="01009240-v" clemma="dire">
+                    <Tag category="msi_annotation" value="01009240-v" />
+                </Concept>
+                 <Concept cid="ita_c_1_8" wid="ita_t_1_8" synset_tag="05800611-n" clemma="indagine"/>
+                 <Concept cid="ita_msi_c_1_8" wid="ita_t_1_8" synset_tag="05800611-n" clemma="indagine">
+                    <Tag category="msi_annotation" value="05800611-n" />
+                </Concept>
+                 <Concept cid="ita_c_1_10" wid="ita_t_1_10" synset_tag="01730444-a" clemma="recente"/>
+                 <Concept cid="ita_msi_c_1_10" wid="ita_t_1_10" synset_tag="01642477-a" clemma="recente">
+                    <Tag category="msi_annotation" value="01642477-a" />
+                </Concept>
+                 <Concept cid="ita_c_1_14" wid="ita_t_1_14" synset_tag="09076675-n" clemma="Atlanta"/>
+                 <Concept cid="ita_msi_c_1_14" wid="ita_t_1_14" synset_tag="09076675-n" clemma="Atlanta">
+                    <Tag category="msi_annotation" value="09076675-n" />
+                </Concept>
+                 <Concept cid="ita_c_1_17" wid="ita_t_1_17" synset_tag="02141146-v" clemma="produrre"/>
+                 <Concept cid="ita_msi_c_1_17" wid="ita_t_1_17" synset_tag="01752884-v" clemma="produrre">
+                    <Tag category="msi_annotation" value="01752884-v" />
+                </Concept>
+                 <Concept cid="ita_c_1_20" wid="ita_t_1_20" synset_tag="05823932-n" clemma="prova"/>
+                 <Concept cid="ita_msi_c_1_20" wid="ita_t_1_20" synset_tag="05823932-n" clemma="prova">
+                    <Tag category="msi_annotation" value="05823932-n" />
+                </Concept>
+                 <Concept cid="ita_c_1_27" wid="ita_t_1_27" synset_tag="00339934-v" clemma="verificare"/>
+                 <Concept cid="ita_msi_c_1_27" wid="ita_t_1_27" synset_tag="02520997-v" clemma="verificare">
+                    <Tag category="msi_annotation" value="02520997-v" />
+                </Concept>
+                 <Concept cid="ita_c_1_29" wid="ita_t_1_29" synset_tag="00737188-n" clemma="irregolarità"/>
+                 <Concept cid="ita_msi_c_1_29" wid="ita_t_1_29" synset_tag="04770211-n" clemma="irregolarità">
+                    <Tag category="msi_annotation" value="04770211-n" />
+                </Concept>
+                 </Sentence>
+      </Document>
+        <Document docID="ron_a01" doc="text" language="ron" title="a01">
+            <Sentence sid="ron_s_1" sent="Fulton spus vineri alegerilor produs dovadă">
+                <Word wid="ron_t_1_4" pos="n" lemma="group" surface_form="Fulton"/>
+                <Word wid="ron_t_1_6" pos="v" lemma="spune" surface_form="spus"/>
+                <Word wid="ron_t_1_7" pos="n" lemma="vineri" surface_form="vineri"/>
+                <Word wid="ron_t_1_12" pos="n" lemma="alegere" surface_form="alegerilor"/>
+                <Word wid="ron_t_1_16" pos="v" lemma="produce" surface_form="produs"/>
+                <Word wid="ron_t_1_19" pos="n" lemma="dovadă" surface_form="dovadă"/>
+                <Concept cid="ron_c_1_4" wid="ron_t_1_4" synset_tag="00031264-n" clemma="group"/>
+                 <Concept cid="ron_c_1_6" wid="ron_t_1_6" synset_tag="01009240-v" clemma="spune"/>
+                 <Concept cid="ron_msi_c_1_6" wid="ron_t_1_6" synset_tag="00683771-v" clemma="spune">
+                    <Tag category="msi_annotation" value="00683771-v" />
+                </Concept>
+                 <Concept cid="ron_c_1_7" wid="ron_t_1_7" synset_tag="15164463-n" clemma="vineri"/>
+                 <Concept cid="ron_msi_c_1_7" wid="ron_t_1_7" synset_tag="15164463-n" clemma="vineri">
+                    <Tag category="msi_annotation" value="15164463-n" />
+                </Concept>
+                 <Concept cid="ron_c_1_12" wid="ron_t_1_12" synset_tag="00181781-n" clemma="alegere"/>
+                 <Concept cid="ron_c_1_16" wid="ron_t_1_16" synset_tag="02141146-v" clemma="produce"/>
+                 <Concept cid="ron_msi_c_1_16" wid="ron_t_1_16" synset_tag="02141146-v" clemma="produce">
+                    <Tag category="msi_annotation" value="02141146-v" />
+                </Concept>
+                 <Concept cid="ron_c_1_19" wid="ron_t_1_19" synset_tag="05824739-n" clemma="dovadă"/>
+                 </Sentence>
+      </Document>
+    <Document docID="jpn_a01" doc="text" language="jpn" title="a01">
+            <Sentence sid="jpn_s_1" sent="金曜日 いる 示す アトランタ 調査 徴候 予備 選挙 最近 いる 陳べる いる 行なう れる 不正 行為">
+                <Word wid="jpn_w1.1.6" pos="n" lemma="金曜日" surface_form="金曜日"/>
+                <Word wid="jpn_w1.1.44" pos="v" lemma="いる" surface_form="いる"/>
+                <Word wid="jpn_w1.1.36" pos="v" lemma="示す" surface_form="示す"/>
+                <Word wid="jpn_w1.1.8" pos="n" lemma="アトランタ" surface_form="アトランタ"/>
+                <Word wid="jpn_w1.1.15" pos="n" lemma="調査" surface_form="調査"/>
+                <Word wid="jpn_w1.1.32" pos="n" lemma="徴候" surface_form="徴候"/>
+                <Word wid="jpn_w1.1.12" pos="n" lemma="予備選挙" surface_form="予備 選挙"/>
+                <Word wid="jpn_w1.1.10" pos="n" lemma="最近" surface_form="最近"/>
+                <Word wid="jpn_w1.1.38" pos="v" lemma="いる" surface_form="いる"/>
+                <Word wid="jpn_w1.1.42" pos="v" lemma="陳べる" surface_form="陳べる"/>
+                <Word wid="jpn_w1.1.25" pos="v" lemma="いる" surface_form="いる"/>
+                <Word wid="jpn_w1.1.22" pos="v" lemma="行なわれる" surface_form="行なう れる"/>
+                <Word wid="jpn_w1.1.19" pos="n" lemma="不正行為" surface_form="不正 行為"/>
+                <Concept cid="jpn_c1.1.6" wid="jpn_w1.1.6" synset_tag="15164463-n" clemma="金曜日"/>
+                 <Concept cid="jpn_msi_w1.1.6" wid="jpn_w1.1.6" synset_tag="15164463-n" clemma="金曜日">
+                    <Tag category="msi_annotation" value="15164463-n" />
+                </Concept>
+                 <Concept cid="jpn_c1.1.8" wid="jpn_w1.1.8" synset_tag="09076675-n" clemma="アトランタ"/>
+                 <Concept cid="jpn_msi_w1.1.8" wid="jpn_w1.1.8" synset_tag="09076675-n" clemma="アトランタ">
+                    <Tag category="msi_annotation" value="09076675-n" />
+                </Concept>
+                 <Concept cid="jpn_c1.1.15" wid="jpn_w1.1.15" synset_tag="05800611-n" clemma="調査"/>
+                 <Concept cid="jpn_msi_w1.1.15" wid="jpn_w1.1.15" synset_tag="00141806-n" clemma="調査">
+                    <Tag category="msi_annotation" value="00141806-n" />
+                </Concept>
+                 <Concept cid="jpn_c1.1.12" wid="jpn_w1.1.12" synset_tag="00182571-n" clemma="予備選挙"/>
+                 <Concept cid="jpn_msi_w1.1.12" wid="jpn_w1.1.12" synset_tag="00182571-n" clemma="予備選挙">
+                    <Tag category="msi_annotation" value="00182571-n" />
+                </Concept>
+                 <Concept cid="jpn_c1.1.42" wid="jpn_w1.1.42" synset_tag="01009240-v" clemma="陳べる"/>
+                 <Concept cid="jpn_c1.1.22" wid="jpn_w1.1.22" synset_tag="00339934-v" clemma="行なわれる"/>
+                 <Concept cid="jpn_msi_w1.1.22" wid="jpn_w1.1.22" synset_tag="00339934-v" clemma="行なわれる">
+                    <Tag category="msi_annotation" value="00339934-v" />
+                </Concept>
+                 <Concept cid="jpn_c1.1.19" wid="jpn_w1.1.19" synset_tag="00745637-n" clemma="不正行為"/>
+                 </Sentence>
+    </Document>
+        <Alignment>
+        <DocAlignment docID="ita_a01 eng_a01 jpn_a01 ron_a01"/>
+            <SentAlignment sid_from="eng_s_1" sid_to="ita_s_1 ron_s_1 jpn_s_1" type="manual"/>
+            <SentAlignment sid_from="ita_s_1" sid_to="eng_s_1 ron_s_1 jpn_s_1" type="manual"/>
+            <SentAlignment sid_from="ron_s_1" sid_to="eng_s_1 ita_s_1 jpn_s_1" type="manual"/>
+            <SentAlignment sid_from="jpn_s_1" sid_to="eng_s_1 ita_s_1 ron_s_1" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_3" wid_to="ita_t_1_5 ron_t_1_6 jpn_w1.1.42" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_4" wid_to="ita_t_1_1 jpn_w1.1.6" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_6" wid_to="ita_t_1_8 jpn_w1.1.15" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_8" wid_to="ita_t_1_14 jpn_w1.1.8" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_10" wid_to="ita_t_1_10 jpn_w1.1.10" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_11" wid_to="jpn_w1.1.12" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_12" wid_to="ita_t_1_17 ron_t_1_16" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_15" wid_to="ita_t_1_20" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_19" wid_to="ita_t_1_29" type="manual"/>
+            <WordAlignment wid_from="eng_t_1_20" wid_to="ita_t_1_27 jpn_w1.1.22" type="manual"/>
+            <ConceptAlignment cid_from="eng_c_1_8" cid_to="ita_c_1_14 jpn_w1.1.8" type="manual"/>
+            <ConceptAlignment cid_from="eng_c_1_3" cid_to="ita_c_1_5 ron_c_1_6 jpn_w1.1.42" type="manual"/>
+            <ConceptAlignment cid_from="eng_c_1_4" cid_to="ita_c_1_1 jpn_w1.1.6 ron_c_1_7" type="manual"/>
+            <ConceptAlignment cid_from="eng_c_1_6" cid_to="ita_c_1_8 jpn_w1.1.15" type="manual"/>
+      </Alignment>
+</Corpus>
