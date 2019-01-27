@@ -321,6 +321,7 @@ if __name__ == '__main__':
     add_alignments_to_corpus(en2jp_alignments, multilingual_corpus, eng_corpus.id, jpn_corpus.id)
 
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
+    msi.dump_missing_lemmas_recap()
     import pdb; pdb.set_trace()
 
     msi.evaluate_msi(multilingual_corpus)

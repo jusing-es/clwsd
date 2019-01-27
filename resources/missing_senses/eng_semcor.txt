@@ -1,0 +1,2 @@
+a_thousand	a	3	
+a_hundred	a	2	

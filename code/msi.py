@@ -36,13 +36,17 @@ missing_lemmas_recap = {'eng' : Counter(),
 
 def add_to_missing_lemmas_recap(word):
     try:
-        translation = f"({word.alignments['eng'].lemma})"
+        translation = f"{word.alignments['eng'].lemma}"
     except KeyError:
         translation = ''
-    if f'{word.lemma}-{word.pos} {translation}' not in missing_lemmas_recap[word.lang]:
-        comments = f'No sense in WN3.0 for lemma {word.lemma}, pos {word.pos} {translation}'
-        print(comments)
-    missing_lemmas_recap[word.lang][f'{word.lemma}-{word.pos} {translation}'] += 1
+    missing_lemmas_recap[word.lang][f'{word.lemma}${word.pos}${translation}'] += 1
+
+def dump_missing_lemmas_recap():
+    for lang in missing_lemmas_recap:
+        with open(f'../resources/missing_senses/{lang}_semcor.txt', 'w', encoding='utf8') as so:
+            for item in missing_lemmas_recap[lang]:
+                lemma, pos, translation = item.split("$")
+                so.write(f'{lemma}\t{pos}\t{missing_lemmas_recap[lang][item]}\t{translation}\n')
 
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
