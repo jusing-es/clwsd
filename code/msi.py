@@ -20,7 +20,29 @@ generic_senses = {'00007846-n': 'person',
 missing_romanian_lemmas = {
     'căsători' : '[se]_căsători',
     'teme' : '[se]_teme',
+    'devota' : '|se|_devota',
+    'răci': '|se|_răci',
+    'minuna': '[se]_minuna',
+    'preta' : '[se]_preta',
+    'îndrăgosti' : '[se]_îndrăgosti',
 }
+
+
+missing_lemmas_recap = {'eng' : Counter(),
+                        'ita' : Counter(),
+                        'ron' : Counter(),
+                        'jpn': Counter()
+                        }
+
+def add_to_missing_lemmas_recap(word):
+    try:
+        translation = f"({word.alignments['eng'].lemma})"
+    except KeyError:
+        translation = ''
+    if f'{word.lemma}-{word.pos} {translation}' not in missing_lemmas_recap[word.lang]:
+        comments = f'No sense in WN3.0 for lemma {word.lemma}, pos {word.pos} {translation}'
+        print(comments)
+    missing_lemmas_recap[word.lang][f'{word.lemma}-{word.pos} {translation}'] += 1
 
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
@@ -100,6 +122,8 @@ def get_mfs_offset(word):
 def synset_lookup(word):
     if word.lemma in generic_senses.values():
         return wn.synsets(word.lemma, pos='n', lang='eng')
+    if re.match(r'^\d+?$', word.lemma):
+        return wn.synsets(word.lemma, pos=word.pos, lang='eng')
     try:
         if word.pos in ('a', 'r', 'v', 'n', 's'):
             return wn.synsets(word.lemma, lang=word.lang, pos=word.pos)
@@ -252,62 +276,64 @@ def evaluate_msi(multilingual_corpus):
     for _, corpus in multilingual_corpus.corpora.items():
         recap[corpus.lang]['contributing_languages'] = Counter()
         recap[corpus.lang]['aligned_languages'] = Counter()
-        for _, document in corpus.documents.items():
+        for doc_id, document in corpus.documents.items():
+            recap[corpus.lang][doc_id] = defaultdict(lambda: 0)
             for _, sentence in document.sentences.items():
                 for _, word in sentence.tokens.items():
                     if word.sense and word.alignments:
-                        recap[corpus.lang]['counts'] += 1
+                        recap[corpus.lang][doc_id]['counts'] += 1
 
                         mfs = get_mfs_offset(word)
                         if mfs:
                             mfs = get_only_element_in_overlap(mfs)
                             if mfs == word.sense:
-                                recap[corpus.lang]['mfs_match'] += 1
+                                recap[corpus.lang][doc_id]['mfs_match'] += 1
                             else:
-                                recap[corpus.lang]['mfs_mismatch'] += 1
+                                recap[corpus.lang][doc_id]['mfs_mismatch'] += 1
                                 if mfs in coarse_senses_dict and word.sense in coarse_senses_dict[mfs]:
-                                    recap[corpus.lang]['coarse_mfs_match'] += 1
+                                    recap[corpus.lang][doc_id]['coarse_mfs_match'] += 1
 
                         rmfs = get_relative_frequent_senses(word)
                         if rmfs:
                             rmfs = rmfs[0]
                             if rmfs == word.sense:
-                                recap[corpus.lang]['rmfs_match'] += 1
+                                recap[corpus.lang][doc_id]['rmfs_match'] += 1
                             else:
-                                recap[corpus.lang]['rmfs_mismatch'] += 1
+                                recap[corpus.lang][doc_id]['rmfs_mismatch'] += 1
                                 if rmfs in coarse_senses_dict and word.sense in coarse_senses_dict[rmfs]:
-                                    recap[corpus.lang]['coarse_rmfs_match'] += 1
+                                    recap[corpus.lang][doc_id]['coarse_rmfs_match'] += 1
 
                         if word.msi_annotation:
                             if word.msi_annotation.assigned_sense == word.sense:
-                                recap[corpus.lang]['match'] += 1
-                                recap[corpus.lang][word.msi_annotation.assignment_type] += 1
-                                recap[corpus.lang]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
-                                recap[corpus.lang]['aligned_languages'][len(word.alignments)] += 1
+                                recap[corpus.lang][doc_id]['match'] += 1
+                                recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
+                                recap[corpus.lang][doc_id]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
+                                recap[corpus.lang][doc_id]['aligned_languages'][len(word.alignments)] += 1
                             elif word.msi_annotation.assigned_sense is None:
-                                recap[corpus.lang][word.msi_annotation.assignment_type] += 1
+                                recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
                             elif word.msi_annotation.assigned_sense and word.sense \
                                     and word.msi_annotation.assigned_sense != word.sense \
                                     and re.match(r'\d{8}-[avrn]', word.msi_annotation.assigned_sense):
-                                recap[corpus.lang]['mismatch'] += 1
+                                recap[corpus.lang][doc_id]['mismatch'] += 1
                                 if word.msi_annotation.assigned_sense in coarse_senses_dict \
                                     and word.sense in coarse_senses_dict[word.msi_annotation.assigned_sense]:
-                                    recap[corpus.lang]['coarse_match'] += 1
+                                    recap[corpus.lang][doc_id]['coarse_match'] += 1
                                 else:
-                                    recap[corpus.lang]['coarse_mismatch'] += 1
+                                    recap[corpus.lang][doc_id]['coarse_mismatch'] += 1
 
                                 #print(word.sense, word.lemma, word.msi_annotation.assigned_sense, coarse_senses_dict.get(word.msi_annotation.assigned_sense, []))
 
-        assert recap[corpus.lang]['mismatch'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
-        assert recap[corpus.lang]['coarse_mismatch'] + recap[corpus.lang]['coarse_match'] + recap[corpus.lang]['no_sense'] + recap[corpus.lang]['match'] == recap[corpus.lang]['counts']
+        import pdb;pdb.set_trace()
+        assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
+        assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
 
-        recap[corpus.lang]['precision'] = recap[corpus.lang]['match'] / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+        recap[corpus.lang][doc_id]['precision'] = recap[corpus.lang][doc_id]['match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang]['precision_mfs'] = recap[corpus.lang]['mfs_match'] / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+        recap[corpus.lang][doc_id]['precision_mfs'] = recap[corpus.lang][doc_id]['mfs_match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang]['precision_coarse'] = (recap[corpus.lang]['coarse_match'] + recap[corpus.lang]['match']) / (recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+        recap[corpus.lang][doc_id]['precision_coarse'] = (recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['match']) / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-        recap[corpus.lang]['precision_coarse_mfs'] = (recap[corpus.lang]['mfs_match'] + recap[corpus.lang]['coarse_mfs_match'])/(recap[corpus.lang]['counts'] - recap[corpus.lang]['no_sense'])
+        recap[corpus.lang][doc_id]['precision_coarse_mfs'] = (recap[corpus.lang][doc_id]['mfs_match'] + recap[corpus.lang][doc_id]['coarse_mfs_match'])/(recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
     from pprint import pprint
     pprint(recap)
@@ -349,22 +375,23 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                             if check_for_named_entities(word):
                                 target_synsets = set(map(get_offset, check_for_named_entities(word)))
                             else:
-                                if (word.lang =='ita' and word.sense and not target_synsets) \
-                                        or (word.lang == 'ron' and is_multiword(word.lemma)) or \
-                                        (word.lang == 'jpn' and not word.equivalent_wn_senses):
-                                    assigned_sense = None
-                                    assignment_type = 'no_sense'
-                                    comments = f'No sense in WN3.0 for lemma {word.lemma}, pos {word.pos}'
-                                    print(comments)
-                                    assign_sense(word, assigned_sense, set(word.alignments.keys()), assignment_type)
-                                    continue
-                                elif (word.lang== 'ron' and word.lemma in missing_romanian_lemmas):
+                                if (word.lang == 'ron' and word.lemma in missing_romanian_lemmas):
                                     word.lemma = missing_romanian_lemmas[word.lemma]
                                     target_synsets = set(map(get_offset, synset_lookup(word)))
                                 elif word.lang == 'jpn' and word.equivalent_wn_senses:
                                     target_synsets = set(word.equivalent_wn_senses)
                                 else:
-                                    import pdb; pdb.set_trace()
+                                    """
+                                    possible cases:
+                                        if (word.lang =='ita' and word.sense and not target_synsets) 
+                                        or is_multiword(word.lemma) 
+                                        or (word.lang == 'jpn' and not word.equivalent_wn_senses):
+                                    """
+                                    assigned_sense = None
+                                    assignment_type = 'no_sense'
+                                    add_to_missing_lemmas_recap(word)
+                                    assign_sense(word, assigned_sense, set(word.alignments.keys()), assignment_type)
+                                    continue
                         overlap, contributing_languages = perform_intersection(word, target_synsets, aligned_synset_bags)
                         assigned_sense, assignment_type = make_decision(word, overlap, corpus_sense_frequencies)
                         assign_sense(word, assigned_sense, contributing_languages, assignment_type)
