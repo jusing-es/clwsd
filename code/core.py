@@ -30,8 +30,6 @@ def add_alignments_to_corpus(alignments, multilingual_corpus, source_corpus_id, 
             sent_pairs = set()
             for sentid in alignments[doc_in]:
                 source_sid, source_wid = sentid.split("%")
-                if source_wid == 't_1_4':
-                    import pdb; pdb.set_trace()
                 target_wid = alignments[doc_in][sentid]
                 source_word_alignment = Alignment(type='word', source_id=source_doc.lang + '_' + source_wid,
                                                  target_id= target_doc.lang+ '_' + target_wid, origin='manual')
@@ -304,29 +302,29 @@ if __name__ == '__main__':
     ac = mc.alignment_collector
     add_alignments_to_corpus(en2it_alignments, multilingual_corpus, eng_corpus.id, ita_corpus.id)
 
-    pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
+    #pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
 
     add_automatic_alignment_to_corpus(multilingual_corpus)
 
-    pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
+    #pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
 
     add_automatic_alignment_to_corpus_ita(multilingual_corpus)
 
-    pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
+    #pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
 
     with open('../alignments/ro2en.json', 'r') as si:
         ro2en_alignments = json.loads(si.read())
 
     add_alignments_to_corpus(ro2en_alignments, multilingual_corpus, ron_corpus.id, eng_corpus.id)
 
-    pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
+    #pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
 
     with open('../alignments/ro2it.json', 'r') as si:
         ro2it_alignments = json.loads(si.read())
 
     add_alignments_to_corpus(ro2it_alignments, multilingual_corpus, ron_corpus.id, ita_corpus.id)
 
-    pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
+    #pprint([(a.source_id, a.target_id) for a in ac.words['eng_t_1_4']])
 
     with open('../alignments/en2jp_alignments_49.json', 'r') as si:
         en2jp_alignments = json.loads(si.read())
@@ -334,10 +332,9 @@ if __name__ == '__main__':
     add_alignments_to_corpus(en2jp_alignments, multilingual_corpus, eng_corpus.id, jpn_corpus.id)
 
     import pdb; pdb.set_trace()
-    #msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
+    msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
     #msi.dump_missing_lemmas_recap()
-    import pdb; pdb.set_trace()
-    #msi.evaluate_msi(multilingual_corpus)
+    msi.evaluate_msi(multilingual_corpus)
     #print(render_multilingual_corpus(multilingual_corpus))
     #dump_multilingual_corpus_to_xml(multilingual_corpus)
 
