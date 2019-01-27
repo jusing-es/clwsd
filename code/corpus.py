@@ -150,6 +150,9 @@ class Document(object):
         if self.multilingual_corpus:
             self.multilingual_corpus.alignment_collector.add(alignment)
 
+    def number_content_words_in_document(self):
+        return sum([sentence.number_content_words() for sentence in self.sentences.values()])
+
     # doesn't dump corpus / alignments
     def to_json(self):
         return {'__class__': self.__class__.__name__,
@@ -199,6 +202,11 @@ class Sentence(object):
         if len(matches) >= 1:
             return matches[0]
         return None
+
+
+    def number_content_words(self):
+        return len([word.sense for word in self.tokens.values() if word.sense])
+
 
     def to_json(self):
         return {'__class__': self.__class__.__name__,

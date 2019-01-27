@@ -1,886 +1,949 @@
-警告	v	9	warn
-所有	v	8	own
-否定	v	8	deny
-影響	v	8	affect
-除去	v	7	remove
-拒否	v	7	refuse
-識別	v	7	recognize
-提供	v	7	offer
-議論	v	7	discuss
-チャンピオン	n	7	champion
-電話	v	7	call
-支持	v	6	support
-要求	v	6	require
-到達	v	6	reach
-上演	v	6	present
-準備	v	6	prepare
-練習	v	6	practice
-プレー	v	6	play
-殺害	v	6	kill
-改善	v	6	improve
-比較	v	6	compare
-達成	v	6	achieve
-心配	v	5	worry
-サイン	v	5	sign
-立証	v	5	show
-共有	v	5	share
-得点	v	5	score
-報告	v	5	report
-推薦	v	5	recommend
-認識	v	5	recognize
-ページ	n	5	page
-言及	v	5	mention
-意味	v	5	mean
-交尾	v	5	mate
-着地	v	5	land
-発行	v	5	issue
-開催	v	5	hold
-予期	v	5	expect
-設立	v	5	establish
-要求	v	5	demand
-対処	v	5	deal
-コミューン	n	5	commune
-コーヒー	n	5	coffee
-携帯	v	5	carry
-存在	v	5	be
-ベースボール	n	5	baseball
-洗濯	v	4	wash
-示唆	v	4	suggest
-開始	v	4	start
-理解	v	4	see
-反映	v	4	reflect
-購入	v	4	purchase
-約束	v	4	promise
-宣言	v	4	proclaim
-予測	v	4	predict
-演奏	v	4	play
-可決	v	4	pass
-反対	v	4	oppose
-移動	v	4	move
-意図	v	4	mean
-構成	v	4	make_up
-維持	v	4	keep
-正当化	v	4	justify
-想像	v	4	imagine
-手助け	v	4	help
-設立	v	4	form
-経験	v	4	experience
-イベント	n	4	event
-奨励	v	4	encourage
-破壊	v	4	destroy
-説明	v	4	describe
-コントロール	v	4	control
-継続	v	4	continue
-連絡	v	4	contact
-主張	v	4	claim
-算出	v	4	calculate
-建設	v	4	build
-開始	v	4	begin
-仮定	v	4	assume
-主張	v	4	assert
-到着	v	4	arrive
-発表	v	4	announce
-同意	v	4	agree
-トレーニング	v	3	work_out
-投票	v	3	vote
-行使	v	3	use
-威嚇	v	3	threaten
-指導	v	3	teach
-想定	v	3	suppose
-提案	v	3	suggest
-研究	v	3	study
-歪み	n	3	strain
-解決	v	3	solve
-マーク	v	3	set
-送りだす	v	3	send
-面会	v	3	see
-発言	v	3	say
-ロイヤルティー	n	3	royalty
-辞職	v	3	resign
-返済	v	3	repay
-反射	v	3	reflect
-理解	v	3	realize
-認識	v	3	realize
-レース	n	3	race
-証明	v	3	prove
-保護	v	3	protect
-ホームプレート	n	3	plate
-計画	v	3	plan
-運営	v	3	operate
-反対	v	3	object
-維持	v	3	maintain
-住む	v	3	live
-列記	v	3	list
-出発	v	3	leave
-解釈	v	3	interpret
-影響	v	3	influence
-増加	v	3	increase
-無視	v	3	ignore
-保持	v	3	hold
-加熱	v	3	heat
-機能	v	3	function
-発見	v	3	find
-可能にする	v	3	enable
-強調	v	3	emphasize
-下馬	v	3	dismount
-演出	v	3	direct
-監督	v	3	direct
-比較	v	3	contrast
-考慮	v	3	consider
-指揮	v	3	conduct
-要求	v	3	call_for
-購入	v	3	buy
-埋葬	v	3	bury
-構成	v	3	build
-ブランデー	n	3	brandy
-応札	v	3	bid
-ビール	n	3	beer
-追放	v	3	banish
-認可	v	3	authorize
-出席	v	3	attend
-推測	v	3	assume
-承認	v	3	approve
-執筆	v	2	write
-勝利	v	2	win
-着用	v	2	wear
-強調	v	2	underline
-試験	v	2	test
-電話	v	2	telephone
-教導	v	2	teach
-水泳	v	2	swim
-監督	v	2	supervise
-成功	v	2	succeed
-勉強	v	2	study
-調査	v	2	study
-強調	v	2	stress
-硬直	v	2	stiffen
-凝視	v	2	stare
-上演	v	2	stage
-後援	v	2	sponsor
-猛打	v	2	slug
-スロー	a	2	slow
-上映	v	2	show
-実証	v	2	show
-撮影	v	2	shoot
-移動	v	2	shift
-設置	v	2	set_up
-売却	v	2	sell
-選択	v	2	select
-予定	v	2	schedule
-明らかにする	v	2	reveal
-復帰	v	2	return
-回復	v	2	restore
-憤慨	v	2	resent
-撤回	v	2	rescind
-象徴	v	2	represent
-再現	v	2	repeat
-排除	v	2	remove
-拒絶	v	2	reject
-辞退	v	2	reject
-登録	v	2	register
-低減	v	2	reduce
-削減	v	2	reduce
-収録	v	2	record
-保証	v	2	reassure
-再配列	v	2	rearrange
-正当化	v	2	rationalize
-喚起	v	2	raise
-引用	v	2	quote
-疑問視	v	2	question
-公表	v	2	publish
-出版	v	2	publish
-実証	v	2	prove
-抗議	v	2	protest
-掲載	v	2	print
-推定	v	2	presume
-維持	v	2	preserve
-描写	v	2	portray
-プレイ	v	2	play
-ポン引き	n	2	pimp
-撮影	v	2	photograph
-電話	v	2	phone
-永続化	v	2	perpetuate
-許可	v	2	permit
-上演	v	2	perform
-認識	v	2	perceive
-手のひら	n	2	palm
-機能	v	2	operate
-取得	v	2	obtain
-必要とする	v	2	need
-モロッコ	n	2	morocco
-動員	v	2	mobilize
-測定	v	2	measure
-計測	v	2	measure
-結婚	v	2	marry
-製造	v	2	make
-突進	v	2	lunge
-生活	v	2	live
-理解	v	2	learn
-習得	v	2	learn
-欠如	v	2	lack
-キス	v	2	kiss
-考案	v	2	invent
-紹介	v	2	introduce
-介入	v	2	intervene
-改良	v	2	improve
-意味	v	2	imply
-暗示	v	2	imply
-確認	v	2	identify
-補佐	v	2	help
-備わる	v	2	have
-嫌い	v	2	hate
-楽しげ	a	2	happy
-挨拶	v	2	greet
-提供	v	2	furnish
-形成	v	2	form
-決定	v	2	fix
-発射	v	2	fire
-発砲	v	2	fire
-直面	v	2	face
-調査	v	2	explore
-体験	v	2	experience
-要求	v	2	expect
-喚起	v	2	evoke
-評価	v	2	evaluate
-立証	v	2	establish
-エンターテイメント	n	2	entertainment
-享受	v	2	enjoy
-終り	n	2	end
-使用	v	2	employ
-排除	v	2	eliminate
-除去	v	2	eliminate
-電気カミソリ	n	2	electric_razor
-選出	v	2	elect
-運転	v	2	drive
-寄贈	v	2	donate
-やる	v	2	do
-区別	v	2	distinguish
-発揮	v	2	display
-死亡	v	2	die
-決定	v	2	determine
-検出	v	2	detect
-希望	v	2	desire
-デザイン	v	2	design
-依存	v	2	depend_on
-実証	v	2	demonstrate
-配達	v	2	deliver
-遅延	v	2	delay
-定義	v	2	define
-減少	v	2	decrease
-装飾	v	2	decorate
-決定	v	2	decide
-決断	v	2	decide
-包含	v	2	contain
-直面	v	2	confront
-実証	v	2	confirm
-非難	v	2	condemn
-心配	v	2	concern
-冷ややか	a	2	cold
-閉まる	v	2	close
-掃除	v	2	clean
-祝賀	v	2	celebrate
-実行	v	2	carry_out
-遂行	v	2	carry_out
-構築	v	2	build
-非難	v	2	blame
-信用	v	2	believe
-保証	v	2	assure
-断言	v	2	assert
-喚起	v	2	arouse
-拍手喝采	v	2	applaud
-分析	v	2	analyze
-手助け	v	2	aid
-賛成	v	2	agree
-調整	v	2	adjust
-行動	v	2	act
-説明	v	2	account_for
-達成	v	2	accomplish
-放棄	v	2	abandon
-使用	v	20	use
-提供	v	20	provide
-書きつづる	v	1	write
-起草	v	1	write
-トレーニング	v	1	work
-機能	v	1	work
-訓練	v	1	work
-疑問視	v	1	wonder
-希望	v	1	wish
-ワイヤ	n	1	wire
-きらめく	v	1	wink
-ウィンク	v	1	wink
-制覇	v	1	win
-受賞	v	1	win
-ウイスキー	n	1	whisky
-歓迎	v	1	welcome
-ウイークエンド	n	1	weekend
-採決	v	1	vote
-ベデラン	n	1	veteran
-利用	v	1	utilize
-一体化	v	1	unify
-代表	v	1	typify
-身悶え	v	1	twist
-判明	v	1	turn_out
-拒絶	v	1	turn_down
-努力	v	1	try
-審理	v	1	try
-試食	v	1	try
-信頼	v	1	trust
-手当て	v	1	treat
-旅行	v	1	travel
-翻訳	v	1	translate
-どきどきする	v	1	thump
-突進	v	1	thrust
-仮定	v	1	theorize
-感謝	v	1	thank
-証言	v	1	testify
-指示	v	1	tell
-テレビセット	n	1	television_set
-チームメート	n	1	teammate
-伝授	v	1	teach
-教授	v	1	teach
-教示	v	1	teach
-課税	v	1	tax
-対談	v	1	talk
-話し	v	1	talk
-参加	v	1	take_part
-関与	v	1	take_part
-ひと休み	v	1	take_a_breather
-撮影	v	1	take
-略取	v	1	take
-解釈	v	1	take
-象徴	v	1	symbolize
-怪しげ	a	1	suspect
-推察	v	1	suspect
-残存	v	1	survive
-観念	v	1	surrender
-降伏	v	1	surrender
-陵駕	v	1	surpass
-推測	v	1	suppose
-立証	v	1	support
-供給	v	1	supply
-提供	v	1	supply
-用意	v	1	supply
-累計	v	1	summate
-アドバイス	v	1	suggest
-助言	v	1	suggest
-提出	v	1	submit
-学習	v	1	study
-検分	v	1	study
-力説	v	1	stress
-保管	v	1	store
-中断	v	1	stop
-刺激	v	1	stir
-明記	v	1	stipulate
-付着	v	1	stick_to
-凝着	v	1	stick_to
-由来	v	1	stem
-窃取	v	1	steal
-窃盗	v	1	steal
-滞在	v	1	stay
-回避	v	1	stave_off
-じっとする	v	1	stand_still
-傑出	v	1	stand_out
-位置	v	1	stand
-抑制	v	1	stamp_down
-スクワット	n	1	squatting
-スクワット	n	1	squat
-平方	v	1	square
-蔓延	v	1	spread
-憶測	v	1	speculate
-明記	v	1	specify
-分類	v	1	sort_out
-ソファ	n	1	sofa
-笑み	n	1	smile
-猛打	v	1	smash
-眠たげ	a	1	sleepy
-就眠	v	1	sleep
-座る	v	1	sit_down
-単打	v	1	single
-歌唱	v	1	sing
-契約	v	1	sign_up
-展示	v	1	show
-証明	v	1	show
-短縮	v	1	shorten
-形成	v	1	shape
-定住	v	1	settle
-解決	v	1	settle
-機能	v	1	serve
-サージ	n	1	serge
-分離	v	1	separate
-チャンピオン	n	1	sensation
-派遣	v	1	send
-販売	v	1	sell
-分離	v	1	segregate
-追究	v	1	seek
-発見	v	1	see
-目撃	v	1	see
-固定	v	1	secure
-精察	v	1	scrutinize
-仮定	v	1	say
-指示	v	1	say
-発音	v	1	say
-陳べる	v	1	say
-容認	v	1	sanction
-セージ	n	1	sage
-駆け足	v	1	run
-除外	v	1	rule_out
-ざらざら	a	1	rough
-上昇	v	1	rise
-起床	v	1	rise
-改訂	v	1	revise
-反転	v	1	reverse
-逆転	v	1	reverse
-帰還	v	1	return
-後退	v	1	retreat
-引退	v	1	retire
-限定	v	1	restrict
-制御	v	1	restrain
-復元	v	1	restore
-反応	v	1	respond
-抵抗	v	1	resist
-酷似	v	1	resemble
-救出	v	1	rescue
-必要とする	v	1	require
-要求	v	1	request
-複製	v	1	reproduce
-意味	v	1	represent
-説明	v	1	report
-返事	v	1	reply
-言い直し	v	1	repeat
-撤回	v	1	repeal
-修繕	v	1	repair
-賃貸	v	1	rent
-一新	v	1	renew
-取りはらう	v	1	remove
-言及	v	1	remark
-緩和	v	1	relieve
-釈放	v	1	release
-リラックス	v	1	relax
-関係	v	1	relate
-関連	v	1	relate
-拒否	v	1	reject
-増強	v	1	reinforce
-言及	v	1	refer
-減少	v	1	reduce
-縮小	v	1	reduce
-軽減	v	1	reduce
-再発	v	1	recur
-回復	v	1	recover
-口述	v	1	recount
-レコードプレーヤー	n	1	record_player
-記録	v	1	record
-和解	v	1	reconcile
-推奨	v	1	recommend
-選奨	v	1	recommend
-認可	v	1	recognize
-認知	v	1	recognize
-受信	v	1	receive
-反抗	v	1	rebel
-到着	v	1	reach
-ラット	n	1	rat
-クオーターバック	n	1	quarterback
-ピーアール	v	1	push
-購買	v	1	purchase
-処罰	v	1	punish
-発表	v	1	publish
-公表	v	1	publicize
-供給	v	1	provide
-用意	v	1	provide
-判明	v	1	prove
-防護	v	1	protect
-起訴	v	1	prosecute
-奨励	v	1	promote
-予想	v	1	promise
-禁止	v	1	prohibit
-進展	v	1	progress
-制作	v	1	produce
-生産	v	1	produce
-誘発	v	1	produce
-処理	v	1	process
-防止	v	1	prevent
-阻害	v	1	prevent
-上映	v	1	present
-提出	v	1	present
-提示	v	1	present
-演出	v	1	present
-用意	v	1	prepare
-説法	v	1	preach
-賞賛	v	1	praise
-実践	v	1	practice
-主張	v	1	postulate
-延期	v	1	postpone
-具わる	v	1	possess
-予示	v	1	portend
-生息	v	1	populate
-熟考	v	1	ponder
-コメント	v	1	point_out
-嘆願	v	1	plead
-競技	v	1	play
-予定	v	1	plan
-プレースキック	n	1	place-kicker
-まやかし	n	1	phony
-レコードプレーヤー	n	1	phonograph
-可能にする	v	1	permit
-容認	v	1	permit
-認可	v	1	permit
-実践	v	1	perform
-演技	v	1	perform
-返済	v	1	pay
-中断	v	1	pause
-休止	v	1	pause
-通り抜け	v	1	pass_through
-参加	v	1	participate
-関与	v	1	participate
-息切れ	v	1	pant
-圧倒	v	1	overwhelm
-圧倒	v	1	overpower
-食べ過ぎる	v	1	overindulge
-克服	v	1	overcome
-概説	v	1	outline
-発生	v	1	originate
-設立	v	1	organize
-命令	v	1	order
-注文	v	1	order
-統制	v	1	order
-操作	v	1	operate
-経営	v	1	operate
-開始	v	1	open
-一つ	n	1	one
-オファー	v	1	offer
-侵攻	v	1	occupy
-検出	v	1	observe
-注目	v	1	observe
-観察	v	1	observe
-抗議	v	1	object
-服従	v	1	obey
-案内	v	1	notify
-発見	v	1	notice
-ネービーブルー	n	1	navy
-任命	v	1	name
-移転	v	1	move
-軽減	v	1	mitigate
-失敗	v	1	miscarry
-最小化	v	1	minimize
-メートル	n	1	meter
-修理	v	1	mend
-驚嘆	v	1	marvel
-行進	v	1	march
-操作	v	1	manipulate
-決断	v	1	make_up_one's_mind
-識別	v	1	make_out
-やる	v	1	make
-変ずる	v	1	make
-製作	v	1	make
-誘導	v	1	make
-メイド	n	1	maid
-寵愛	v	1	love
-敗北	v	1	lose
-考慮	v	1	look_at
-ロック	v	1	lock
-生存	v	1	live
-限定	v	1	limit
-位置	v	1	lie
-貸出	v	1	lend
-都合	v	1	lend
-レモネード	n	1	lemonade
-レザー	n	1	leather
-修得	v	1	learn
-記憶	v	1	learn
-埋葬	v	1	lay_to_rest
-創立	v	1	launch
-不足	v	1	lack
-識別	v	1	key
-維持	v	1	keep_up
-キープ	v	1	keep
-保有	v	1	keep
-判断	v	1	judge
-評価	v	1	judge
-ジョーク	n	1	joke
-加入	v	1	join
-連結	v	1	join
-出版	v	1	issue
-誘引	v	1	invite
-調査	v	1	investigate
-投資	v	1	invest
-創作	v	1	invent
-理解	v	1	interpret
-干渉	v	1	interfere
-意図	v	1	intend
-一体化	v	1	integrate
-統合	v	1	integrate
-設立	v	1	institute
-力説	v	1	insist
-イニシャル	n	1	initial
-誘発	v	1	induce
-増大	v	1	increase
-内包	v	1	include
-包含	v	1	include
-向上	v	1	improve
-吸収	v	1	imbibe
-推測	v	1	imagine
-例証	v	1	illustrate
-黙殺	v	1	ignore
-期待	v	1	hope
-表彰	v	1	honor
-保有	v	1	hold
-執行	v	1	hold
-強調	v	1	highlight
-躊躇	v	1	hesitate
-手だすけ	v	1	help
-支援	v	1	help
-聞ける	v	1	hear
-所有	v	1	have
-うろうろ	v	1	hang_around
-妨害	v	1	hamper
-推察	v	1	guess
-ガード	v	1	guard
-笑み	n	1	grinning
-把握	v	1	grasp
-キャッチ	v	1	grab
-失敗	v	1	go_wrong
-帰宅	v	1	go_home
-減少	v	1	go_down
-グリセリン	n	1	glycerol
-一瞥	v	1	glance
-生成	v	1	give
-到着	v	1	get
-意図	v	1	get
-一般化	v	1	generalize
-集結	v	1	gather
-綱渡り	v	1	gamble
-獲得	v	1	gain
-コミカル	a	1	funny
-解放	v	1	free
-設立	v	1	found
-考案	v	1	formulate
-予知	v	1	foresee
-予測	v	1	forecast
-強圧	v	1	force
-し損なう	v	1	flub
-横行	v	1	flourish
-逃亡	v	1	flee
-きらめく	v	1	flash
-修理	v	1	fix
-和合	v	1	fit_in
-フィット	v	1	fit
-調和	v	1	fit
-適合	v	1	fit
-裁決	v	1	find
-ムービー	n	1	film
-登録	v	1	file
-感ずる	v	1	feel
-恐怖	v	1	fear
-懸念	v	1	fear
-低下	v	1	fall
-落下	v	1	fall
-失敗	v	1	fail
-向き合う	v	1	face
-拡張	v	1	extend
-実験	v	1	experiment
-支出	v	1	expend
-拡大	v	1	expand
-エキジビション	n	1	exhibition
-展示	v	1	exhibit
-実行	v	1	exercise
-刺激	v	1	excite
-超越	v	1	exceed
-検討	v	1	examine
-誘発	v	1	evoke
-実証	v	1	evidence
-立証	v	1	evidence
-測定	v	1	evaluate
-設置	v	1	establish
-エッセイ	n	1	essay
-エッセー	n	1	essay
-護衛	v	1	escort
-代表	v	1	epitomize
-接待	v	1	entertain
-増強	v	1	enhance
-従事	v	1	engage
-施行	v	1	enforce
-刺激	v	1	energize
-支持	v	1	endorse
-促進	v	1	encourage
-空にする	v	1	empty
-利用	v	1	employ
-力説	v	1	emphasize
-着手	v	1	embark_on
-解明	v	1	elucidate
-詳説	v	1	elaborate
-乾燥	v	1	dry
-ドレスアップ	v	1	dress_up
-ダブルプレー	n	1	double_play
-ばらつき	n	1	distribution
-分配	v	1	distribute
-配付	v	1	distribute
-展示	v	1	display
-一掃	v	1	dispel
-追いはらう	v	1	dispel
-論議	v	1	discuss
-察知	v	1	discover
-さぐり当てる	v	1	discover
-発見	v	1	discover
-阻止	v	1	discourage
-識別	v	1	discern
-指示	v	1	direct
-相違	v	1	differ
-準備	v	1	devise
-成長	v	1	develop
-左右する	v	1	determine
-企画	v	1	design
-立案	v	1	design
-考案	v	1	design
-叙述	v	1	describe
-表現	v	1	describe
-記述	v	1	describe
-推測	v	1	derive
-由来	v	1	derive
-依存	v	1	depend_upon
-非難	v	1	denounce
-催促	v	1	demand
-要望	v	1	demand
-防守	v	1	defend
-防衛	v	1	defend
-推測	v	1	deduce
-非難	v	1	decry
-宣言	v	1	declare
-言明	v	1	declare
-決意	v	1	decide
-中断	v	1	cut_off
-制限	v	1	curtail
-カフスリンク	n	1	cufflink
-cps	n	1	cps
-包含	v	1	cover
-求愛	v	1	court
-カップル	n	1	couple
-確証	v	1	corroborate
-一致	v	1	correspond
-修正	v	1	correct
-真似	v	1	copy
-対処	v	1	cope
-協力	v	1	cooperate
-冷却	v	1	cool
-断罪	v	1	convict
-変換	v	1	convert
-拠出	v	1	contribute
-契約	v	1	contract
-内包	v	1	contain
-含有	v	1	contain
-コンサルテーション	n	1	consultation
-参照	v	1	consult
-相談	v	1	consult
-諮詢	v	1	consult
-検討	v	1	consider
-白状	v	1	confess
-話し合い	v	1	confer_with
-賛同	v	1	concur
-判断	v	1	conclude
-結論	v	1	conclude
-関連	v	1	concern
-想像	v	1	conceive_of
-算出	v	1	compute
-含有	v	1	comprise
-圧縮	v	1	compress
-構成	v	1	compose
-完了	v	1	complete
-完成	v	1	complete
-コンペ	n	1	competition
-匹敵	v	1	compare
-コメント	v	1	comment
-論評	v	1	comment
-称賛	v	1	commend
-到来	v	1	come
-到着	v	1	come
-合成	v	1	combine
-色どり	n	1	color
-密着	v	1	cohere
-コーチ	v	1	coach
-休校	v	1	close
-閉める	v	1	close
-閉幕	v	1	close
-閉鎖	v	1	close
-閉館	v	1	close
-ガタガタ	v	1	clatter
-クラシック	a	1	classical
-分類	v	1	class
-告発	v	1	charge
-委任	v	1	charge
-請求	v	1	charge
-交換	v	1	change
-変化	v	1	change
-変移	v	1	change
-チャンピオン	n	1	champ
-認可	v	1	certify
-忠告	v	1	caution
-彫刻	v	1	carve
-所持	v	1	carry
-電話	v	1	call_up
-計算	v	1	calculate
-忙しげ	a	1	busy
-焼討ち	v	1	burn
-接合	v	1	bring_together
-呼吸	v	1	breathe
-爆発	v	1	break_loose
-破壊	v	1	break
-リバウンド	v	1	bounce
-猛打	v	1	boom
-出血	v	1	bleed
-噛みつく	v	1	bite
-ビスケット	n	1	biscuit
-吸着	v	1	bind
-利得	v	1	benefit
-帰属	v	1	belong_to
-行動	v	1	behave
-懇請	v	1	beg
-入浴	v	1	bathe
-ベーシック	a	1	basic
-自覚	n	1	awareness
-回避	v	1	avoid
-平均	v	1	average
-参加	v	1	attend
-非難	v	1	attack
-断言	v	1	assure
-推定	v	1	assume
-支援	v	1	assist
-評価	v	1	assess
-集会	v	1	assemble
-到着	v	1	arrive_at
-準備	v	1	arrange
-装備	v	1	arm
-発生	v	1	arise
-接近	v	1	approach
-評価	v	1	appraise
-任命	v	1	appoint
-利用	v	1	apply
-拍手	v	1	applaud
-予想	v	1	anticipate
-予期	v	1	anticipate
-返事をする	v	1	answer
-公表	v	1	announce
-増幅	v	1	amplify
-改正	v	1	amend
-変換	v	1	alter
-可能にする	v	1	allow
-許可	v	1	allow
-認可	v	1	allow
-支援	v	1	aid
-補佐	v	1	aid
-アドバイス	v	1	advise
-前進	v	1	advance
-称賛	v	1	admire
-執行	v	1	administer
-管理	v	1	administer
-調節	v	1	adjust
-適応	v	1	adapt
-演技	v	1	act
-糺弾	v	1	accuse
-集積	v	1	accumulate
-認定	v	1	accredit
-認容	v	1	accept
-加速	v	1	accelerate
-存在	v	17	exist
-利用	v	16	use
-座る	v	16	sit
-説明	v	14	explain
-理解	v	12	understand
-トレーニング	n	12	training
+所有	v	8	own	02204692-v
+警告	v	7	warn	00870213-v
+理解	v	7	understand	00588888-v
+除去	v	7	remove	00173338-v
+拒否	v	7	refuse	00797430-v
+識別	v	7	recognize	02193194-v
+提供	v	7	offer	02296726-v
+議論	v	7	discuss	01034312-v
+チャンピオン	n	7	champion	09906704-n
+電話	v	7	call	00789448-v
+要求	v	6	require	02627934-v
+到達	v	6	reach	02020590-v
+練習	v	6	practice	00606093-v
+プレー	v	6	play	01072949-v
+殺害	v	6	kill	01323958-v
+改善	v	6	improve	00205885-v
+比較	v	6	compare	00652900-v
+影響	v	6	affect	00137313-v
+達成	v	6	achieve	02526085-v
+心配	v	5	worry	01767163-v
+得点	v	5	score	01111816-v
+報告	v	5	report	00966809-v
+推薦	v	5	recommend	00875141-v
+上演	v	5	present	01711445-v
+準備	v	5	prepare	00406243-v
+ページ	n	5	page	06256697-n
+交尾	v	5	mate	01428853-v
+着地	v	5	land	01979901-v
+発行	v	5	issue	00967625-v
+開催	v	5	hold	01733477-v
+予期	v	5	expect	00719734-v
+否定	v	5	deny	00817003-v
+対処	v	5	deal	02587532-v
+コミューン	n	5	commune	08541609-n
+コーヒー	n	5	coffee	07929519-n
+存在	v	5	be	02603699-v
+ベースボール	n	5	baseball	00471613-n
+洗濯	v	4	wash	01535246-v
+理解	v	4	understand	00591115-v
+開始	v	4	start	00345761-v
+立証	v	4	show	00664788-v
+理解	v	4	see	00591115-v
+反映	v	4	reflect	02136892-v
+認識	v	4	recognize	00728617-v
+購入	v	4	purchase	02207206-v
+宣言	v	4	proclaim	00977336-v
+予測	v	4	predict	00917772-v
+反対	v	4	oppose	00775831-v
+移動	v	4	move	01850315-v
+意図	v	4	mean	00955148-v
+構成	v	4	make_up	02620587-v
+想像	v	4	imagine	01636397-v
+手助け	v	4	help	02547586-v
+設立	v	4	form	02448185-v
+イベント	n	4	event	00029378-n
+設立	v	4	establish	02427103-v
+奨励	v	4	encourage	02554922-v
+説明	v	4	describe	00965035-v
+継続	v	4	continue	02684924-v
+連絡	v	4	contact	00743344-v
+携帯	v	4	carry	02717102-v
+算出	v	4	calculate	00637259-v
+建設	v	4	build	01654628-v
+開始	v	4	begin	00345761-v
+仮定	v	4	assume	00632236-v
+到着	v	4	arrive	02005948-v
+発表	v	4	announce	00974367-v
+同意	v	4	agree	00805376-v
+トレーニング	v	3	work_out	00099721-v
+投票	v	3	vote	02461314-v
+行使	v	3	use	01158872-v
+威嚇	v	3	threaten	00871405-v
+指導	v	3	teach	00829107-v
+想定	v	3	suppose	00633443-v
+支持	v	3	support	02556126-v
+示唆	v	3	suggest	00930806-v
+提案	v	3	suggest	00875394-v
+研究	v	3	study	00644583-v
+歪み	n	3	strain	11515325-n
+解決	v	3	solve	00634906-v
+サイン	v	3	sign	00889229-v
+共有	v	3	share	02718309-v
+マーク	v	3	set	01062395-v
+送りだす	v	3	send	01951480-v
+面会	v	3	see	02488304-v
+発言	v	3	say	01009240-v
+ロイヤルティー	n	3	royalty	13257982-n
+辞職	v	3	resign	02367032-v
+返済	v	3	repay	02284951-v
+認識	v	3	realize	00728617-v
+理解	v	3	realize	00591115-v
+レース	n	3	race	07458453-n
+保護	v	3	protect	01128193-v
+約束	v	3	promise	00884317-v
+演奏	v	3	play	01725051-v
+ホームプレート	n	3	plate	03528901-n
+運営	v	3	operate	02443849-v
+反対	v	3	object	00807461-v
+言及	v	3	mention	01024190-v
+意味	v	3	mean	02635189-v
+住む	v	3	live	02649830-v
+列記	v	3	list	00945853-v
+出発	v	3	leave	02009433-v
+維持	v	3	keep	02681795-v
+影響	v	3	influence	00701040-v
+増加	v	3	increase	00156601-v
+加熱	v	3	heat	00371264-v
+可能にする	v	3	enable	00512877-v
+強調	v	3	emphasize	01013367-v
+下馬	v	3	dismount	01958452-v
+演出	v	3	direct	01710317-v
+監督	v	3	direct	01710317-v
+破壊	v	3	destroy	01564144-v
+否定	v	3	deny	00816556-v
+比較	v	3	contrast	00661213-v
+指揮	v	3	conduct	01732921-v
+主張	v	3	claim	00756338-v
+要求	v	3	call_for	02627934-v
+購入	v	3	buy	02207206-v
+埋葬	v	3	bury	02456493-v
+構成	v	3	build	01654628-v
+ブランデー	n	3	brandy	07903208-n
+応札	v	3	bid	02298632-v
+ビール	n	3	beer	07886849-n
+追放	v	3	banish	02504017-v
+認可	v	3	authorize	00803325-v
+出席	v	3	attend	02612762-v
+推測	v	3	assume	00632236-v
+主張	v	3	assert	01016778-v
+承認	v	3	approve	00806502-v
+執筆	v	2	write	01698271-v
+勝利	v	2	win	01100145-v
+着用	v	2	wear	00052374-v
+警告	v	2	warn	00870577-v
+強調	v	2	underline	01014609-v
+試験	v	2	test	02531625-v
+電話	v	2	telephone	00789448-v
+教導	v	2	teach	00829107-v
+水泳	v	2	swim	01960911-v
+支持	v	2	support	02453889-v
+監督	v	2	supervise	02443049-v
+成功	v	2	succeed	02524171-v
+調査	v	2	study	00644583-v
+勉強	v	2	study	00607405-v
+強調	v	2	stress	01013367-v
+硬直	v	2	stiffen	00418563-v
+凝視	v	2	stare	02132745-v
+上演	v	2	stage	01711445-v
+後援	v	2	sponsor	02219940-v
+猛打	v	2	slug	01415585-v
+スロー	a	2	slow	00980527-a
+上映	v	2	show	02148788-v
+実証	v	2	show	01015244-v
+撮影	v	2	shoot	01002740-v
+移動	v	2	shift	01883344-v
+共有	v	2	share	02295550-v
+売却	v	2	sell	02242464-v
+選択	v	2	select	00674607-v
+明らかにする	v	2	reveal	00933821-v
+回復	v	2	restore	02552449-v
+憤慨	v	2	resent	01773346-v
+撤回	v	2	rescind	00799798-v
+象徴	v	2	represent	00836236-v
+再現	v	2	repeat	01734502-v
+排除	v	2	remove	00173338-v
+辞退	v	2	reject	02237338-v
+拒絶	v	2	reject	00685683-v
+反射	v	2	reflect	02765924-v
+低減	v	2	reduce	00429060-v
+削減	v	2	reduce	00429060-v
+収録	v	2	record	00998399-v
+保証	v	2	reassure	01766407-v
+再配列	v	2	rearrange	00278280-v
+正当化	v	2	rationalize	00894738-v
+喚起	v	2	raise	01629958-v
+引用	v	2	quote	01023259-v
+疑問視	v	2	question	00867409-v
+公表	v	2	publish	01745722-v
+出版	v	2	publish	00967625-v
+実証	v	2	prove	00664788-v
+証明	v	2	prove	00664788-v
+抗議	v	2	protest	00910135-v
+掲載	v	2	print	01745722-v
+推定	v	2	presume	00632236-v
+維持	v	2	preserve	02679899-v
+描写	v	2	portray	00988890-v
+プレイ	v	2	play	01072949-v
+計画	v	2	plan	00704690-v
+ポン引き	n	2	pimp	10433737-n
+撮影	v	2	photograph	01003249-v
+電話	v	2	phone	00789448-v
+永続化	v	2	perpetuate	02648253-v
+許可	v	2	permit	00802318-v
+上演	v	2	perform	01714208-v
+認識	v	2	perceive	02106506-v
+可決	v	2	pass	02523351-v
+可決	v	2	pass	02466670-v
+手のひら	n	2	palm	05565696-n
+機能	v	2	operate	01525666-v
+取得	v	2	obtain	02238085-v
+必要とする	v	2	need	01188725-v
+モロッコ	n	2	morocco	08969291-n
+動員	v	2	mobilize	00270215-v
+言及	v	2	mention	01020005-v
+計測	v	2	measure	00489837-v
+意味	v	2	mean	00931852-v
+結婚	v	2	marry	02488834-v
+製造	v	2	make	01621555-v
+維持	v	2	maintain	02681795-v
+突進	v	2	lunge	02062212-v
+理解	v	2	learn	00598954-v
+習得	v	2	learn	00597915-v
+欠如	v	2	lack	02632353-v
+キス	v	2	kiss	01431230-v
+正当化	v	2	justify	00896141-v
+考案	v	2	invent	01632411-v
+紹介	v	2	introduce	00901103-v
+介入	v	2	intervene	02538765-v
+解釈	v	2	interpret	00623151-v
+改良	v	2	improve	00205885-v
+意味	v	2	imply	00930599-v
+暗示	v	2	imply	00929839-v
+無視	v	2	ignore	00800930-v
+確認	v	2	identify	00618878-v
+保持	v	2	hold	02681795-v
+補佐	v	2	help	02547586-v
+嫌い	v	2	hate	01774136-v
+楽しげ	a	2	happy	01148283-a
+挨拶	v	2	greet	00897241-v
+提供	v	2	furnish	02327200-v
+機能	v	2	function	01525666-v
+決定	v	2	fix	00947077-v
+発砲	v	2	fire	01135783-v
+発見	v	2	find	01637982-v
+直面	v	2	face	01078783-v
+調査	v	2	explore	00648224-v
+経験	v	2	experience	02110220-v
+経験	v	2	experience	00596644-v
+要求	v	2	expect	00755745-v
+喚起	v	2	evoke	01759326-v
+評価	v	2	evaluate	00681429-v
+立証	v	2	establish	00664788-v
+エンターテイメント	n	2	entertainment	00429048-n
+享受	v	2	enjoy	01192510-v
+使用	v	2	employ	01158872-v
+排除	v	2	eliminate	02629256-v
+除去	v	2	eliminate	00471711-v
+電気カミソリ	n	2	electric_razor	04185804-n
+選出	v	2	elect	02400760-v
+寄贈	v	2	donate	02263027-v
+やる	v	2	do	02560585-v
+区別	v	2	distinguish	00650353-v
+発揮	v	2	display	02140033-v
+死亡	v	2	die	00358431-v
+検出	v	2	detect	02154508-v
+希望	v	2	desire	01825237-v
+デザイン	v	2	design	01640550-v
+依存	v	2	depend_on	02711987-v
+実証	v	2	demonstrate	00664788-v
+要求	v	2	demand	02627934-v
+要求	v	2	demand	00754942-v
+配達	v	2	deliver	01438304-v
+定義	v	2	define	02611630-v
+減少	v	2	decrease	00151689-v
+装飾	v	2	decorate	01675963-v
+決定	v	2	decide	00697589-v
+決断	v	2	decide	00697589-v
+コントロール	v	2	control	02510337-v
+コントロール	v	2	control	02441022-v
+包含	v	2	contain	02629535-v
+直面	v	2	confront	01078783-v
+実証	v	2	confirm	00665886-v
+非難	v	2	condemn	00864159-v
+心配	v	2	concern	02678438-v
+冷ややか	a	2	cold	01257612-a
+閉まる	v	2	close	01346978-v
+掃除	v	2	clean	01532589-v
+実行	v	2	carry_out	01640855-v
+遂行	v	2	carry_out	00486018-v
+構築	v	2	build	01654628-v
+非難	v	2	blame	00842772-v
+信用	v	2	believe	00683280-v
+断言	v	2	assert	01016778-v
+喚起	v	2	arouse	01759326-v
+拍手喝采	v	2	applaud	00861929-v
+手助け	v	2	aid	02547586-v
+影響	v	2	affect	00019448-v
+調整	v	2	adjust	00296178-v
+説明	v	2	account_for	00939621-v
+放棄	v	2	abandon	02228031-v
+使用	v	20	use	01158872-v
+提供	v	20	provide	02327200-v
+書きつづる	v	1	write	01698271-v
+起草	v	1	write	01698271-v
+機能	v	1	work	02525447-v
+トレーニング	v	1	work	00100551-v
+訓練	v	1	work	00100551-v
+疑問視	v	1	wonder	00925110-v
+希望	v	1	wish	01824736-v
+ワイヤ	n	1	wire	04594489-n
+きらめく	v	1	wink	02159890-v
+ウィンク	v	1	wink	00008299-v
+制覇	v	1	win	01100145-v
+受賞	v	1	win	01100145-v
+ウイスキー	n	1	whisky	07906284-n
+歓迎	v	1	welcome	02237206-v
+ウイークエンド	n	1	weekend	15170504-n
+採決	v	1	vote	02461314-v
+ベデラン	n	1	veteran	10749123-n
+利用	v	1	utilize	01158872-v
+一体化	v	1	unify	00367685-v
+理解	v	1	understand	00593852-v
+代表	v	1	typify	02699141-v
+身悶え	v	1	twist	01868370-v
+判明	v	1	turn_out	02633881-v
+拒絶	v	1	turn_down	02237338-v
+努力	v	1	try	02530167-v
+審理	v	1	try	02501278-v
+試食	v	1	try	01195299-v
+信頼	v	1	trust	00688377-v
+手当て	v	1	treat	00078760-v
+旅行	v	1	travel	01845720-v
+翻訳	v	1	translate	00959827-v
+どきどきする	v	1	thump	01880113-v
+突進	v	1	thrust	02062212-v
+仮定	v	1	theorize	00633443-v
+感謝	v	1	thank	00892315-v
+証言	v	1	testify	01014821-v
+指示	v	1	tell	00746718-v
+テレビセット	n	1	television_set	04405907-n
+チームメート	n	1	teammate	10695050-n
+伝授	v	1	teach	00829107-v
+教授	v	1	teach	00829107-v
+教示	v	1	teach	00829107-v
+課税	v	1	tax	02307547-v
+話し	v	1	talk	07135734-n
+対談	v	1	talk	00962447-v
+参加	v	1	take_part	02450256-v
+関与	v	1	take_part	02450256-v
+ひと休み	v	1	take_a_breather	00779360-v
+略取	v	1	take	02206619-v
+撮影	v	1	take	01002740-v
+解釈	v	1	take	00624476-v
+象徴	v	1	symbolize	00836236-v
+怪しげ	a	1	suspect	01917594-a
+推察	v	1	suspect	00921072-v
+残存	v	1	survive	02618149-v
+観念	v	1	surrender	01115585-v
+降伏	v	1	surrender	01115585-v
+陵駕	v	1	surpass	02673965-v
+推測	v	1	suppose	00633443-v
+支持	v	1	support	00895304-v
+立証	v	1	support	00665886-v
+供給	v	1	supply	02327200-v
+提供	v	1	supply	02327200-v
+用意	v	1	supply	02327200-v
+累計	v	1	summate	00949288-v
+示唆	v	1	suggest	00927430-v
+アドバイス	v	1	suggest	00875394-v
+助言	v	1	suggest	00875394-v
+提出	v	1	submit	02262752-v
+検分	v	1	study	00644583-v
+学習	v	1	study	00607405-v
+力説	v	1	stress	01013367-v
+保管	v	1	store	02282506-v
+中断	v	1	stop	00362348-v
+刺激	v	1	stir	02116118-v
+明記	v	1	stipulate	01018928-v
+付着	v	1	stick_to	01356750-v
+凝着	v	1	stick_to	01356750-v
+由来	v	1	stem	02627753-v
+窃取	v	1	steal	02321757-v
+窃盗	v	1	steal	02321757-v
+滞在	v	1	stay	02637202-v
+回避	v	1	stave_off	02453321-v
+じっとする	v	1	stand_still	01834485-v
+傑出	v	1	stand_out	02673965-v
+位置	v	1	stand	02611373-v
+抑制	v	1	stamp_down	00462092-v
+スクワット	n	1	squatting	00630071-n
+スクワット	n	1	squat	00630071-n
+平方	v	1	square	00640136-v
+蔓延	v	1	spread	01380122-v
+憶測	v	1	speculate	00633443-v
+明記	v	1	specify	01018928-v
+分類	v	1	sort_out	00654625-v
+ソファ	n	1	sofa	04256520-n
+笑み	n	1	smile	06878071-n
+猛打	v	1	smash	01401772-v
+眠たげ	a	1	sleepy	00189017-a
+就眠	v	1	sleep	00014742-v
+座る	v	1	sit_down	01984902-v
+単打	v	1	single	01409374-v
+歌唱	v	1	sing	01729431-v
+契約	v	1	sign_up	02409941-v
+サイン	v	1	sign	02464866-v
+サイン	v	1	sign	00996485-v
+展示	v	1	show	02148788-v
+立証	v	1	show	01015244-v
+証明	v	1	show	01015244-v
+短縮	v	1	shorten	00316768-v
+形成	v	1	shape	01659248-v
+設置	v	1	set_up	02427103-v
+設置	v	1	set_up	01569566-v
+解決	v	1	settle	00763399-v
+定住	v	1	settle	00413876-v
+機能	v	1	serve	02670890-v
+サージ	n	1	serge	04174026-n
+分離	v	1	separate	02621853-v
+チャンピオン	n	1	sensation	09762509-n
+派遣	v	1	send	01088923-v
+販売	v	1	sell	02242464-v
+分離	v	1	segregate	02482139-v
+追究	v	1	seek	02240481-v
+目撃	v	1	see	02128873-v
+発見	v	1	see	00598954-v
+固定	v	1	secure	01340439-v
+精察	v	1	scrutinize	02153387-v
+予定	v	1	schedule	00794981-v
+予定	v	1	schedule	00678282-v
+陳べる	v	1	say	01009240-v
+発音	v	1	say	00978549-v
+仮定	v	1	say	00917300-v
+指示	v	1	say	00746718-v
+容認	v	1	sanction	00806502-v
+セージ	n	1	sage	07820497-n
+駆け足	v	1	run	01926311-v
+除外	v	1	rule_out	02629390-v
+ざらざら	a	1	rough	02238462-a
+上昇	v	1	rise	00433232-v
+起床	v	1	rise	00018158-v
+改訂	v	1	revise	00996102-v
+逆転	v	1	reverse	00386715-v
+反転	v	1	reverse	00138508-v
+帰還	v	1	return	02004874-v
+復帰	v	1	return	02004874-v
+復帰	v	1	return	00387310-v
+後退	v	1	retreat	01994442-v
+引退	v	1	retire	02379753-v
+限定	v	1	restrict	00236592-v
+制御	v	1	restrain	01301051-v
+復元	v	1	restore	02552449-v
+反応	v	1	respond	00717358-v
+抵抗	v	1	resist	01116585-v
+酷似	v	1	resemble	02665282-v
+救出	v	1	rescue	02551144-v
+必要とする	v	1	require	01188725-v
+要求	v	1	request	00752764-v
+複製	v	1	reproduce	01736822-v
+意味	v	1	represent	00836236-v
+説明	v	1	report	00965035-v
+返事	v	1	reply	00815686-v
+言い直し	v	1	repeat	00957679-v
+撤回	v	1	repeal	00799798-v
+修繕	v	1	repair	00260648-v
+賃貸	v	1	rent	02208903-v
+一新	v	1	renew	01631072-v
+取りはらう	v	1	remove	00173338-v
+言及	v	1	remark	01020005-v
+緩和	v	1	relieve	00064095-v
+釈放	v	1	release	02421374-v
+リラックス	v	1	relax	00026385-v
+関係	v	1	relate	02676054-v
+関連	v	1	relate	02676054-v
+拒否	v	1	reject	02237338-v
+増強	v	1	reinforce	00222472-v
+登録	v	1	register	02471690-v
+登録	v	1	register	01001857-v
+反射	v	1	reflect	02136271-v
+言及	v	1	refer	01024190-v
+減少	v	1	reduce	00429060-v
+縮小	v	1	reduce	00429060-v
+軽減	v	1	reduce	00429060-v
+再発	v	1	recur	00343334-v
+回復	v	1	recover	00092690-v
+口述	v	1	recount	00953216-v
+レコードプレーヤー	n	1	record_player	04064401-n
+記録	v	1	record	01000214-v
+和解	v	1	reconcile	00764902-v
+推奨	v	1	recommend	00875141-v
+選奨	v	1	recommend	00875141-v
+認可	v	1	recognize	02475535-v
+認知	v	1	recognize	00610374-v
+認識	v	1	recognize	00610374-v
+受信	v	1	receive	02107248-v
+反抗	v	1	rebel	02583139-v
+到着	v	1	reach	02020590-v
+ラット	n	1	rat	02331046-n
+クオーターバック	n	1	quarterback	10498816-n
+ピーアール	v	1	push	00976653-v
+購買	v	1	purchase	02207206-v
+処罰	v	1	punish	02499629-v
+発表	v	1	publish	01745722-v
+公表	v	1	publicize	00975902-v
+供給	v	1	provide	02327200-v
+用意	v	1	provide	02327200-v
+判明	v	1	prove	02633881-v
+証明	v	1	prove	01015244-v
+防護	v	1	protect	01128193-v
+起訴	v	1	prosecute	02581477-v
+奨励	v	1	promote	02554922-v
+予想	v	1	promise	00917772-v
+約束	v	1	promise	00884011-v
+禁止	v	1	prohibit	00795863-v
+進展	v	1	progress	00248659-v
+制作	v	1	produce	02157100-v
+誘発	v	1	produce	01752884-v
+生産	v	1	produce	01621555-v
+処理	v	1	process	00515154-v
+防止	v	1	prevent	02452885-v
+阻害	v	1	prevent	02452885-v
+提出	v	1	present	02262752-v
+上映	v	1	present	02148788-v
+上演	v	1	present	02148788-v
+演出	v	1	present	01711445-v
+提示	v	1	present	00772967-v
+用意	v	1	prepare	01664172-v
+準備	v	1	prepare	01651444-v
+説法	v	1	preach	00828003-v
+賞賛	v	1	praise	00856824-v
+実践	v	1	practice	02568672-v
+主張	v	1	postulate	00756898-v
+延期	v	1	postpone	02642814-v
+具わる	v	1	possess	02204692-v
+予示	v	1	portend	00871942-v
+生息	v	1	populate	02649830-v
+熟考	v	1	ponder	00630380-v
+コメント	v	1	point_out	01058574-v
+嘆願	v	1	plead	00759501-v
+演奏	v	1	play	01724459-v
+競技	v	1	play	01072949-v
+計画	v	1	plan	01638368-v
+予定	v	1	plan	00705227-v
+プレースキック	n	1	place-kicker	10436851-n
+まやかし	n	1	phony	10195593-n
+レコードプレーヤー	n	1	phonograph	04064401-n
+可能にする	v	1	permit	02423183-v
+容認	v	1	permit	00802318-v
+認可	v	1	permit	00802318-v
+演技	v	1	perform	01714208-v
+実践	v	1	perform	01712704-v
+返済	v	1	pay	02253456-v
+中断	v	1	pause	00779061-v
+休止	v	1	pause	00779061-v
+通り抜け	v	1	pass_through	01915365-v
+参加	v	1	participate	02450256-v
+関与	v	1	participate	02450256-v
+息切れ	v	1	pant	00005526-v
+圧倒	v	1	overwhelm	01809321-v
+圧倒	v	1	overpower	01809321-v
+食べ過ぎる	v	1	overindulge	01193099-v
+克服	v	1	overcome	01108627-v
+概説	v	1	outline	01006421-v
+発生	v	1	originate	02624263-v
+設立	v	1	organize	02448185-v
+統制	v	1	order	02511551-v
+命令	v	1	order	00747135-v
+注文	v	1	order	00745499-v
+経営	v	1	operate	02443849-v
+操作	v	1	operate	01224744-v
+開始	v	1	open	02426171-v
+一つ	n	1	one	13742573-n
+オファー	v	1	offer	02297142-v
+侵攻	v	1	occupy	01126360-v
+観察	v	1	observe	02169352-v
+検出	v	1	observe	02154508-v
+注目	v	1	observe	02118933-v
+抗議	v	1	object	00807461-v
+服従	v	1	obey	02542795-v
+案内	v	1	notify	00873682-v
+発見	v	1	notice	02154508-v
+ネービーブルー	n	1	navy	04969703-n
+任命	v	1	name	02396205-v
+移転	v	1	move	01855606-v
+軽減	v	1	mitigate	00906037-v
+失敗	v	1	miscarry	02528380-v
+最小化	v	1	minimize	00427802-v
+メートル	n	1	meter	13659162-n
+修理	v	1	mend	00260648-v
+測定	v	1	measure	00647094-v
+測定	v	1	measure	00489837-v
+驚嘆	v	1	marvel	00925490-v
+行進	v	1	march	01996735-v
+操作	v	1	manipulate	02536329-v
+決断	v	1	make_up_one's_mind	00697589-v
+識別	v	1	make_out	02193194-v
+やる	v	1	make	02560585-v
+製作	v	1	make	01621555-v
+誘導	v	1	make	00770437-v
+変ずる	v	1	make	00556855-v
+維持	v	1	maintain	01184625-v
+メイド	n	1	maid	10282672-n
+寵愛	v	1	love	01775164-v
+敗北	v	1	lose	01099592-v
+考慮	v	1	look_at	00734054-v
+ロック	v	1	lock	01348174-v
+生活	v	1	live	02616713-v
+生活	v	1	live	02614387-v
+生存	v	1	live	02614181-v
+限定	v	1	limit	00235368-v
+位置	v	1	lie	02690708-v
+貸出	v	1	lend	02324182-v
+都合	v	1	lend	02324182-v
+レモネード	n	1	lemonade	07926250-n
+レザー	n	1	leather	14759722-n
+記憶	v	1	learn	00604576-v
+修得	v	1	learn	00597915-v
+埋葬	v	1	lay_to_rest	02456493-v
+創立	v	1	launch	02427103-v
+不足	v	1	lack	02632353-v
+識別	v	1	key	00652346-v
+維持	v	1	keep_up	02679530-v
+キープ	v	1	keep	02202384-v
+保有	v	1	keep	02202384-v
+維持	v	1	keep	01184625-v
+正当化	v	1	justify	00896803-v
+正当化	v	1	justify	00894738-v
+判断	v	1	judge	00672277-v
+評価	v	1	judge	00670261-v
+ジョーク	n	1	joke	06778102-n
+加入	v	1	join	02434976-v
+連結	v	1	join	01291069-v
+出版	v	1	issue	00967625-v
+誘引	v	1	invite	01807529-v
+調査	v	1	investigate	00785962-v
+投資	v	1	invest	02271137-v
+創作	v	1	invent	01634424-v
+解釈	v	1	interpret	00938247-v
+理解	v	1	interpret	00623151-v
+干渉	v	1	interfere	02538765-v
+意図	v	1	intend	00708538-v
+一体化	v	1	integrate	00466651-v
+統合	v	1	integrate	00466651-v
+設立	v	1	institute	01647229-v
+力説	v	1	insist	00818974-v
+イニシャル	n	1	initial	06830997-n
+誘発	v	1	induce	01644050-v
+増大	v	1	increase	00156601-v
+内包	v	1	include	02632940-v
+包含	v	1	include	02632940-v
+向上	v	1	improve	00205046-v
+吸収	v	1	imbibe	01539063-v
+推測	v	1	imagine	00631737-v
+例証	v	1	illustrate	01021128-v
+無視	v	1	ignore	01059564-v
+黙殺	v	1	ignore	01059564-v
+期待	v	1	hope	01826723-v
+表彰	v	1	honor	02546075-v
+保持	v	1	hold	02283324-v
+保有	v	1	hold	02283324-v
+執行	v	1	hold	01733477-v
+強調	v	1	highlight	00514069-v
+躊躇	v	1	hesitate	02640440-v
+手だすけ	v	1	help	02547586-v
+支援	v	1	help	02547586-v
+聞ける	v	1	hear	02169702-v
+備わる	v	1	have	02204692-v
+所有	v	1	have	02204692-v
+備わる	v	1	have	02203362-v
+うろうろ	v	1	hang_around	02639075-v
+妨害	v	1	hamper	00236289-v
+推察	v	1	guess	00636061-v
+ガード	v	1	guard	01129337-v
+笑み	n	1	grinning	06878071-n
+把握	v	1	grasp	00588221-v
+キャッチ	v	1	grab	01439190-v
+失敗	v	1	go_wrong	02528380-v
+帰宅	v	1	go_home	02005496-v
+減少	v	1	go_down	00431826-v
+グリセリン	n	1	glycerol	14885684-n
+一瞥	v	1	glance	02165304-v
+生成	v	1	give	01629000-v
+到着	v	1	get	02005948-v
+意図	v	1	get	01026975-v
+一般化	v	1	generalize	01022420-v
+集結	v	1	gather	02428924-v
+綱渡り	v	1	gamble	02544348-v
+獲得	v	1	gain	02288295-v
+コミカル	a	1	funny	01265308-a
+機能	v	1	function	02670890-v
+解放	v	1	free	02421374-v
+設立	v	1	found	02427103-v
+考案	v	1	formulate	01632411-v
+形成	v	1	form	02621395-v
+形成	v	1	form	00142191-v
+予知	v	1	foresee	00720808-v
+予測	v	1	forecast	00926472-v
+強圧	v	1	force	02504562-v
+し損なう	v	1	flub	02527651-v
+横行	v	1	flourish	00310386-v
+逃亡	v	1	flee	02075462-v
+きらめく	v	1	flash	02159890-v
+修理	v	1	fix	00260648-v
+和合	v	1	fit_in	02700104-v
+適合	v	1	fit	02702830-v
+フィット	v	1	fit	02659763-v
+調和	v	1	fit	02657219-v
+発射	v	1	fire	01135783-v
+発射	v	1	fire	01133825-v
+発見	v	1	find	02248465-v
+裁決	v	1	find	00971999-v
+ムービー	n	1	film	06262567-n
+登録	v	1	file	01001857-v
+感ずる	v	1	feel	00690305-v
+懸念	v	1	fear	01780729-v
+恐怖	v	1	fear	01780202-v
+落下	v	1	fall	01972298-v
+低下	v	1	fall	00151689-v
+失敗	v	1	fail	02528380-v
+向き合う	v	1	face	01078783-v
+拡張	v	1	extend	00540235-v
+実験	v	1	experiment	02532595-v
+体験	v	1	experience	02110220-v
+体験	v	1	experience	02108026-v
+支出	v	1	expend	02267060-v
+拡大	v	1	expand	02077148-v
+エキジビション	n	1	exhibition	08407619-n
+展示	v	1	exhibit	02140033-v
+実行	v	1	exercise	02568672-v
+刺激	v	1	excite	00503164-v
+超越	v	1	exceed	02669081-v
+検討	v	1	examine	00644583-v
+誘発	v	1	evoke	01646866-v
+実証	v	1	evidence	00820976-v
+立証	v	1	evidence	00820976-v
+測定	v	1	evaluate	00681429-v
+設置	v	1	establish	02427103-v
+設立	v	1	establish	01647229-v
+エッセイ	n	1	essay	06409562-n
+エッセー	n	1	essay	06409562-n
+護衛	v	1	escort	02025829-v
+代表	v	1	epitomize	02699141-v
+接待	v	1	entertain	02492198-v
+増強	v	1	enhance	00230033-v
+従事	v	1	engage	02375131-v
+施行	v	1	enforce	02560164-v
+刺激	v	1	energize	00022686-v
+支持	v	1	endorse	02453889-v
+終り	n	1	end	15266911-n
+終り	n	1	end	07291794-n
+促進	v	1	encourage	02554922-v
+空にする	v	1	empty	00449692-v
+利用	v	1	employ	01158872-v
+力説	v	1	emphasize	01013367-v
+着手	v	1	embark_on	01650610-v
+解明	v	1	elucidate	00939857-v
+詳説	v	1	elaborate	00955601-v
+乾燥	v	1	dry	00219403-v
+運転	v	1	drive	01930874-v
+運転	v	1	drive	01930117-v
+ドレスアップ	v	1	dress_up	00044149-v
+ダブルプレー	n	1	double_play	00564373-n
+ばらつき	n	1	distribution	05087297-n
+分配	v	1	distribute	02294436-v
+配付	v	1	distribute	02201644-v
+展示	v	1	display	02140033-v
+一掃	v	1	dispel	02002720-v
+追いはらう	v	1	dispel	02002720-v
+論議	v	1	discuss	01034312-v
+さぐり当てる	v	1	discover	02154508-v
+発見	v	1	discover	01637982-v
+察知	v	1	discover	00598954-v
+阻止	v	1	discourage	00908099-v
+識別	v	1	discern	02193194-v
+指示	v	1	direct	00749205-v
+相違	v	1	differ	02666239-v
+準備	v	1	devise	01651444-v
+成長	v	1	develop	00252019-v
+決定	v	1	determine	00947077-v
+左右する	v	1	determine	00701040-v
+決定	v	1	determine	00699815-v
+破壊	v	1	destroy	01619929-v
+考案	v	1	design	01639714-v
+企画	v	1	design	01638368-v
+立案	v	1	design	00709625-v
+叙述	v	1	describe	00987071-v
+表現	v	1	describe	00987071-v
+記述	v	1	describe	00987071-v
+推測	v	1	derive	00636574-v
+由来	v	1	derive	00251791-v
+依存	v	1	depend_upon	02711987-v
+非難	v	1	denounce	00841580-v
+要求	v	1	demand	01017826-v
+催促	v	1	demand	00754942-v
+要望	v	1	demand	00754942-v
+遅延	v	1	delay	02641957-v
+遅延	v	1	delay	00459776-v
+防守	v	1	defend	01127795-v
+防衛	v	1	defend	01127795-v
+推測	v	1	deduce	00636574-v
+非難	v	1	decry	00864159-v
+言明	v	1	declare	01010118-v
+宣言	v	1	declare	00822367-v
+決意	v	1	decide	00697589-v
+中断	v	1	cut_off	00778275-v
+制限	v	1	curtail	00236592-v
+カフスリンク	n	1	cufflink	03146075-n
+cps	n	1	cps	15279104-n
+包含	v	1	cover	02629793-v
+求愛	v	1	court	02534492-v
+カップル	n	1	couple	07985628-n
+確証	v	1	corroborate	00665886-v
+一致	v	1	correspond	02657219-v
+修正	v	1	correct	00199659-v
+真似	v	1	copy	01742886-v
+対処	v	1	cope	02587532-v
+協力	v	1	cooperate	02416278-v
+冷却	v	1	cool	00370412-v
+断罪	v	1	convict	00906367-v
+変換	v	1	convert	00161225-v
+拠出	v	1	contribute	02308741-v
+契約	v	1	contract	00888786-v
+内包	v	1	contain	02629535-v
+含有	v	1	contain	02629535-v
+コンサルテーション	n	1	consultation	07143137-n
+相談	v	1	consult	00877559-v
+諮詢	v	1	consult	00877559-v
+参照	v	1	consult	00877083-v
+検討	v	1	consider	02166460-v
+考慮	v	1	consider	02166460-v
+考慮	v	1	consider	00950431-v
+考慮	v	1	consider	00734054-v
+白状	v	1	confess	00819508-v
+話し合い	v	1	confer_with	00877559-v
+賛同	v	1	concur	00805376-v
+判断	v	1	conclude	00634472-v
+結論	v	1	conclude	00634472-v
+関連	v	1	concern	02676054-v
+想像	v	1	conceive_of	01636397-v
+算出	v	1	compute	00637259-v
+含有	v	1	comprise	02629535-v
+圧縮	v	1	compress	01389329-v
+構成	v	1	compose	02621244-v
+完了	v	1	complete	00484166-v
+完成	v	1	complete	00484166-v
+コンペ	n	1	competition	07456188-n
+匹敵	v	1	compare	02729632-v
+コメント	v	1	comment	01058574-v
+論評	v	1	comment	01058574-v
+称賛	v	1	commend	00882395-v
+到着	v	1	come	02005948-v
+到来	v	1	come	00341917-v
+合成	v	1	combine	00193486-v
+色どり	n	1	color	04956594-n
+密着	v	1	cohere	01220885-v
+コーチ	v	1	coach	00833702-v
+休校	v	1	close	02426395-v
+閉鎖	v	1	close	02426395-v
+閉館	v	1	close	02426395-v
+閉幕	v	1	close	02425913-v
+閉める	v	1	close	01345109-v
+ガタガタ	v	1	clatter	02172127-v
+クラシック	a	1	classical	00413622-a
+分類	v	1	class	00654625-v
+主張	v	1	claim	00758333-v
+委任	v	1	charge	02475922-v
+請求	v	1	charge	02320374-v
+告発	v	1	charge	00869931-v
+交換	v	1	change	02257370-v
+変化	v	1	change	00109660-v
+変移	v	1	change	00109660-v
+チャンピオン	n	1	champ	09906704-n
+認可	v	1	certify	02444662-v
+祝賀	v	1	celebrate	02578510-v
+祝賀	v	1	celebrate	02490877-v
+忠告	v	1	caution	00871195-v
+彫刻	v	1	carve	01256157-v
+所持	v	1	carry	02717102-v
+携帯	v	1	carry	01449974-v
+電話	v	1	call_up	00789448-v
+計算	v	1	calculate	00637259-v
+忙しげ	a	1	busy	00292937-a
+焼討ち	v	1	burn	00378664-v
+接合	v	1	bring_together	01295275-v
+呼吸	v	1	breathe	00001740-v
+爆発	v	1	break_loose	00306539-v
+破壊	v	1	break	01369758-v
+リバウンド	v	1	bounce	01892104-v
+猛打	v	1	boom	01401772-v
+出血	v	1	bleed	00074834-v
+噛みつく	v	1	bite	01445932-v
+ビスケット	n	1	biscuit	07693972-n
+吸着	v	1	bind	01356750-v
+利得	v	1	benefit	02290461-v
+帰属	v	1	belong_to	02719930-v
+行動	v	1	behave	00010435-v
+懇請	v	1	beg	00759269-v
+入浴	v	1	bathe	00035603-v
+ベーシック	a	1	basic	01855764-a
+自覚	n	1	awareness	05675905-n
+回避	v	1	avoid	02453321-v
+平均	v	1	average	02645389-v
+参加	v	1	attend	02612762-v
+非難	v	1	attack	00862683-v
+保証	v	1	assure	00890590-v
+保証	v	1	assure	00776268-v
+断言	v	1	assure	00776268-v
+推定	v	1	assume	00632236-v
+支援	v	1	assist	02547586-v
+評価	v	1	assess	00681429-v
+主張	v	1	assert	01011031-v
+集会	v	1	assemble	02428924-v
+到着	v	1	arrive_at	02020590-v
+準備	v	1	arrange	01021629-v
+装備	v	1	arm	01087197-v
+発生	v	1	arise	02624263-v
+接近	v	1	approach	02053941-v
+評価	v	1	appraise	00681429-v
+任命	v	1	appoint	02475922-v
+利用	v	1	apply	01158872-v
+拍手	v	1	applaud	00861929-v
+予想	v	1	anticipate	00917772-v
+予期	v	1	anticipate	00719734-v
+返事をする	v	1	answer	00815686-v
+公表	v	1	announce	00974367-v
+分析	v	1	analyze	00644583-v
+分析	v	1	analyze	00643473-v
+増幅	v	1	amplify	00434077-v
+改正	v	1	amend	00996328-v
+変換	v	1	alter	00126264-v
+可能にする	v	1	allow	02423183-v
+許可	v	1	allow	00802318-v
+認可	v	1	allow	00802318-v
+支援	v	1	aid	02547586-v
+補佐	v	1	aid	02547586-v
+賛成	v	1	agree	00805376-v
+賛成	v	1	agree	00764222-v
+アドバイス	v	1	advise	00872886-v
+前進	v	1	advance	01992503-v
+称賛	v	1	admire	02164694-v
+管理	v	1	administer	02431971-v
+執行	v	1	administer	02309621-v
+調節	v	1	adjust	00296178-v
+適応	v	1	adapt	00150287-v
+行動	v	1	act	02367363-v
+演技	v	1	act	01719302-v
+行動	v	1	act	00010435-v
+糺弾	v	1	accuse	00842989-v
+集積	v	1	accumulate	00158804-v
+認定	v	1	accredit	02475535-v
+達成	v	1	accomplish	02526085-v
+達成	v	1	accomplish	01640855-v
+認容	v	1	accept	00686447-v
+加速	v	1	accelerate	00438178-v
+存在	v	17	exist	02603699-v
+利用	v	16	use	01158872-v
+座る	v	16	sit	01543123-v
+説明	v	14	explain	00939277-v
+トレーニング	n	12	training	00893955-n

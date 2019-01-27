@@ -1,880 +1,907 @@
-densità	n	8	density
-undef	n	7	
-più	r	6	more
-termale	a	5	thermal
-undef	v	5	
-formarsi	v	4	form
-trattarsi	v	4	
-ingiusto	a	3	unfair
-volgere	v	3	turn
-così	r	3	so
-più	r	3	most
-perso	a	3	lost
-stazione_di_servizio	n	3	garage
-svuotare	v	3	empty
-fioco	a	3	dim
-cerebrale	a	3	cerebral
-record_mondiale	n	2	world_record
-risvegliare	v	2	wake_up
-volgare	a	2	vulgar
-voluttuoso	a	2	voluptuous
-visuale	a	2	visual
-vittimizzare	v	2	victimize
-vibrante	a	2	vibrant
-Utah	n	2	utah
-intatto	a	2	untouched
-impreparato	a	2	unprepared
-impassibile	a	2	unmoved
-unanime	a	2	unanimous
-trionfante	a	2	triumphant
-triplo	n	2	triple
-allenato	a	2	trained
-Texas	n	2	texas
-tecnicamente	r	2	technically
-presunto	a	2	supposed
-sottendere	v	2	subtend
-risvegliare	v	2	stir
-aderire	v	2	stick_to
-organico	n	2	staff
-struttura_sociale	n	2	social_structure
-liscio	a	2	smooth
-esiguo	a	2	small
-sedicesimo	a	2	sixteenth
-laterale	a	2	side
-sic	r	2	sic
-settimo	a	2	seventh
-serratus	n	2	serratus
-scolastico	a	2	scholastic
-derubare	v	2	rob
-righthander	n	2	right-hander
-reversibile	a	2	reversible
-restituire	v	2	repay
-reliquia	n	2	relic
-registrato	a	2	recorded
-rassicurare	v	2	reassure
-giungere	v	2	reach
-razionalizzare	v	2	rationalize
-viola	a	2	purple
-possibilità 	n	2	possibility
-politicamente	r	2	politically
-pianificatore	n	2	planner
-piazzare	v	2	place
-pittoresco	a	2	picturesque
-illustrato	a	2	pictorial
-Philadelphia	n	2	philadelphia
-Phase	n	2	phase
-percussione	n	2	percussion
-par	n	2	par
-operistico	a	2	operatic
-nazionalistico	a	2	nationalistic
-muscoloso	a	2	muscular
-Montreal	n	2	montreal
-modernizzare	v	2	modernize
-mancante	a	2	missing
-Massachusetts	n	2	massachusetts
-Corpo_della_Marina	n	2	marine_corps
-manoscritto	n	2	manuscript
-vicegovernatore	n	2	lieutenant_governor
-colto	a	2	learned
-pigro	a	2	lazy
-ionizzato	a	2	ionized
-integrante	a	2	integral
-inibitore	a	2	inhibitory
-idrofobo	a	2	hydrophobic
-umiliante	a	2	humiliating
-Houston	n	2	houston
-scuola_media_superiore	n	2	high_school
-ibernare	v	2	hibernate
-ecco	r	2	here
-Harlem	n	2	harlem
-ginnastico	a	2	gymnastic
-ginnico	a	2	gymnastic
-guanto	n	2	glove
-Gibson_Girl	n	2	gibson_girl
-fullback	n	2	fullback
-frustrato	a	2	frustrated
-lungi	r	2	far
-fairway	n	2	fairway
-esteso	a	2	extensive
-previsto	a	2	expected
-ciascuno	a	2	every
-ottanta	a	2	eighty
-orientale	a	2	eastern
-drammaticamente	r	2	dramatically
-distintivo	a	2	distinctive
-dissolvere	v	2	dispel
-diminuito	a	2	diminished
-vice	n	2	deputy
-dentale	a	2	dental
-deltoide	n	2	deltoid
-tagliato	a	2	cut
-sgualcito	a	2	crushed
-grossolano	a	2	crude
-cps	n	2	cps
-convulsivo	a	2	convulsive
-conservativo	a	2	conservative
-riflesso_condizionato	n	2	conditioned_reflex
-clubhouse	n	2	clubhouse
-chiaro	r	2	clearly
-rivendicazione	n	2	claim
-cinematografico	a	2	cinematic
-Padri_della_Chiesa	n	2	church_father
-bodybuilders	n	2	bodybuilder
-biologico	a	2	biological
-piegato	a	2	bent
-Bench_Press	n	2	bench_press
-barbuto	a	2	bearded
-auditorium	n	2	auditorium
-presumere	v	2	assume
-autorizzato	a	2	approved
-apparente	a	2	apparent
-analettico	a	2	analeptic
-alkali_bee	n	2	alkali_bee
-fungere	v	2	act_as
-novello	a	1	young
-yankee	a	1	yankee
-miserabile	a	1	wretched
-misero	a	1	wretched
-aspirante	a	1	would-be
-lavoratore	a	1	working
-filo_elettrico	n	1	wire
-winner	n	1	winner
-ammiccare	v	1	wink
-ventoso	a	1	windy
-tortuoso	a	1	winding
-aggiudicare	v	1	win
-astuto	a	1	wily
-volontà 	n	1	will
-whisky-on-the-rocks	n	1	whisky_on_the_rocks
-Weltanschauung	n	1	weltanschauung
-colto	a	1	well-read
-Ways	n	1	way
-sprecato	a	1	wasted
-diffidente	a	1	wary
-votivo	a	1	votive
-voodoo	n	1	voodoo
-voluminoso	a	1	voluminous
-vividamente	r	1	vividly
-virtuale	a	1	virtual
-verticale	a	1	vertical
-primaverile	a	1	vernal
-vellutato	a	1	velvety
-venato	a	1	veined
-venare	v	1	vein
-svariato	a	1	various
-variante	a	1	variant
-svanito	a	1	vanished
-vano	a	1	vain
-usuale	a	1	usual
-urgentemente	r	1	urgently
-aggiornato	a	1	up-to-date
-lassù	r	1	up
-irremovibile	a	1	unshakable
-invisibile	a	1	unseen
-insensibile	a	1	unresponsive
-esposto	a	1	unprotected
-azzimo	n	1	unleavened_bread
-universalistico	a	1	universalistic
-unità 	n	1	unit
-indenne	a	1	unimpaired
-deplorevole	a	1	unfortunate
-imbarazzato	a	1	uneasy
-indesiderato	a	1	undesirable
-subacqueo	a	1	underwater
-subdolo	a	1	underhanded
-sottosviluppato	a	1	underdeveloped
-sotto	a	1	under
-acritico	a	1	uncritical
-inflessibile	a	1	uncompromising
-contrarsi	v	1	twitch
-contorcersi	v	1	twist
-ventunesimo	a	1	twenty-first
-Twenties	n	1	twenties
-dodicesimo	a	1	twelfth
-tornire	v	1	turn
-turn	v	1	turn
-Tudor	n	1	tudor
-autotrasporto	n	1	trucking
-vittorioso	a	1	triumphant
-trigonale	a	1	trigonal
-viaggiare	n	1	travel
-arruffato	a	1	tousled
-resistente	a	1	tough
-toccarsi	v	1	touch
-barcollante	a	1	tottering
-totemico	a	1	totemic
-total	n	1	total
-tortuoso	a	1	tortuous
-intorpidito	a	1	torpid
-spazzolino	n	1	toothbrush
-sincronizzazione	n	1	timing
-piastrellato	a	1	tiled
-allacciarsi	v	1	tie
-ticchettare	v	1	tick
-spingersi	v	1	thrust
-fitto	a	1	thick
-teatrale	a	1	theatrical
-teutonico	a	1	teutonic
-formidabile	a	1	terrific
-teenagers	n	1	teenager
-loquace	a	1	talky
-assumersi	v	1	take
-Taiwan	n	1	taiwan
-tackle	n	1	tackle
-sincronico	a	1	synchronous
-comprensivo	a	1	sympathetic
-simbolicamente	r	1	symbolically
-simbolico	a	1	symbolic
-sushi	n	1	sushi
-superficiale	a	1	surface
-supino	a	1	supine
-superlativo	a	1	superlative
-sovrapposto	a	1	superimposed
-superficiale	a	1	superficial
-super	a	1	super
-assolato	a	1	sunny
-incavato	a	1	sunken
-sensuale	a	1	sultry
-bastare	v	1	suffice
-sofferente	a	1	suffering
-subentrare	v	1	succeed
-subordinato	a	1	subordinate
-subdivision	n	1	subdivision
-subconscio	a	1	subconscious
-tempestato	a	1	studded
-structure	n	1	structure
-strike	n	1	strike
-allungamento	n	1	stretch
-strozzato	a	1	strangled
-St._Petersburg	n	1	st._petersburg
-cantastorie	n	1	storyteller
-interrompersi	v	1	stop
-St._Louis_Cardinals	n	1	st._louis
-St._Louis	n	1	st._louis
-stimuli	n	1	stimulus
-artificioso	a	1	stilted
-vischioso	a	1	sticky
-attenersi	v	1	stick_to
-stereofonico	a	1	stereophonic
-stereo	a	1	stereo
-stereofonia	n	1	stereo
-cancelleria	n	1	stationery
-incamminarsi	v	1	start
-scanno	n	1	stall
-acciaio_inossidabile	n	1	stainless_steel
-macchiato	a	1	stained
-stagnante	a	1	stagnant
-stabilizzante	a	1	stabilizing
-accovacciare	v	1	squat
-squadrato	a	1	squared
-quadrare	v	1	square
-quadrato	a	1	square
-sputnik	n	1	sputnik
-sorgente	n	1	spring
-spugnoso	a	1	spongy
-viziato	a	1	spoiled
-spinnability	n	1	spinnability
-precisare	v	1	specify
-specializzare	v	1	specialize
-sfavillante	a	1	sparkling
-spazioso	a	1	spacious
-sudista	a	1	southern
-fradicio	a	1	sopping
-solo	n	1	solo
-solitario	a	1	solitary
-solenne	a	1	solemn
-tenue	a	1	soft
-sodium	n	1	sodium
-sapone_in_scaglie	n	1	soap_flakes
-comodamente	r	1	snugly
-azzannare	v	1	snap
-sorridente	a	1	smiling
-schiantare	v	1	smash
-smash	n	1	smash
-pigro	a	1	sluggish
-sbobba	n	1	slop
-slice	n	1	slice
-assonnato	a	1	sleepy
-insonnolito	a	1	sleepy
-schiaffeggiare	v	1	slap
-spiovente	a	1	slanting
-gracile	a	1	skinny
-ubicazione	n	1	site
-sinusoidale	a	1	sinusoidal
-argenteo	a	1	silver
-cortezza	n	1	shortness
-radersi	v	1	shave
-duramente	r	1	sharply
-scaltro	a	1	sharp
-spigoloso	a	1	sharp
-informe	a	1	shapeless
-scosso	a	1	shaken
-svariato	a	1	several
-scenografia	n	1	set
-sensitivity	n	1	sensitivity
-autosufficiente	a	1	self-sufficient
-quartiere	n	1	section
-Segretario_di_Stato	n	1	secretary_of_state
-in_secondo_luogo	r	1	secondly
-Seattle	n	1	seattle
-scheletrico	a	1	scrawny
-sparso	a	1	scattered
-Savannah	n	1	savannah
-campionare	v	1	sample
-medesimo	a	1	same
-scroscio	n	1	salvo
-salino	a	1	salty
-saloon	n	1	saloon
-Sally	n	1	sally
-campagnolo	a	1	rural
-marcato	a	1	rugged
-rudimentale	a	1	rudimentary
-raduno	n	1	roundup
-grezzo	a	1	rough
-Rookie	n	1	rookie
-ruotare	v	1	roll
-ritualizzare	v	1	ritualize
-legittimamente	r	1	rightfully
-Richmond	n	1	richmond
-Ribes_sanguineum	n	1	ribes_sanguineum
-venerato	a	1	revered
-restituire	v	1	return
-pensionato	a	1	retired
-risultante	a	1	resultant
-restituire	v	1	restore
-rifornire	v	1	restock
-irrequieto	a	1	restless
-irrequieto	a	1	restive
-responsorio	n	1	response
-rispettato	a	1	respected
-dimettersi	v	1	resign
-riproducibile	a	1	reproducible
-repressivo	a	1	repressive
-ripetuto	a	1	repeated
-riluttante	a	1	reluctant
-Regius_Professor	n	1	regius_professor
-riformato	a	1	reformed
-reflexly	r	1	reflexly
-redimere	v	1	redeem
-ricorrente	a	1	recurrent
-rettangolare	a	1	rectangular
-Recording	n	1	recording
-riconciliare	v	1	reconcile
-riconoscibile	a	1	recognizable
-riaffermare	v	1	reassert
-riaffermare	v	1	reaffirm
-crudo	a	1	raw
-razionale	a	1	rational
-raduno	n	1	rally
-rivangare	v	1	rake_up
-rialzato	a	1	raised
-sfolgorante	a	1	radiant
-donchisciottesco	a	1	quixotic
-lamentoso	a	1	querulous
-pittoresco	a	1	quaint
-mettersi	v	1	put
-spingersi	v	1	push
-Purple_Heart	n	1	purple_heart
-punibile	a	1	punishable
-pubblicato	a	1	published
-pubblicizzare	v	1	publicize
-sistema_tolemaico	n	1	ptolemaic_system
-psicotico	a	1	psychotic
-abilità 	n	1	prowess
-provinciale	a	1	provincial
-proprietà 	n	1	property
-incline	a	1	prone
-preminente	a	1	prominent
-prominenza	n	1	prominence
-professionistico	a	1	professional
-primordiale	a	1	primitive
-rudimentale	a	1	primitive
-primordiale	a	1	primeval
-presumere	v	1	presume
-incalzante	a	1	pressing
-prescritto	a	1	prescribed
-power	n	1	power
-grondare	v	1	pour
-chiuso	n	1	pound
-Postmaster_General	n	1	postmaster_general
-postumo	a	1	posthumous
-solenne	a	1	portentous
-popolato	a	1	populous
-popolato	a	1	populated
-popolare	v	1	populate
-misero	a	1	poor
-prassi	n	1	policy
-additare	v	1	point
-commovente	a	1	poignant
-toccante	a	1	poignant
-compagno_di_giochi	n	1	playmate
-disputare	v	1	play
-play	n	1	play
-platonico	a	1	platonic
-localizzare	a	1	place
-Pittsburgh	n	1	pittsburgh
-Phoenix	n	1	phoenix
-personalizzato	a	1	personalized
-impertinente	a	1	perky
-perire	v	1	perish
-percettivo	a	1	perceptive
-popolare	v	1	people
-Pentagon	n	1	pentagon
-rattoppato	a	1	patched
-pastello	a	1	pastel
-parroco	n	1	parson
-parallela	n	1	parallel_bars
-paradossale	a	1	paradoxical
-cartaceo	a	1	papery
-pannello	n	1	pane
-pachinko	n	1	pachinko
-proprietà 	n	1	ownership
-strapiombo	n	1	overhang
-antiquato	a	1	outmoded
-uscente	a	1	outgoing
-outfield	n	1	outfield
-orientale	a	1	oriental
-organizzarsi	v	1	organize
-metodico	a	1	orderly
-arancione	a	1	orange
-ottimale	a	1	optimal
-aperto	n	1	open
-olimpionico	a	1	olympic
-old	a	1	old
-superato	a	1	old
-Oklahoma	n	1	oklahoma
-oleoso	a	1	oily
-untuoso	a	1	oily
-offrirsi	v	1	offer
-Octave	n	1	octave
-occipitale	a	1	occipital
-osservabile	a	1	observable
-osceno	a	1	obscene
-ignaro	a	1	oblivious
-neppure	r	1	not
-nostalgico	a	1	nostalgic
-Northland	n	1	northland
-inesistente	a	1	nonexistent
-nominare	n	1	nominate
-Nomia_melanderi	n	1	nomia_melanderi
-notturno	a	1	nocturnal
-Nuovo_Testamento	n	1	new_testament
-New_Mexico	n	1	new_mexico
-New_Deal	n	1	new_deal
-neonato	a	1	newborn
-nidificare	v	1	nest
-lampada_al_neon	n	1	neon_tube
-marinaro	a	1	nautical
-narrativo	a	1	narrative
-naprapath	n	1	naprapath
-naive	a	1	naive
-inchiodare	v	1	nail
-agguantare	v	1	nab
-torbido	a	1	murky
-attutito	a	1	muffled
-imbacuccato	a	1	muffled
-smorzato	a	1	muffled
-montato	a	1	mounted
-montuoso	a	1	mountainous
-motorio	a	1	motor
-altro	n	1	more
-moon	n	1	moon
-scandaloso	a	1	monstrous
-monofonico	a	1	monophonic
-monomero	n	1	monomer
-money	n	1	money
-moderatamente	r	1	moderately
-modale	a	1	modal
-finto	a	1	mock
-misto	a	1	mixed
-brumoso	a	1	misty
-Missouri	n	1	missouri
-perso	a	1	missing
-Minneapolis	n	1	minneapolis
-insensato	a	1	mindless
-Milwaukee	n	1	milwaukee
-metrazol	n	1	metrazol
-metodico	a	1	methodical
-mero	a	1	mere
-membership	n	1	membership
-melodrammatico	a	1	melodramatic
-marketing	n	1	marketing
-marcato	a	1	marked
-Corpo_dei_Marine	n	1	marine_corps
-marginalmente	r	1	marginally
-mantrap	n	1	mantrap
-maniacale	a	1	maniacal
-Manhattan	n	1	manhattan
-deforme	a	1	malformed
-stipulare	v	1	make
-maestoso	a	1	majestic
-storpiato	a	1	maimed
-magnetico	a	1	magnetic
-furioso	a	1	mad
-perduto	a	1	lost
-Lorelei	n	1	lorelei
-incombere	v	1	loom
-somigliare	v	1	look_like
-Long_Island	n	1	long_island
-pagnotta	n	1	loaf
-Liverpool	n	1	liverpool
-letterato	a	1	literate
-listare	v	1	list
-rugoso	a	1	lined
-Lincoln	n	1	lincoln
-lilla	a	1	lilac
-autorizzato	a	1	licensed
-dissoluto	a	1	lewd
-prestarsi	v	1	lend
-contratto_di_locazione	n	1	lease
-appoggiarsi	v	1	lean
-preminente	a	1	leading
-leaders	n	1	leaders
-lanciamissili	n	1	launcher
-allampanato	a	1	lanky
-landler	n	1	landler
-carente	a	1	lacking
-inginocchiare	v	1	kneel
-Kipling	n	1	kipling
-mantenersi	v	1	keep
-tenersi	v	1	keep
-Kansas	n	1	kansas
-giovanile	a	1	juvenile
-congiunto	a	1	joint
-Jazz_Festival	n	1	jazz_festival
-Janissaries	n	1	janissary
-frastagliato	a	1	jagged
-ionico	a	1	ionic
-invisibile	a	1	invisible
-intimamente	r	1	intimately
-interpretabile	a	1	interpretable
-intermittente	a	1	intermittent
-intensamente	r	1	intensely
-programmato	a	1	intended
-integrato	a	1	integrated
-illeso	a	1	intact
-intatto	a	1	intact
-insufficiente	a	1	insufficient
-inside_out	r	1	inside_out
-inospitale	a	1	inhospitable
-inflessibile	a	1	inflexible
-immancabile	a	1	inevitable
-rivoluzione_industriale	n	1	industrial_revolution
-induced	v	1	induce
-indignato	a	1	indignant
-Indianapolis	n	1	indianapolis
-infaticabile	a	1	indefatigable
-incompleto	a	1	incomplete
-incandescente	a	1	incandescent
-incapacità 	n	1	inability
-improvvisato	a	1	improvised
-impotente	a	1	impotent
-imperiale	a	1	imperial
-immunità 	n	1	immunity
-imminente	a	1	imminent
-immenso	a	1	immense
-Illinois	n	1	illinois
-Ile_de_France	n	1	ile-de-france
-ozioso	a	1	idle
-idiota	a	1	idiotic
-gelido	a	1	icy
-idrato	a	1	hydrous
-rauco	a	1	husky
-capannello	n	1	huddle
-h	n	1	hr
-rovente	a	1	hot
-terrificante	a	1	horrifying
-orrido	a	1	horrid
-Santo_Sacrificio	n	1	holy_sacrament
-hole	n	1	hole
-indire	n	1	hold
-indire	v	1	hold
-high	a	1	high
-eredità 	n	1	heredity
-impotente	a	1	helpless
-colmare	v	1	heap
-schiudersi	v	1	hatch
-laborioso	a	1	hardworking
-sodo	r	1	hard
-Guy_Fawkes_Day	n	1	guy_fawkes_day
-sempliciotto	a	1	gullible
-agghiacciante	a	1	gruesome
-grottesco	n	1	grotesque
-brizzolato	a	1	grizzled
-sorrisetto	n	1	grin
-green	n	1	green
-gravità 	n	1	gravity
-accordato	a	1	granted
-Venerdì_Santo	n	1	good_friday
-andato	a	1	gone
-risalire	v	1	go_back
-abbandonarsi	v	1	give_way
-volgere	v	1	get
-George_Washington	n	1	george_washington
-generatrice	n	1	generator
-generalizzare	v	1	generalize
-general	a	1	general
-raduno	n	1	gathering
-lampada_a_gas	n	1	gas_lamp
-furtivo	a	1	furtive
-scalpore	n	1	furor
-furlongs	n	1	furlong
-aggrottare	v	1	frown
-amico	a	1	friendly
-Freud	n	1	freud
-focalizzare	v	1	focus
-fluido	a	1	fluid
-fluente	a	1	flowing
-galleggiare	v	1	float
-appariscente	a	1	flashy
-svasatura	n	1	flare
-adattarsi	v	1	fit
-finitura	n	1	finishing
-finitura	n	1	finish
-rifinitura	n	1	finish
-benissimo	r	1	fine
-filmato	n	1	film
-difendersi	v	1	fight_back
-Federal_Housing_Administration	n	1	federal_housing_administration
-fantasioso	a	1	fantastic
-fans	n	1	fan
-dissolvenza	n	1	fadeout
-sbiadito	a	1	faded
-scolorito	a	1	faded
-atteso	a	1	expected
-allargato	a	1	expanded
-esotico	a	1	exotic
-scambiarsi	v	1	exchange
-eventuale	a	1	eventual
-addirittura	r	1	even
-neppure	r	1	even
-preventivo	n	1	estimate
-costituito	a	1	established
-scappatella	n	1	escapade
-uguagliare	v	1	equate
-epigramma	n	1	epigram
-trincerarsi	v	1	entrench
-iscriversi	v	1	enter
-enigmatico	a	1	enigmatic
-impegnarsi	v	1	engage
-commovente	a	1	emotional
-emozionale	a	1	emotional
-allungato	a	1	elongated
-undicesimo	a	1	eleventh
-elettricità 	n	1	electricity
-egocentrico	a	1	egocentric
-didattico	a	1	educational
-didattica	n	1	education
-editor	n	1	editor
-agevole	a	1	easy
-anticipato	a	1	early
-desideroso	a	1	eager
-resistente	a	1	durable
-duplice	a	1	dual
-ubriaco	n	1	drunk
-siccità 	n	1	drought
-mascherarsi	v	1	dress_up
-discendente	a	1	downward
-down	n	1	down
-laggiù	r	1	down
-bastare	v	1	do
-compire	v	1	do
-divino	n	1	divine
-diviso	a	1	divided
-stravolto	a	1	distraught
-distante	a	1	distant
-disservizio	n	1	disservice
-squalificare	v	1	disqualify
-squalificato	a	1	disqualified
-disinteressato	a	1	disinterested
-disintegrazione	n	1	disintegration
-liberarsi	v	1	disengage
-deludente	a	1	disappointing
-direzionale	a	1	directional
-direct	a	1	direct
-diplomatico	a	1	diplomatic
-minuto	a	1	diminutive
-dignitario	n	1	dignitary
-differenziale	a	1	differential
-demoniaco	a	1	devilish
-auspicabile	a	1	desirable
-discendente	a	1	descending
-Ministero_del_Lavoro	n	1	department_of_labor
-Dipartimento_di_Agricoltura	n	1	department_of_agriculture
-fitto	a	1	dense
-confessionale	a	1	denominational
-pudico	a	1	demure
-fare	r	1	deliver
-squisito	a	1	delicious
-insufficiente	a	1	deficient
-dichiarazione_di_guerra	n	1	declaration
-determinante	a	1	decisive
-decentralizzare	v	1	decentralize
-caro	r	1	dearly
-occuparsi	v	1	deal
-caduto	a	1	dead
-smagliante	a	1	dazzling
-datato	a	1	dated
-oscurità 	n	1	darkness
-tenebroso	a	1	dark
-screziato	a	1	dappled
-minuto	a	1	dainty
-curricula	n	1	curriculum
-cagnaccio	n	1	cur
-coppetta	n	1	cup
-culminare	v	1	culminate
-rudimentale	a	1	crude
-accucciarsi	v	1	crouch
-acquattare	v	1	crouch
-incrociato	a	1	cross
-sconquassato	a	1	cranky
-cowboy	n	1	cowboy
-schedina	n	1	coupon
-cosec	n	1	cosecant
-correlare	v	1	correlate
-coquette	n	1	coquette
-coordinato	a	1	coordinated
-coordinato	a	1	coordinate
-cooperare	v	1	cooperate
-Cook	n	1	cook
-convergere	v	1	converge
-contiguo	a	1	contiguous
-consultarsi	v	1	consult
-conformarsi	v	1	conform_to
-conformarsi	v	1	conform
-confermazione	n	1	confirmation
-confidenziale	a	1	confidential
-confederato	a	1	confederate
-condensato	a	1	condensed
-simultaneo	a	1	concurrent
-concertato	a	1	concerted
-concettualizzazione	n	1	conceptualization
-esauriente	a	1	comprehensive
-questore	n	1	commissioner
-commando	n	1	commando
-comandamento	n	1	commandment
-imbattere	v	1	come_across
-provenire	v	1	come
-incolore	a	1	colorless
-coesivo	a	1	cohesive
-coesistente	a	1	coexistent
-clown	n	1	clown
-approfondito	a	1	close
-abbarbicarsi	v	1	cling_to
-aggrappare	v	1	cling
-geniale	a	1	clever
-palese	a	1	clear
-Clean	n	1	clean
-amministrazione_pubblica	n	1	civil_service
-civilizzazione	n	1	civilization
-Città_di_Dio	n	1	city_of_god
-città 	n	1	city
-prescegliere	v	1	choose
-cavalleresco	a	1	chivalrous
-caritatevole	a	1	charitable
-incaricare	v	1	charge
-tariffa	n	1	charge
-caratterizzazione	n	1	characterization
-casuale	a	1	chance
-Century	n	1	century
-censimento	n	1	census
-casual	a	1	casual
-casuale	a	1	casual
-candidatura	n	1	candidacy
-Cambridge	n	1	cambridge
-accaparrarsi	v	1	buy_up
-trafficato	a	1	busy
-galleggiante	a	1	buoyant
-bunt	n	1	bunt
-Bumblebees	n	1	bumblebee
-voluminoso	a	1	bulky
-bruto	a	1	brute
-spazzolino	n	1	brush
-spezzato	a	1	broken
-Broadway	n	1	broadway
-marcato	a	1	broad
-apportare	v	1	bring
-brillantemente	r	1	brilliantly
-briefing	n	1	briefing
-trasgredire	v	1	break
-squillante	a	1	brassy
-intrecciato	a	1	braided
-rassegnarsi	v	1	bow
-legato	a	1	bound
-bouncing_betties	n	1	bouncing_betty
-mutuatario	n	1	borrower
-prenotato	a	1	booked
-ossuto	a	1	bony
-cappellino	n	1	bonnet
-bodybuilding	n	1	bodybuilding
-smussato	a	1	blunt
-dissanguare	v	1	bleed
-spoglio	a	1	bleak
-Birmingham	n	1	birmingham
-vincolante	a	1	binding
-occhialuto	a	1	bespectacled
-vantaggiare	v	1	benefit
-bench	n	1	bench
-belligerante	a	1	belligerent
-tardivo	a	1	belated
-muscoloso	a	1	beefy
-provenire	v	1	be
-spinto	a	1	bawdy
-baronale	a	1	baronial
-banker	n	1	banker
-calvo	a	1	bald
-assiomatico	a	1	axiomatic
-award	n	1	award
-atteso	a	1	awaited
-ausiliare	a	1	auxiliary
-asintotico	a	1	asymptotic
-cinereo	a	1	ashen
-ascendente	a	1	ascending
-artificiale	a	1	artificial
-Arkansas	n	1	arkansas
-acquoso	a	1	aqueous
-accostarsi	v	1	approach
-applicato	a	1	applied
-applicabilità 	n	1	applicability
-distante	r	1	apart
-anti	a	1	anti
-anomia	n	1	anomie
-anomic	a	1	anomic
-angolare	a	1	angular
-rabbioso	a	1	angry
-ambivalente	a	1	ambivalent
-ambiguità 	n	1	ambiguity
-sbalordito	a	1	amazed
-dilettantistico	a	1	amateur
-alundum	n	1	alundum
-alkylbenzenesulfonates	n	1	alkylbenzenesulfonate
-Alabama	n	1	alabama
-arieggiato	a	1	airy
-agglomerare	v	1	agglomerate
-agglomerarsi	v	1	agglomerate
-postumo	n	1	aftereffect
-avventurarsi	v	1	adventure
-aderire	v	1	adhere
-adattarsi	v	1	adapt
-intensamente	r	1	acutely
-attività 	n	1	activity
-acrobatico	a	1	acrobatic
-abituato	a	1	accustomed
-accusatorio	a	1	accusing
-accelerato	a	1	accelerated
-absolute	a	1	absolute
-Abe_Lincoln	n	1	abraham_lincoln
-abbreviato	a	1	abbreviated
-3_hitter	n	1	3-hitter
-20th	a	1	20th
-19th	a	1	19th
-undef	r	11	
-classificare	n	1	
-dimenticare	n	1	
-elaborare	n	1	
-evitare	n	1	
-io	v	1	
-questo	r	1	
-sopraffatto	v	1	
-svolgimento	n	1	
-televisivo	n	1	
+densità	n	7	density	04941453-n
+undef	n	7		
+piÃ¹	r	6	more	00099341-r
+termale	a	5	thermal	02814453-a
+undef	v	5		
+trattarsi	v	4		
+ingiusto	a	3	unfair	00957176-a
+cosÃ¬	r	3	so	00146594-r
+piÃ¹	r	3	most	00111609-r
+stazione_di_servizio	n	3	garage	03416489-n
+record_mondiale	n	2	world_record	00063559-n
+volgare	a	2	vulgar	01950198-a
+voluttuoso	a	2	voluptuous	02132967-a
+visuale	a	2	visual	02869563-a
+vibrante	a	2	vibrant	02280969-a
+Utah	n	2	utah	09147046-n
+impreparato	a	2	unprepared	01845160-a
+impassibile	a	2	unmoved	01560320-a
+unanime	a	2	unanimous	00553732-a
+volgere	v	2	turn	01907258-v
+triplo	n	2	triple	00132982-n
+Texas	n	2	texas	09141526-n
+sottendere	v	2	subtend	02693842-v
+risvegliare	v	2	stir	01761706-v
+aderire	v	2	stick_to	01356750-v
+organico	n	2	staff	08439955-n
+struttura_sociale	n	2	social_structure	08378819-n
+liscio	a	2	smooth	02236842-a
+esiguo	a	2	small	01391351-a
+sedicesimo	a	2	sixteenth	02204131-a
+laterale	a	2	side	08649345-n
+sic	r	2	sic	00146500-r
+settimo	a	2	seventh	02202979-a
+serratus	n	2	serratus	05550330-n
+righthander	n	2	right-hander	10387324-n
+reversibile	a	2	reversible	01758934-a
+restituire	v	2	repay	02284951-v
+reliquia	n	2	relic	04073547-n
+registrato	a	2	recorded	01422956-a
+rassicurare	v	2	reassure	01766407-v
+giungere	v	2	reach	00743344-v
+razionalizzare	v	2	rationalize	00894738-v
+viola	a	2	purple	00380312-a
+pianificatore	n	2	planner	10438172-n
+pittoresco	a	2	picturesque	00219924-a
+Philadelphia	n	2	philadelphia	09136182-n
+Phase	n	2	phase	15290337-n
+par	n	2	par	13596756-n
+operistico	a	2	operatic	02912383-a
+nazionalistico	a	2	nationalistic	01740358-a
+muscoloso	a	2	muscular	00828336-a
+Montreal	n	2	montreal	08829533-n
+mancante	a	2	missing	02127853-v
+Massachusetts	n	2	massachusetts	09095023-n
+Corpo_della_Marina	n	2	marine_corps	08192970-n
+manoscritto	n	2	manuscript	06406979-n
+perso	a	2	lost	01450969-a
+vicegovernatore	n	2	lieutenant_governor	10260322-n
+colto	a	2	learned	02084358-a
+ionizzato	a	2	ionized	00356110-a
+integrante	a	2	integral	01348528-a
+inibitore	a	2	inhibitory	02004176-a
+idrofobo	a	2	hydrophobic	00491749-a
+umiliante	a	2	humiliating	00752555-a
+Houston	n	2	houston	09144851-n
+scuola_media_superiore	n	2	high_school	08409617-n
+ibernare	v	2	hibernate	00015946-v
+ecco	r	2	here	00108773-r
+Harlem	n	2	harlem	09121334-n
+ginnastico	a	2	gymnastic	00032497-a
+ginnico	a	2	gymnastic	00032497-a
+guanto	n	2	glove	02800213-n
+Gibson_Girl	n	2	gibson_girl	10129338-n
+fullback	n	2	fullback	10115430-n
+formarsi	v	2	form	02623906-v
+lungi	r	2	far	00101323-r
+fairway	n	2	fairway	08569319-n
+esteso	a	2	extensive	01386234-a
+previsto	a	2	expected	00929567-a
+ciascuno	a	2	every	02269794-a
+ottanta	a	2	eighty	02194151-a
+orientale	a	2	eastern	00823971-a
+drammaticamente	r	2	dramatically	00138945-r
+distintivo	a	2	distinctive	00357556-a
+dissolvere	v	2	dispel	02002720-v
+diminuito	a	2	diminished	01274945-a
+fioco	a	2	dim	00275290-a
+vice	n	2	deputy	10005548-n
+dentale	a	2	dental	02711098-a
+deltoide	n	2	deltoid	05549350-n
+tagliato	a	2	cut	00661278-a
+sgualcito	a	2	crushed	02240668-a
+grossolano	a	2	crude	02229584-a
+cps	n	2	cps	15279104-n
+convulsivo	a	2	convulsive	02303754-a
+conservativo	a	2	conservative	00574422-a
+riflesso_condizionato	n	2	conditioned_reflex	00864226-n
+clubhouse	n	2	clubhouse	03054311-n
+chiaro	r	2	clearly	00039058-r
+rivendicazione	n	2	claim	06729864-n
+cinematografico	a	2	cinematic	02696795-a
+Padri_della_Chiesa	n	2	church_father	09921792-n
+cerebrale	a	2	cerebral	01927455-a
+bodybuilders	n	2	bodybuilder	09862845-n
+biologico	a	2	biological	02665803-a
+piegato	a	2	bent	06199702-n
+Bench_Press	n	2	bench_press	00626574-n
+barbuto	a	2	bearded	02153965-a
+auditorium	n	2	auditorium	02758134-n
+presumere	v	2	assume	00632236-v
+autorizzato	a	2	approved	00179035-a
+analettico	a	2	analeptic	02309800-a
+alkali_bee	n	2	alkali_bee	02210921-n
+fungere	v	2	act_as	02671613-v
+novello	a	1	young	01646941-a
+yankee	a	1	yankee	01606470-a
+miserabile	a	1	wretched	02347086-a
+misero	a	1	wretched	02347086-a
+aspirante	a	1	would-be	00104825-a
+lavoratore	a	1	working	00864461-a
+filo_elettrico	n	1	wire	04594489-n
+winner	n	1	winner	10782940-n
+ammiccare	v	1	wink	00008299-v
+ventoso	a	1	windy	00305225-a
+tortuoso	a	1	winding	02313784-a
+aggiudicare	v	1	win	02288295-v
+astuto	a	1	wily	00148078-a
+volontÃ 	n	1	will	05983654-n
+whisky-on-the-rocks	n	1	whisky_on_the_rocks	07918601-n
+Weltanschauung	n	1	weltanschauung	06211389-n
+colto	a	1	well-read	01308259-a
+Ways	n	1	way	00415676-n
+sprecato	a	1	wasted	01450293-a
+diffidente	a	1	wary	00162386-a
+risvegliare	v	1	wake_up	00018813-v
+risvegliare	v	1	wake_up	00018526-v
+votivo	a	1	votive	00573666-a
+voodoo	n	1	voodoo	03603958-n
+voluminoso	a	1	voluminous	01390900-a
+vividamente	r	1	vividly	00245843-r
+virtuale	a	1	virtual	01941814-a
+vittimizzare	v	1	victimize	02574205-v
+vittimizzare	v	1	victimize	02500619-v
+verticale	a	1	vertical	01233347-a
+primaverile	a	1	vernal	01649720-a
+vellutato	a	1	velvety	02238310-a
+venato	a	1	veined	01791138-a
+venare	v	1	vein	01696350-v
+svariato	a	1	various	02065665-a
+variante	a	1	variant	02068277-a
+svanito	a	1	vanished	00928414-a
+vano	a	1	vain	01866812-a
+usuale	a	1	usual	00489108-a
+urgentemente	r	1	urgently	00072849-r
+aggiornato	a	1	up-to-date	00668208-a
+lassù	r	1	up	00096333-r
+intatto	a	1	untouched	01086339-a
+intatto	a	1	untouched	00072790-a
+irremovibile	a	1	unshakable	01990653-a
+invisibile	a	1	unseen	05952199-n
+insensibile	a	1	unresponsive	01999766-a
+esposto	a	1	unprotected	01886407-a
+azzimo	n	1	unleavened_bread	07684164-n
+universalistico	a	1	universalistic	02952814-a
+unitÃ 	n	1	unit	09465459-n
+indenne	a	1	unimpaired	01275395-a
+deplorevole	a	1	unfortunate	01049462-a
+imbarazzato	a	1	uneasy	00822449-a
+indesiderato	a	1	undesirable	00733905-a
+subacqueo	a	1	underwater	02472252-a
+subdolo	a	1	underhanded	02319346-a
+sottosviluppato	a	1	underdeveloped	01302544-a
+sotto	a	1	under	00793682-a
+acritico	a	1	uncritical	00650351-a
+inflessibile	a	1	uncompromising	01025913-a
+contrarsi	v	1	twitch	00009631-v
+contorcersi	v	1	twist	01868370-v
+ventunesimo	a	1	twenty-first	02204823-a
+Twenties	n	1	twenties	15148867-n
+dodicesimo	a	1	twelfth	02203629-a
+tornire	v	1	turn	01584450-v
+turn	v	1	turn	00146138-v
+volgere	v	1	turn	00138508-v
+Tudor	n	1	tudor	08159031-n
+autotrasporto	n	1	trucking	01105909-n
+trionfante	a	1	triumphant	00704898-a
+vittorioso	a	1	triumphant	00704898-a
+trionfante	a	1	triumphant	00695209-a
+trigonale	a	1	trigonal	02373467-a
+viaggiare	n	1	travel	00295701-n
+allenato	a	1	trained	01911683-a
+allenato	a	1	trained	00603298-v
+arruffato	a	1	tousled	02425220-a
+resistente	a	1	tough	02447344-a
+toccarsi	v	1	touch	01205696-v
+barcollante	a	1	tottering	02305484-a
+totemico	a	1	totemic	02954331-a
+total	n	1	total	04353803-n
+tortuoso	a	1	tortuous	02176841-a
+intorpidito	a	1	torpid	00034322-a
+spazzolino	n	1	toothbrush	04453156-n
+sincronizzazione	n	1	timing	05046009-n
+piastrellato	a	1	tiled	01698103-a
+allacciarsi	v	1	tie	01285440-v
+ticchettare	v	1	tick	02175578-v
+spingersi	v	1	thrust	02062212-v
+fitto	a	1	thick	00539009-a
+teatrale	a	1	theatrical	00796047-a
+teutonico	a	1	teutonic	02958126-a
+formidabile	a	1	terrific	01676517-a
+teenagers	n	1	teenager	09772029-n
+tecnicamente	r	1	technically	00126972-r
+tecnicamente	r	1	technically	00126837-r
+loquace	a	1	talky	02384077-a
+assumersi	v	1	take	00669762-v
+Taiwan	n	1	taiwan	08730550-n
+tackle	n	1	tackle	10688070-n
+sincronico	a	1	synchronous	02377651-a
+comprensivo	a	1	sympathetic	02374914-a
+simbolicamente	r	1	symbolically	00116280-r
+simbolico	a	1	symbolic	01982186-a
+sushi	n	1	sushi	07879450-n
+superficiale	a	1	surface	02471091-a
+presunto	a	1	supposed	01414137-a
+presunto	a	1	supposed	00917300-v
+supino	a	1	supine	01239781-a
+superlativo	a	1	superlative	02343517-a
+sovrapposto	a	1	superimposed	01469263-v
+superficiale	a	1	superficial	01873406-a
+super	a	1	super	02341864-a
+assolato	a	1	sunny	00363938-a
+incavato	a	1	sunken	02264521-a
+sensuale	a	1	sultry	01257145-a
+bastare	v	1	suffice	02669789-v
+sofferente	a	1	suffering	02458871-a
+subentrare	v	1	succeed	02406585-v
+subordinato	a	1	subordinate	00792991-a
+subdivision	n	1	subdivision	08401248-n
+subconscio	a	1	subconscious	00573093-a
+tempestato	a	1	studded	00059782-a
+structure	n	1	structure	05225602-n
+strike	n	1	strike	00977301-n
+allungamento	n	1	stretch	00628692-n
+strozzato	a	1	strangled	01316808-a
+St._Petersburg	n	1	st._petersburg	09075007-n
+cantastorie	n	1	storyteller	10345804-n
+interrompersi	v	1	stop	02680814-v
+St._Louis_Cardinals	n	1	st._louis	09107626-n
+St._Louis	n	1	st._louis	09107626-n
+stimuli	n	1	stimulus	05827684-n
+artificioso	a	1	stilted	00073465-a
+vischioso	a	1	sticky	00053691-a
+attenersi	v	1	stick_to	01356750-v
+stereofonico	a	1	stereophonic	00240655-a
+stereofonia	n	1	stereo	04315948-n
+stereo	a	1	stereo	00240655-a
+cancelleria	n	1	stationery	06258852-n
+incamminarsi	v	1	start	02014165-v
+scanno	n	1	stall	02873839-n
+acciaio_inossidabile	n	1	stainless_steel	14802921-n
+macchiato	a	1	stained	00402004-a
+stagnante	a	1	stagnant	01241248-a
+stabilizzante	a	1	stabilizing	01197737-a
+accovacciare	v	1	squat	01545314-v
+squadrato	a	1	squared	02043729-a
+quadrato	a	1	square	02043217-a
+quadrare	v	1	square	00640136-v
+sputnik	n	1	sputnik	04290615-n
+sorgente	n	1	spring	08508361-n
+spugnoso	a	1	spongy	01154964-a
+viziato	a	1	spoiled	02527651-v
+spinnability	n	1	spinnability	04720685-n
+precisare	v	1	specify	00715541-v
+specializzare	v	1	specialize	01021973-v
+sfavillante	a	1	sparkling	02299748-a
+spazioso	a	1	spacious	01384212-a
+sudista	a	1	southern	01606648-a
+fradicio	a	1	sopping	02284429-v
+solo	n	1	solo	01257418-n
+solitario	a	1	solitary	02253205-a
+solenne	a	1	solemn	02119213-a
+tenue	a	1	soft	01156112-a
+sodium	n	1	sodium	14655371-n
+sapone_in_scaglie	n	1	soap_flakes	04254319-n
+comodamente	r	1	snugly	00193316-r
+azzannare	v	1	snap	00355670-v
+sorridente	a	1	smiling	00363031-a
+smash	n	1	smash	07410207-n
+schiantare	v	1	smash	01401772-v
+pigro	a	1	sluggish	00981703-a
+sbobba	n	1	slop	07805006-n
+slice	n	1	slice	00572043-n
+assonnato	a	1	sleepy	00189017-a
+insonnolito	a	1	sleepy	00189017-a
+schiaffeggiare	v	1	slap	01416871-v
+spiovente	a	1	slanting	01234747-a
+gracile	a	1	skinny	00990192-a
+ubicazione	n	1	site	08651247-n
+sinusoidale	a	1	sinusoidal	02317145-a
+argenteo	a	1	silver	00283327-a
+cortezza	n	1	shortness	05133944-n
+radersi	v	1	shave	00037298-v
+duramente	r	1	sharply	00049947-r
+spigoloso	a	1	sharp	00780352-a
+scaltro	a	1	sharp	00438909-a
+informe	a	1	shapeless	02151837-a
+scosso	a	1	shaken	00086005-a
+svariato	a	1	several	00494409-a
+scenografia	n	1	set	04297476-n
+sensitivity	n	1	sensitivity	05019661-n
+autosufficiente	a	1	self-sufficient	00729439-a
+quartiere	n	1	section	08648322-n
+Segretario_di_Stato	n	1	secretary_of_state	10103794-n
+in_secondo_luogo	r	1	secondly	00102881-r
+Seattle	n	1	seattle	09154178-n
+scheletrico	a	1	scrawny	00990192-a
+scolastico	a	1	scholastic	02793094-a
+scolastico	a	1	scholastic	02792903-a
+sparso	a	1	scattered	00542099-a
+Savannah	n	1	savannah	09077821-n
+campionare	v	1	sample	01195299-v
+medesimo	a	1	same	02068476-a
+scroscio	n	1	salvo	00988320-n
+salino	a	1	salty	02306874-a
+saloon	n	1	saloon	04018399-n
+Sally	n	1	sally	06767777-n
+campagnolo	a	1	rural	02050452-a
+marcato	a	1	rugged	00707366-a
+rudimentale	a	1	rudimentary	00524965-a
+raduno	n	1	roundup	00921627-n
+grezzo	a	1	rough	02238462-a
+Rookie	n	1	rookie	09981834-n
+ruotare	v	1	roll	01866192-v
+derubare	v	1	rob	02321391-v
+derubare	v	1	rob	02319050-v
+ritualizzare	v	1	ritualize	00525446-v
+legittimamente	r	1	rightfully	00223000-r
+Richmond	n	1	richmond	09150047-n
+Ribes_sanguineum	n	1	ribes_sanguineum	12805899-n
+venerato	a	1	revered	01226660-a
+restituire	v	1	return	01433159-v
+pensionato	a	1	retired	00035368-a
+risultante	a	1	resultant	00122844-a
+restituire	v	1	restore	02310482-v
+rifornire	v	1	restock	02322924-v
+irrequieto	a	1	restless	00590271-a
+irrequieto	a	1	restive	02406370-a
+responsorio	n	1	response	06385582-n
+rispettato	a	1	respected	01983548-a
+dimettersi	v	1	resign	02367032-v
+riproducibile	a	1	reproducible	01867996-a
+repressivo	a	1	repressive	02004176-a
+ripetuto	a	1	repeated	00592880-a
+riluttante	a	1	reluctant	01293882-a
+Regius_Professor	n	1	regius_professor	10517283-n
+riformato	a	1	reformed	01691975-a
+reflexly	r	1	reflexly	00191776-r
+redimere	v	1	redeem	02551602-v
+ricorrente	a	1	recurrent	00592880-a
+rettangolare	a	1	rectangular	02048977-a
+Recording	n	1	recording	04063661-n
+riconciliare	v	1	reconcile	00764902-v
+riconoscibile	a	1	recognizable	01272920-a
+riaffermare	v	1	reassert	01012073-v
+riaffermare	v	1	reaffirm	01011923-v
+crudo	a	1	raw	00958020-a
+razionale	a	1	rational	01925372-a
+raduno	n	1	rally	08358332-n
+rivangare	v	1	rake_up	00721755-v
+rialzato	a	1	raised	01207835-a
+sfolgorante	a	1	radiant	00280463-a
+donchisciottesco	a	1	quixotic	01837182-a
+lamentoso	a	1	querulous	00513981-a
+pittoresco	a	1	quaint	00969556-a
+mettersi	v	1	put	01494310-v
+spingersi	v	1	push	01871979-v
+Purple_Heart	n	1	purple_heart	06708475-n
+punibile	a	1	punishable	01322846-a
+pubblicato	a	1	published	00470930-a
+pubblicizzare	v	1	publicize	00975902-v
+sistema_tolemaico	n	1	ptolemaic_system	05890809-n
+psicotico	a	1	psychotic	02077469-a
+abilitÃ 	n	1	prowess	05638987-n
+provinciale	a	1	provincial	02785874-a
+proprietÃ 	n	1	property	04916342-n
+incline	a	1	prone	01292884-a
+preminente	a	1	prominent	00580805-a
+prominenza	n	1	prominence	14433587-n
+professionistico	a	1	professional	01868724-a
+primordiale	a	1	primitive	09627462-n
+rudimentale	a	1	primitive	00818175-a
+primordiale	a	1	primeval	00813589-a
+presumere	v	1	presume	00632236-v
+incalzante	a	1	pressing	00713558-a
+prescritto	a	1	prescribed	00720212-a
+power	n	1	power	11453016-n
+grondare	v	1	pour	02069248-v
+chiuso	n	1	pound	13720096-n
+Postmaster_General	n	1	postmaster_general	10459764-n
+postumo	a	1	posthumous	00817242-a
+possibilitÃ 	n	1	possibility	14481929-n
+possibilitÃ 	n	1	possibility	05951180-n
+solenne	a	1	portentous	02164165-a
+popolato	a	1	populous	01312376-a
+popolato	a	1	populated	01312215-a
+popolare	v	1	populate	02649830-v
+misero	a	1	poor	08179205-n
+politicamente	r	1	politically	00115859-r
+politicamente	r	1	politically	00115745-r
+prassi	n	1	policy	05901508-n
+additare	v	1	point	01152214-v
+toccante	a	1	poignant	01712174-a
+commovente	a	1	poignant	01560821-a
+compagno_di_giochi	n	1	playmate	10441037-n
+disputare	v	1	play	01072949-v
+play	n	1	play	00557588-n
+platonico	a	1	platonic	02780680-a
+piazzare	v	1	place	02392762-v
+localizzare	a	1	place	01494310-v
+piazzare	v	1	place	01494310-v
+Pittsburgh	n	1	pittsburgh	09136582-n
+illustrato	a	1	pictorial	02861617-a
+illustrato	a	1	pictorial	01941026-a
+Phoenix	n	1	phoenix	09058376-n
+personalizzato	a	1	personalized	01768252-a
+impertinente	a	1	perky	00363621-a
+perire	v	1	perish	00358431-v
+percussione	n	1	percussion	00545059-n
+percussione	n	1	percussion	00377813-n
+percettivo	a	1	perceptive	02868326-a
+popolare	v	1	people	00451461-v
+Pentagon	n	1	pentagon	03912496-n
+rattoppato	a	1	patched	01640356-a
+pastello	a	1	pastel	00409207-a
+parroco	n	1	parson	09983572-n
+parallela	n	1	parallel_bars	03888605-n
+paradossale	a	1	paradoxical	00939895-a
+cartaceo	a	1	papery	02414599-a
+pannello	n	1	pane	03881893-n
+pachinko	n	1	pachinko	00459465-n
+proprietÃ 	n	1	ownership	13240514-n
+strapiombo	n	1	overhang	03864356-n
+antiquato	a	1	outmoded	00974159-a
+uscente	a	1	outgoing	01295443-a
+outfield	n	1	outfield	03859717-n
+orientale	a	1	oriental	00825807-a
+organizzarsi	v	1	organize	02434238-v
+metodico	a	1	orderly	01666126-a
+arancione	a	1	orange	00378892-a
+ottimale	a	1	optimal	00228645-a
+aperto	n	1	open	08632423-n
+olimpionico	a	1	olympic	03093076-a
+old	a	1	old	01643620-a
+superato	a	1	old	01638438-a
+Oklahoma	n	1	oklahoma	09131654-n
+oleoso	a	1	oily	00992432-a
+untuoso	a	1	oily	00992432-a
+offrirsi	v	1	offer	02425112-v
+Octave	n	1	octave	15296258-n
+occipitale	a	1	occipital	02934994-a
+osservabile	a	1	observable	01287486-a
+osceno	a	1	obscene	00684163-a
+ignaro	a	1	oblivious	00192026-a
+neppure	r	1	not	00024073-r
+nostalgico	a	1	nostalgic	00889098-a
+Northland	n	1	northland	08562990-n
+inesistente	a	1	nonexistent	00927578-a
+nominare	n	1	nominate	00879540-v
+Nomia_melanderi	n	1	nomia_melanderi	02210921-n
+notturno	a	1	nocturnal	00678923-a
+Nuovo_Testamento	n	1	new_testament	06453849-n
+New_Mexico	n	1	new_mexico	09114696-n
+New_Deal	n	1	new_deal	06657109-n
+neonato	a	1	newborn	01649184-a
+nidificare	v	1	nest	02654947-v
+lampada_al_neon	n	1	neon_tube	03818343-n
+marinaro	a	1	nautical	02889746-a
+narrativo	a	1	narrative	00498912-a
+naprapath	n	1	naprapath	09625309-n
+naive	a	1	naive	02271544-a
+inchiodare	v	1	nail	01401772-v
+agguantare	v	1	nab	01600759-v
+torbido	a	1	murky	00433529-a
+imbacuccato	a	1	muffled	01696855-a
+attutito	a	1	muffled	01454985-a
+smorzato	a	1	muffled	01454985-a
+montato	a	1	mounted	00159267-a
+montuoso	a	1	mountainous	02240490-a
+motorio	a	1	motor	00334245-a
+altro	n	1	more	11190183-n
+moon	n	1	moon	09358550-n
+scandaloso	a	1	monstrous	01389738-a
+monofonico	a	1	monophonic	00241079-a
+monomero	n	1	monomer	14682963-n
+money	n	1	money	13384557-n
+modernizzare	v	1	modernize	00411020-v
+modernizzare	v	1	modernize	00262076-v
+moderatamente	r	1	moderately	00035718-r
+modale	a	1	modal	01594811-a
+finto	a	1	mock	01117823-a
+misto	a	1	mixed	01199083-a
+brumoso	a	1	misty	00461609-a
+Missouri	n	1	missouri	09105821-n
+perso	a	1	missing	02127853-v
+Minneapolis	n	1	minneapolis	09102883-n
+insensato	a	1	mindless	01498418-a
+Milwaukee	n	1	milwaukee	09158268-n
+metrazol	n	1	metrazol	03913702-n
+metodico	a	1	methodical	01668567-a
+mero	a	1	mere	01099707-a
+membership	n	1	membership	08400965-n
+melodrammatico	a	1	melodramatic	00795078-a
+marketing	n	1	marketing	01113068-n
+marcato	a	1	marked	01287808-a
+Corpo_dei_Marine	n	1	marine_corps	08192970-n
+marginalmente	r	1	marginally	00090000-r
+mantrap	n	1	mantrap	10613996-n
+maniacale	a	1	maniacal	02076416-a
+Manhattan	n	1	manhattan	09120594-n
+deforme	a	1	malformed	02141298-a
+stipulare	v	1	make	02560585-v
+maestoso	a	1	majestic	01285136-a
+storpiato	a	1	maimed	07950786-n
+magnetico	a	1	magnetic	02926188-a
+furioso	a	1	mad	00115193-a
+perduto	a	1	lost	01449564-a
+perso	a	1	lost	01449564-a
+Lorelei	n	1	lorelei	10272657-n
+incombere	v	1	loom	02696503-v
+somigliare	v	1	look_like	02665617-v
+Long_Island	n	1	long_island	09124039-n
+pagnotta	n	1	loaf	07683786-n
+Liverpool	n	1	liverpool	08877382-n
+letterato	a	1	literate	01421602-a
+listare	v	1	list	00945853-v
+rugoso	a	1	lined	02241543-a
+Lincoln	n	1	lincoln	11132462-n
+lilla	a	1	lilac	00376917-a
+autorizzato	a	1	licensed	00178811-a
+dissoluto	a	1	lewd	00425740-a
+prestarsi	v	1	lend	02736391-v
+contratto_di_locazione	n	1	lease	13248393-n
+appoggiarsi	v	1	lean	01606574-v
+preminente	a	1	leading	01472790-a
+leaders	n	1	leaders	08381436-n
+pigro	a	1	lazy	00981304-a
+pigro	a	1	lazy	00294579-a
+lanciamissili	n	1	launcher	03647520-n
+allampanato	a	1	lanky	00989544-a
+landler	n	1	landler	07055923-n
+carente	a	1	lacking	00052012-a
+inginocchiare	v	1	kneel	01545649-v
+Kipling	n	1	kipling	11105778-n
+mantenersi	v	1	keep	02681795-v
+tenersi	v	1	keep	02578872-v
+Kansas	n	1	kansas	09087599-n
+giovanile	a	1	juvenile	02892980-a
+congiunto	a	1	joint	02111684-a
+Jazz_Festival	n	1	jazz_festival	00518039-n
+Janissaries	n	1	janissary	10219453-n
+frastagliato	a	1	jagged	00912288-a
+ionico	a	1	ionic	02750752-a
+invisibile	a	1	invisible	02517265-a
+intimamente	r	1	intimately	00160659-r
+interpretabile	a	1	interpretable	00938979-a
+intermittente	a	1	intermittent	00593836-a
+intensamente	r	1	intensely	00190959-r
+programmato	a	1	intended	01337486-a
+integrato	a	1	integrated	02477557-a
+illeso	a	1	intact	01319434-a
+intatto	a	1	intact	00515870-a
+insufficiente	a	1	insufficient	02336449-a
+inside_out	r	1	inside_out	00166964-r
+inospitale	a	1	inhospitable	01242489-a
+inflessibile	a	1	inflexible	01024597-a
+immancabile	a	1	inevitable	01841834-a
+rivoluzione_industriale	n	1	industrial_revolution	15260277-n
+induced	v	1	induce	01644522-v
+indignato	a	1	indignant	00115494-a
+Indianapolis	n	1	indianapolis	09085593-n
+infaticabile	a	1	indefatigable	00874920-a
+incompleto	a	1	incomplete	00523978-a
+incandescente	a	1	incandescent	00271813-a
+incapacitÃ 	n	1	inability	05644922-n
+improvvisato	a	1	improvised	01757211-a
+impotente	a	1	impotent	01824751-a
+imperiale	a	1	imperial	02747036-a
+immunitÃ 	n	1	immunity	14526764-n
+imminente	a	1	imminent	00448314-a
+immenso	a	1	immense	01387319-a
+Illinois	n	1	illinois	09082540-n
+Ile_de_France	n	1	ile-de-france	08942629-n
+ozioso	a	1	idle	00294175-a
+idiota	a	1	idiotic	02075737-a
+gelido	a	1	icy	01258264-a
+idrato	a	1	hydrous	02555387-a
+rauco	a	1	husky	02038126-a
+capannello	n	1	huddle	07144416-n
+h	n	1	hr	15227846-n
+rovente	a	1	hot	01247240-a
+terrificante	a	1	horrifying	00193480-a
+orrido	a	1	horrid	01127661-a
+Santo_Sacrificio	n	1	holy_sacrament	01035853-n
+hole	n	1	hole	13911429-n
+indire	v	1	hold	01733477-v
+indire	n	1	hold	01216670-v
+high	a	1	high	01210854-a
+ereditÃ 	n	1	heredity	13493399-n
+impotente	a	1	helpless	01230616-a
+colmare	v	1	heap	02263788-v
+schiudersi	v	1	hatch	00063095-v
+laborioso	a	1	hardworking	00754682-a
+sodo	r	1	hard	00091332-r
+Guy_Fawkes_Day	n	1	guy_fawkes_day	15158997-n
+sempliciotto	a	1	gullible	02272485-a
+agghiacciante	a	1	gruesome	00195684-a
+grottesco	n	1	grotesque	03462441-n
+brizzolato	a	1	grizzled	00245763-a
+sorrisetto	n	1	grin	06878071-n
+green	n	1	green	08615374-n
+gravitÃ 	n	1	gravity	11464143-n
+accordato	a	1	granted	02255462-v
+Venerdì_Santo	n	1	good_friday	15191827-n
+andato	a	1	gone	00095873-a
+risalire	v	1	go_back	02723951-v
+abbandonarsi	v	1	give_way	00435103-v
+volgere	v	1	get	02210855-v
+George_Washington	n	1	george_washington	11375418-n
+generatrice	n	1	generator	03433877-n
+generalizzare	v	1	generalize	01022420-v
+general	a	1	general	01101391-a
+raduno	n	1	gathering	07975026-n
+lampada_a_gas	n	1	gas_lamp	03423877-n
+furtivo	a	1	furtive	02088974-a
+scalpore	n	1	furor	05751173-n
+furlongs	n	1	furlong	13651072-n
+frustrato	a	1	frustrated	02558172-v
+frustrato	a	1	frustrated	02333976-a
+aggrottare	v	1	frown	00032981-v
+amico	a	1	friendly	01246801-a
+Freud	n	1	freud	10982127-n
+formarsi	v	1	form	02448185-v
+formarsi	v	1	form	02430922-v
+focalizzare	v	1	focus	02161922-v
+fluido	a	1	fluid	00345494-a
+fluente	a	1	flowing	07405893-n
+galleggiare	v	1	float	01902783-v
+appariscente	a	1	flashy	00407420-a
+svasatura	n	1	flare	13862644-n
+adattarsi	v	1	fit	02657219-v
+finitura	n	1	finishing	04700642-n
+finitura	n	1	finish	04700642-n
+rifinitura	n	1	finish	04700642-n
+benissimo	r	1	fine	00053004-r
+filmato	n	1	film	06613686-n
+difendersi	v	1	fight_back	01092284-v
+Federal_Housing_Administration	n	1	federal_housing_administration	08423634-n
+fantasioso	a	1	fantastic	01942732-a
+fans	n	1	fan	10639925-n
+dissolvenza	n	1	fadeout	07336214-n
+sbiadito	a	1	faded	00882166-a
+scolorito	a	1	faded	00882166-a
+atteso	a	1	expected	00929567-a
+allargato	a	1	expanded	00554780-a
+esotico	a	1	exotic	01035007-a
+scambiarsi	v	1	exchange	02257370-v
+eventuale	a	1	eventual	01578856-a
+addirittura	r	1	even	00017445-r
+neppure	r	1	even	00017445-r
+preventivo	n	1	estimate	06528783-n
+costituito	a	1	established	01635146-a
+scappatella	n	1	escapade	00796315-n
+uguagliare	v	1	equate	02633534-v
+epigramma	n	1	epigram	07153727-n
+trincerarsi	v	1	entrench	01531025-v
+iscriversi	v	1	enter	02471327-v
+enigmatico	a	1	enigmatic	00534524-a
+impegnarsi	v	1	engage	02375131-v
+svuotare	v	1	empty	02076676-v
+svuotare	v	1	empty	00449692-v
+svuotare	v	1	empty	00448680-v
+commovente	a	1	emotional	01927279-a
+emozionale	a	1	emotional	01927279-a
+allungato	a	1	elongated	01434007-a
+undicesimo	a	1	eleventh	02203500-a
+elettricitÃ 	n	1	electricity	11449907-n
+egocentrico	a	1	egocentric	10047199-n
+didattico	a	1	educational	01324565-a
+didattica	n	1	education	00611433-n
+editor	n	1	editor	10044879-n
+agevole	a	1	easy	00749230-a
+anticipato	a	1	early	00812952-a
+desideroso	a	1	eager	00810916-a
+resistente	a	1	durable	01439496-a
+duplice	a	1	dual	02217452-a
+ubriaco	n	1	drunk	10037385-n
+siccitÃ 	n	1	drought	14537054-n
+mascherarsi	v	1	dress_up	00044149-v
+discendente	a	1	downward	02486248-a
+down	n	1	down	00458286-n
+laggiù	r	1	down	00095612-r
+bastare	v	1	do	02669789-v
+compire	v	1	do	02561995-v
+divino	n	1	divine	09536363-n
+diviso	a	1	divided	02478749-a
+stravolto	a	1	distraught	00085870-a
+distante	a	1	distant	00445548-a
+disservizio	n	1	disservice	01209791-n
+squalificare	v	1	disqualify	00301338-v
+squalificato	a	1	disqualified	00853225-a
+disinteressato	a	1	disinterested	01723543-a
+disintegrazione	n	1	disintegration	14561327-n
+liberarsi	v	1	disengage	01511380-v
+deludente	a	1	disappointing	02082611-a
+direzionale	a	1	directional	02713974-a
+direct	a	1	direct	00770480-a
+diplomatico	a	1	diplomatic	02713715-a
+minuto	a	1	diminutive	01392249-a
+fioco	a	1	dim	00782216-a
+dignitario	n	1	dignitary	10748620-n
+differenziale	a	1	differential	02712922-a
+demoniaco	a	1	devilish	01133374-a
+auspicabile	a	1	desirable	00732960-a
+discendente	a	1	descending	02485650-a
+Ministero_del_Lavoro	n	1	department_of_labor	08137495-n
+Dipartimento_di_Agricoltura	n	1	department_of_agriculture	08128964-n
+densità	n	1	density	05088804-n
+fitto	a	1	dense	02416390-a
+confessionale	a	1	denominational	02710825-a
+pudico	a	1	demure	01538118-a
+fare	r	1	deliver	00989602-v
+squisito	a	1	delicious	01807964-a
+insufficiente	a	1	deficient	00052012-a
+dichiarazione_di_guerra	n	1	declaration	06725877-n
+determinante	a	1	decisive	00684480-a
+decentralizzare	v	1	decentralize	00405540-v
+caro	r	1	dearly	00077619-r
+occuparsi	v	1	deal	01033527-v
+caduto	a	1	dead	00095280-a
+smagliante	a	1	dazzling	01283787-a
+datato	a	1	dated	00974404-a
+oscuritÃ 	n	1	darkness	13983515-n
+tenebroso	a	1	dark	00273082-a
+screziato	a	1	dappled	01788273-a
+minuto	a	1	dainty	01948092-a
+curricula	n	1	curriculum	06676416-n
+cagnaccio	n	1	cur	02084861-n
+coppetta	n	1	cup	13904665-n
+culminare	v	1	culminate	00485609-v
+rudimentale	a	1	crude	02229584-a
+accucciarsi	v	1	crouch	02062632-v
+acquattare	v	1	crouch	01545314-v
+incrociato	a	1	cross	01445917-a
+sconquassato	a	1	cranky	02292421-a
+cowboy	n	1	cowboy	09972661-n
+schedina	n	1	coupon	05822001-n
+cosec	n	1	cosecant	13789002-n
+correlare	v	1	correlate	02658979-v
+coquette	n	1	coquette	09965134-n
+coordinato	a	1	coordinated	00062152-a
+coordinato	a	1	coordinate	00890874-a
+cooperare	v	1	cooperate	02416278-v
+Cook	n	1	cook	09963320-n
+convergere	v	1	converge	02710402-v
+contiguo	a	1	contiguous	00449079-a
+consultarsi	v	1	consult	00877559-v
+conformarsi	v	1	conform_to	02667900-v
+conformarsi	v	1	conform	02662979-v
+confermazione	n	1	confirmation	05825245-n
+confidenziale	a	1	confidential	01859801-a
+confederato	a	1	confederate	01606942-a
+condensato	a	1	condensed	00364868-v
+simultaneo	a	1	concurrent	02378496-a
+concertato	a	1	concerted	02112108-a
+concettualizzazione	n	1	conceptualization	00940842-n
+esauriente	a	1	comprehensive	00525453-a
+questore	n	1	commissioner	09943811-n
+commando	n	1	commando	09942275-n
+comandamento	n	1	commandment	07169848-n
+imbattere	v	1	come_across	02286687-v
+provenire	v	1	come	02625339-v
+incolore	a	1	colorless	00408031-a
+coesivo	a	1	cohesive	00053564-a
+coesistente	a	1	coexistent	02378347-a
+clown	n	1	clown	09930876-n
+approfondito	a	1	close	00309945-a
+abbarbicarsi	v	1	cling_to	01220303-v
+aggrappare	v	1	cling	01220885-v
+geniale	a	1	clever	00439252-a
+palese	a	1	clear	00428404-a
+Clean	n	1	clean	00626838-n
+amministrazione_pubblica	n	1	civil_service	08357258-n
+civilizzazione	n	1	civilization	08111783-n
+Città_di_Dio	n	1	city_of_god	05628193-n
+cittÃ 	n	1	city	08524735-n
+prescegliere	v	1	choose	00674607-v
+cavalleresco	a	1	chivalrous	00640106-a
+caritatevole	a	1	charitable	00359459-a
+tariffa	n	1	charge	13306870-n
+incaricare	v	1	charge	02475922-v
+caratterizzazione	n	1	characterization	07201804-n
+casuale	a	1	chance	01798162-a
+cerebrale	a	1	cerebral	02688974-a
+Century	n	1	century	15205532-n
+censimento	n	1	census	00653388-n
+casual	a	1	casual	01044557-a
+casuale	a	1	casual	00545746-a
+candidatura	n	1	candidacy	00799537-n
+Cambridge	n	1	cambridge	02942227-n
+accaparrarsi	v	1	buy_up	02274299-v
+trafficato	a	1	busy	00292937-a
+galleggiante	a	1	buoyant	01187072-a
+bunt	n	1	bunt	00128477-n
+Bumblebees	n	1	bumblebee	02209624-n
+voluminoso	a	1	bulky	01384438-a
+bruto	a	1	brute	01263445-a
+spazzolino	n	1	brush	02908217-n
+spezzato	a	1	broken	00289082-a
+Broadway	n	1	broadway	09122086-n
+marcato	a	1	broad	00428878-a
+apportare	v	1	bring	02077656-v
+brillantemente	r	1	brilliantly	00077042-r
+briefing	n	1	briefing	07217782-n
+trasgredire	v	1	break	02566528-v
+squillante	a	1	brassy	02670411-a
+intrecciato	a	1	braided	01674717-v
+rassegnarsi	v	1	bow	00898691-v
+legato	a	1	bound	00252954-a
+bouncing_betties	n	1	bouncing_betty	02878796-n
+mutuatario	n	1	borrower	09867633-n
+prenotato	a	1	booked	01988468-a
+ossuto	a	1	bony	00988988-a
+cappellino	n	1	bonnet	02869837-n
+bodybuilding	n	1	bodybuilding	00625993-n
+smussato	a	1	blunt	00800464-a
+dissanguare	v	1	bleed	00074834-v
+spoglio	a	1	bleak	01242750-a
+Birmingham	n	1	birmingham	08877613-n
+vincolante	a	1	binding	02499036-a
+occhialuto	a	1	bespectacled	00056943-a
+vantaggiare	v	1	benefit	02290461-v
+bench	n	1	bench	04600486-n
+belligerante	a	1	belligerent	01244846-a
+tardivo	a	1	belated	01901186-a
+muscoloso	a	1	beefy	02038126-a
+provenire	v	1	be	02604760-v
+spinto	a	1	bawdy	00424787-a
+baronale	a	1	baronial	01283508-a
+banker	n	1	banker	09837824-n
+calvo	a	1	bald	00210848-a
+assiomatico	a	1	axiomatic	01618895-a
+award	n	1	award	13268146-n
+atteso	a	1	awaited	00929815-a
+ausiliare	a	1	auxiliary	01854129-a
+asintotico	a	1	asymptotic	02929071-a
+cinereo	a	1	ashen	00404568-a
+ascendente	a	1	ascending	02484208-a
+artificiale	a	1	artificial	01571363-a
+Arkansas	n	1	arkansas	09059274-n
+acquoso	a	1	aqueous	02636461-a
+accostarsi	v	1	approach	02053941-v
+applicato	a	1	applied	01158872-v
+applicabilitÃ 	n	1	applicability	13795180-n
+apparente	a	1	apparent	01873985-a
+apparente	a	1	apparent	01618376-a
+distante	r	1	apart	00181075-r
+anti	a	1	anti	01817405-a
+anomia	n	1	anomie	14415898-n
+anomic	a	1	anomic	01683908-a
+angolare	a	1	angular	02930616-a
+rabbioso	a	1	angry	00113818-a
+ambivalente	a	1	ambivalent	00337841-a
+ambiguitÃ 	n	1	ambiguity	04825114-n
+sbalordito	a	1	amazed	02357810-a
+dilettantistico	a	1	amateur	01869634-a
+alundum	n	1	alundum	14824469-n
+alkylbenzenesulfonates	n	1	alkylbenzenesulfonate	14713247-n
+Alabama	n	1	alabama	09053185-n
+arieggiato	a	1	airy	02508917-a
+agglomerare	v	1	agglomerate	01484714-v
+agglomerarsi	v	1	agglomerate	01484714-v
+postumo	n	1	aftereffect	11411501-n
+avventurarsi	v	1	adventure	02544348-v
+aderire	v	1	adhere	02718178-v
+adattarsi	v	1	adapt	00150287-v
+intensamente	r	1	acutely	00502325-r
+attivitÃ 	n	1	activity	14006945-n
+acrobatico	a	1	acrobatic	00032497-a
+abituato	a	1	accustomed	00024417-a
+accusatorio	a	1	accusing	00924257-a
+accelerato	a	1	accelerated	00977105-a
+absolute	a	1	absolute	00005205-a
+Abe_Lincoln	n	1	abraham_lincoln	11132462-n
+abbreviato	a	1	abbreviated	01436432-a
+3_hitter	n	1	3-hitter	00475403-n
+20th	a	1	20th	02204716-a
+19th	a	1	19th	02204472-a
+undef	r	11		
+classificare	n	1		
+dimenticare	n	1		
+elaborare	n	1		
+evitare	n	1		
+io	v	1		
+questo	r	1		
+sopraffatto	v	1		
+svolgimento	n	1		
+televisivo	n	1		

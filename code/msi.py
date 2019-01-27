@@ -17,17 +17,6 @@ generic_senses = {'00007846-n': 'person',
                   '00031264-n': 'group',
                   '00027167-n': 'location'}
 
-missing_romanian_lemmas = {
-    'căsători' : '[se]_căsători',
-    'teme' : '[se]_teme',
-    'devota' : '|se|_devota',
-    'răci': '|se|_răci',
-    'minuna': '[se]_minuna',
-    'preta' : '[se]_preta',
-    'îndrăgosti' : '[se]_îndrăgosti',
-}
-
-
 missing_lemmas_recap = {'eng' : Counter(),
                         'ita' : Counter(),
                         'ron' : Counter(),
@@ -37,16 +26,18 @@ missing_lemmas_recap = {'eng' : Counter(),
 def add_to_missing_lemmas_recap(word):
     try:
         translation = f"{word.alignments['eng'].lemma}"
+        sense = f"{word.alignments['eng'].sense}"
     except KeyError:
         translation = ''
-    missing_lemmas_recap[word.lang][f'{word.lemma}${word.pos}${translation}'] += 1
+        sense = ''
+    missing_lemmas_recap[word.lang][f'{word.lemma}${word.pos}${translation}${sense}'] += 1
 
 def dump_missing_lemmas_recap():
     for lang in missing_lemmas_recap:
         with open(f'../resources/missing_senses/{lang}_semcor.txt', 'w', encoding='utf8') as so:
             for item in missing_lemmas_recap[lang]:
-                lemma, pos, translation = item.split("$")
-                so.write(f'{lemma}\t{pos}\t{missing_lemmas_recap[lang][item]}\t{translation}\n')
+                lemma, pos, translation, suggested_sense = item.split("$")
+                so.write(f'{lemma}\t{pos}\t{missing_lemmas_recap[lang][item]}\t{translation}\t{suggested_sense}\n')
 
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
@@ -224,6 +215,15 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=False):
 
     return assigned_sense, assignment_type
 
+def print_recap_for_table(recap):
+    for lang in recap:
+        print(f"doc_id\tLanguage\tMSI Precision\tMFS Precision\tCoarse MSI Precision\tCoarse MFS Precision\tCoverage")
+        for column in recap[lang]:
+            if column not in ('contributing_languages', 'aligned_languages'):
+                print(f"{column}\t{lang}\t{recap[lang][column]['precision']}\t{recap[lang][column]['precision_mfs']}\t"
+                     f"{recap[lang][column]['precision_coarse']}\t{recap[lang][column]['precision_coarse_mfs']}\t"
+                     f"{recap[lang][column]['coverage']}"
+                     f"\n")
 
 def perform_intersection(target_word, possible_target_synsets, aligned_synset_bags):
     """Be aware: compares offsets interally.
@@ -330,16 +330,26 @@ def evaluate_msi(multilingual_corpus):
             assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
             assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
 
-            recap[corpus.lang][doc_id]['precision'] = recap[corpus.lang][doc_id]['match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
 
-            recap[corpus.lang][doc_id]['precision_mfs'] = recap[corpus.lang][doc_id]['mfs_match'] / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            # content words (that had sense) with alignments, excluding those not having a sense in WN 3.0
+            number_annotable_words = recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense']
 
-            recap[corpus.lang][doc_id]['precision_coarse'] = (recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['match']) / (recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            # estimate on words that had sense (non necessarily alignment)
+            number_content_words = document.number_content_words_in_document()
 
-            recap[corpus.lang][doc_id]['precision_coarse_mfs'] = (recap[corpus.lang][doc_id]['mfs_match'] + recap[corpus.lang][doc_id]['coarse_mfs_match'])/(recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense'])
+            recap[corpus.lang][doc_id]['precision'] = round(recap[corpus.lang][doc_id]['match'] / number_annotable_words, 3)
+
+            recap[corpus.lang][doc_id]['precision_mfs'] = round(recap[corpus.lang][doc_id]['mfs_match'] / number_annotable_words, 3)
+
+            recap[corpus.lang][doc_id]['precision_coarse'] = round((recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['match']) / number_annotable_words, 3)
+
+            recap[corpus.lang][doc_id]['precision_coarse_mfs'] = round((recap[corpus.lang][doc_id]['mfs_match'] + recap[corpus.lang][doc_id]['coarse_mfs_match']) / number_annotable_words, 3)
+
+            recap[corpus.lang][doc_id]['coverage'] = round(number_annotable_words / number_content_words, 3)
 
     from pprint import pprint
     pprint(recap)
+    print_recap_for_table(recap)
     import pdb; pdb.set_trace()
 
 
@@ -378,10 +388,7 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                             if check_for_named_entities(word):
                                 target_synsets = set(map(get_offset, check_for_named_entities(word)))
                             else:
-                                if (word.lang == 'ron' and word.lemma in missing_romanian_lemmas):
-                                    word.lemma = missing_romanian_lemmas[word.lemma]
-                                    target_synsets = set(map(get_offset, synset_lookup(word)))
-                                elif word.lang == 'jpn' and word.equivalent_wn_senses:
+                                if word.lang == 'jpn' and word.equivalent_wn_senses:
                                     target_synsets = set(word.equivalent_wn_senses)
                                 else:
                                     """

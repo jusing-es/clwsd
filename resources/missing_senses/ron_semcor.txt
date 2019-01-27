@@ -1,198 +1,210 @@
-în_general	r	9	generally
-de_fapt	r	9	actually
-deja_vu	n	7	deja_vu
-în_același_timp	r	7	at_the_same_time
-de_asemenea	r	78	also
-avea_nevoie	v	6	need
-în_final	r	6	finally
-corp_negru	n	6	blackbody
-și_așa_mai_departe	r	6	and_so_on
-fi_de_acord	v	6	agree
-din_păcate	r	5	unfortunately
-în_general	r	5	in_general
-în_jos	r	5	down
-de_asemenea	r	5	as_well
-în_sus	r	4	up
-fără_îndoială	r	4	undoubtedly
-deget_de_la_picior	n	4	toe
-punct_de_vedere	n	4	standpoint
-vânzare_cu_amănuntul	n	4	retailing
-energie_potențială	n	4	potential_energy
-da_din_cap	v	4	nod
-între_timp	r	4	meanwhile
-pune_în_scenă	v	3	stage
-radiație_solară	n	3	solar_radiation
-pur_și_simplu	r	3	simply
-doi	a	3	latter
-stat_în_mâini	n	3	handstand
-duzină	n	3	dozen
-război_rece	n	3	cold_war
-mic_dejun	n	3	breakfast
-sârmă_ghimpată	n	3	barbed_wire
-ivi	v	3	arise
-albină_lucrătoare	n	2	worker_bee
-în_sus	r	2	upwards
-în_sus	r	2	upward
-lua_parte	v	2	take_part
-balansa	v	2	swing
-temperatura_camerei	n	2	room_temperature
-de_fapt	r	2	really
-viață_reală	n	2	real_life
-pictură_în_ulei	n	2	oil_painting
-club_de_noapte	n	2	nightclub
-cădere_nervoasă	n	2	nervous_breakdown
-rezonanță_magnetică	n	2	magnetic_resonance
-în_față	r	2	in_front
-emisie_infraroșie	n	2	infrared_emission
-ființă_umană	n	2	human_being
-înaltă_fidelitate	n	2	high_fidelity
-jucător_de_golf	n	2	golfer
-din_fericire	r	2	fortunately
-grădină_de_flori	n	2	flower_garden
-la_fel_de	r	2	equally
-definit	a	2	definite
-reflex_condiționat	n	2	conditioned_reflex
-cortex_cerebral	n	2	cerebral_cortex
-arcui	v	2	arch
-în_față	r	2	ahead
-Statele_Unite	n	2	
-Uniunea_Sovietică	n	2	
-forță_de_muncă	n	1	work_force
-zi_lucrătoare	n	1	weekday
-ziua_nunții	n	1	wedding_day
-vapori_de_apă	n	1	water_vapor
-pierdere_de_timp	n	1	waste_of_time
-sistem_de_votare	n	1	voting_system
-punct_de_vedere	n	1	viewpoint
-cerc_vicios	n	1	vicious_cycle
-vice-președinte	n	1	vice_president
-din_nefericire	r	1	unfortunately
-în_final	r	1	ultimately
-ultime	a	1	ultimate
-treimi	n	1	two-thirds
-douăzeci_și_unu	n	1	twenty-one
-avea_încredere	v	1	trust
-linie_de_tranzit	n	1	transit_line
-face_comerț	v	1	trade
-glandă_tiroidă	n	1	thyroid_gland
-treimi	n	1	third
-depune_mărturie	v	1	testify
-zecimi	n	1	tenth
-teren_de_tenis	n	1	tennis_court
-avea_grijă	v	1	tend
-apel_telefonic	n	1	telephone_call
-serviciu_de_ceai	n	1	tea_service
-avea_grijă	v	1	take_care
-senzație_tactilă	n	1	tactual_sensation
-tenis_de_masă	n	1	table_tennis
-punct_mort	n	1	standstill
-ieși_în_evidență	v	1	stand_out
-undă_sonoră	n	1	sound_wave
-control_social	n	1	social_control
-șlap	n	1	slipper
-șantier_naval	n	1	shipyard
-act_sexual	n	1	sex_act
-sistem_de_canalizare	n	1	sewage_system
-simțul_umorului	n	1	sense_of_humor
-în_secret	r	1	secretly
-în_al_doilea_rând	r	1	secondly
-doi	a	1	secondary
-tabelă_de_marcaj	n	1	scoreboard
-om_de_știință	n	1	scientist
-science_fiction	n	1	science_fiction
-oră_de_vârf	n	1	rush_hour
-pe_drept_cuvânt	r	1	rightly
-pleca_călare	v	1	ride_off
-pleca_călare	v	1	ride_away
-vânzător_cu_amănuntul	n	1	retailer
-proprietate_imobiliară	n	1	real_property
-undă_radio	n	1	radio_wave
-în_principal	r	1	principally
-pre-sezon	n	1	preseason
-concurs_de_popularitate	n	1	popularity_contest
-științe_politice	n	1	political_science
-platformă_politică	n	1	political_platform
-partid_politic	n	1	political_party
-punct_de_vedere	n	1	point_of_view
-loc_de_naștere	n	1	place_of_birth
-pișa	v	1	piss
-efect_piezoelectric	n	1	piezoelectric_effect
-apel_telefonic	n	1	phone_call
-instrument_de_percuție	n	1	percussive_instrument
-joc_de_societate	n	1	party_game
-acid_nucleic	n	1	nucleic_acid
-non-ficțiune	n	1	nonfiction
-cămașă_de_noapte	n	1	nightdress
-lună_nouă	n	1	new_moon
-nouă	a	1	new
-fenomen_natural	n	1	natural_phenomenon
-venit_național	n	1	national_income
-compoziție_muzicală	n	1	musical_composition
-distrofie_musculară	n	1	muscular_dystrophy
-scleroză_multiplă	n	1	multiple_sclerosis
-greșeală_de_calcul	n	1	miscalculation
-maestru_de_ceremonii	n	1	master_of_ceremonies
-lucru_manual	n	1	manual_labor
-în_principal	r	1	mainly
-câmp_magnetic	n	1	magnetic_field
-de_asemenea	r	1	likewise
-științele_vieții	n	1	life_science
-număr_de_înmatriculare	n	1	license_number
-facultate_de_drept	n	1	law_school
-energie_cinetică	n	1	kinetic_energy
-formație_de_jazz	n	1	jazz_group
-face_cunoștință	v	1	introduce
-în_final	r	1	in_the_end
-în_sfârșit	r	1	in_the_end
-combustie_internă	n	1	internal_combustion
-în_secret	r	1	in_secret
-revoluție_industrială	n	1	industrial_revolution
-parc_industrial	n	1	industrial_park
-în_avans	r	1	in_advance
-durere_de_cap	n	1	headache
-jumătate_de_oră	n	1	half-hour
-foiță_de_aur	n	1	gold_leaf
-director_general	n	1	general_manager
-lampă_cu_gaz	n	1	gas_lamp
-din_când_în_când	r	1	from_time_to_time
-la_nesfârșit	r	1	forever
-notă_de_subsol	n	1	footnote
-barcă_de_pescuit	n	1	fishing_boat
-daună	a	1	first
-primă	a	1	first
-în_sfârșit	r	1	finally
-avea_chef	v	1	feel_like
-guvern_federal	n	1	federal_government
-secretar_executiv	n	1	executive_secretary
-da_naștere	v	1	engender
-pune_capăt	v	1	end
-îmbarca	v	1	embark
-scaun_electric	n	1	electric_chair
-șoc_electric	n	1	electrical_shock
-ordin_de_plată	n	1	draft
-în_jos	r	1	downward
-lumina_zilei	n	1	daylight
-școală_de_dans	n	1	dancing_school
-fi_de_acord	v	1	concur
-ceașcă_de_cafea	n	1	coffee_cup
-în_principal	r	1	chiefly
-muzică_de_cameră	n	1	chamber_music
-cu_siguranță	r	1	certainly
-corp_ceresc	n	1	celestial_body
-în_general	r	1	by_and_large
-linie_de_autobuz	n	1	bus_line
-om_de_afaceri	n	1	businessman
-parte_a_corpului	n	1	body_part
-costum_de_baie	n	1	bathing_suit
-în_spate	r	1	back
-bombă_atomică	n	1	atomic_bomb
-în_esență	r	1	at_heart
-în_jur	r	1	around
-din_nou	r	1	anew
-aventura	v	1	adventure
-de_asemenea	r	18	too
-chiar_și	r	15	even
-lungime_de_undă	n	12	wavelength
-design_interior	n	11	interior_design
-New_Deal	n	1	
-Vinerea_Mare	n	1	
+de_fapt	r	9	actually	00149510-r
+în_general	r	8	generally	00155621-r
+deja_vu	n	7	deja_vu	05810440-n
+în_același_timp	r	7	at_the_same_time	00120095-r
+de_asemenea	r	78	also	00047534-r
+avea_nevoie	v	6	need	01188725-v
+corp_negru	n	6	blackbody	09222406-n
+și_așa_mai_departe	r	6	and_so_on	00103664-r
+din_păcate	r	5	unfortunately	00042769-r
+în_general	r	5	in_general	00041954-r
+în_jos	r	5	down	00095320-r
+de_asemenea	r	5	as_well	00047534-r
+fi_de_acord	v	5	agree	00805376-v
+în_sus	r	4	up	00096333-r
+fără_îndoială	r	4	undoubtedly	00079107-r
+deget_de_la_picior	n	4	toe	05577410-n
+punct_de_vedere	n	4	standpoint	06210363-n
+vânzare_cu_amănuntul	n	4	retailing	01115866-n
+energie_potențială	n	4	potential_energy	11494472-n
+da_din_cap	v	4	nod	00898434-v
+între_timp	r	4	meanwhile	00065184-r
+pune_în_scenă	v	3	stage	01711445-v
+radiație_solară	n	3	solar_radiation	11510067-n
+pur_și_simplu	r	3	simply	00246296-r
+doi	a	3	latter	01047561-a
+stat_în_mâini	n	3	handstand	00436187-n
+în_final	r	3	finally	00065822-r
+în_final	r	3	finally	00047903-r
+teme	v	3	fear	01780729-v
+duzină	n	3	dozen	13746785-n
+război_rece	n	3	cold_war	13982000-n
+mic_dejun	n	3	breakfast	07574602-n
+sârmă_ghimpată	n	3	barbed_wire	02790823-n
+albină_lucrătoare	n	2	worker_bee	02207805-n
+în_sus	r	2	upwards	00096333-r
+în_sus	r	2	upward	00096333-r
+lua_parte	v	2	take_part	02450256-v
+balansa	v	2	swing	01877355-v
+temperatura_camerei	n	2	room_temperature	05014442-n
+de_fapt	r	2	really	00149510-r
+viață_reală	n	2	real_life	05810250-n
+pictură_în_ulei	n	2	oil_painting	03844349-n
+club_de_noapte	n	2	nightclub	02931417-n
+cădere_nervoasă	n	2	nervous_breakdown	14066661-n
+rezonanță_magnetică	n	2	magnetic_resonance	11478682-n
+în_față	r	2	in_front	00066781-r
+emisie_infraroșie	n	2	infrared_emission	11469481-n
+ființă_umană	n	2	human_being	02472293-n
+înaltă_fidelitate	n	2	high_fidelity	01020488-n
+jucător_de_golf	n	2	golfer	10136959-n
+din_fericire	r	2	fortunately	00042254-r
+grădină_de_flori	n	2	flower_garden	03368637-n
+la_fel_de	r	2	equally	00022131-r
+devota	v	2	devote	00887463-v
+definit	a	2	definite	00700451-a
+răci	v	2	cool	00370412-v
+reflex_condiționat	n	2	conditioned_reflex	00864226-n
+cortex_cerebral	n	2	cerebral_cortex	05486510-n
+ivi	v	2	arise	02624263-v
+arcui	v	2	arch	02034986-v
+în_față	r	2	ahead	00066781-r
+Statele_Unite	n	2		
+Uniunea_Sovietică	n	2		
+forță_de_muncă	n	1	work_force	08212347-n
+minuna	v	1	wonder	00925490-v
+zi_lucrătoare	n	1	weekday	15163157-n
+ziua_nunții	n	1	wedding_day	15222951-n
+vapori_de_apă	n	1	water_vapor	15055442-n
+pierdere_de_timp	n	1	waste_of_time	00743500-n
+sistem_de_votare	n	1	voting_system	05904135-n
+punct_de_vedere	n	1	viewpoint	06210363-n
+cerc_vicios	n	1	vicious_cycle	13573368-n
+vice-președinte	n	1	vice_president	10751265-n
+din_nefericire	r	1	unfortunately	00042769-r
+în_final	r	1	ultimately	00047903-r
+ultime	a	1	ultimate	01578312-a
+treimi	n	1	two-thirds	13737378-n
+douăzeci_și_unu	n	1	twenty-one	13748246-n
+avea_încredere	v	1	trust	00688377-v
+linie_de_tranzit	n	1	transit_line	04472098-n
+face_comerț	v	1	trade	02260362-v
+glandă_tiroidă	n	1	thyroid_gland	05330244-n
+treimi	n	1	third	13737190-n
+depune_mărturie	v	1	testify	01014821-v
+zecimi	n	1	tenth	13738327-n
+teren_de_tenis	n	1	tennis_court	04409712-n
+avea_grijă	v	1	tend	02549847-v
+apel_telefonic	n	1	telephone_call	06272803-n
+serviciu_de_ceai	n	1	tea_service	04398309-n
+avea_grijă	v	1	take_care	02437707-v
+senzație_tactilă	n	1	tactual_sensation	05722427-n
+tenis_de_masă	n	1	table_tennis	00499263-n
+punct_mort	n	1	standstill	14015361-n
+ieși_în_evidență	v	1	stand_out	02674564-v
+undă_sonoră	n	1	sound_wave	07347224-n
+control_social	n	1	social_control	01123598-n
+șlap	n	1	slipper	04241394-n
+șantier_naval	n	1	shipyard	04197235-n
+act_sexual	n	1	sex_act	00845523-n
+sistem_de_canalizare	n	1	sewage_system	04178897-n
+simțul_umorului	n	1	sense_of_humor	04650201-n
+în_secret	r	1	secretly	00166608-r
+în_al_doilea_rând	r	1	secondly	00102881-r
+doi	a	1	secondary	01853461-a
+tabelă_de_marcaj	n	1	scoreboard	04149813-n
+om_de_știință	n	1	scientist	10560637-n
+science_fiction	n	1	science_fiction	06368628-n
+oră_de_vârf	n	1	rush_hour	15229144-n
+pe_drept_cuvânt	r	1	rightly	00205375-r
+pleca_călare	v	1	ride_off	02011302-v
+pleca_călare	v	1	ride_away	02011302-v
+vânzător_cu_amănuntul	n	1	retailer	10525436-n
+proprietate_imobiliară	n	1	real_property	13246475-n
+undă_radio	n	1	radio_wave	11499817-n
+în_principal	r	1	principally	00073897-r
+pre-sezon	n	1	preseason	15240119-n
+concurs_de_popularitate	n	1	popularity_contest	01169200-n
+științe_politice	n	1	political_science	06148148-n
+platformă_politică	n	1	political_platform	06501311-n
+partid_politic	n	1	political_party	08256968-n
+punct_de_vedere	n	1	point_of_view	06210363-n
+loc_de_naștere	n	1	place_of_birth	08510350-n
+pișa	v	1	piss	00072012-v
+efect_piezoelectric	n	1	piezoelectric_effect	11491308-n
+apel_telefonic	n	1	phone_call	06272803-n
+instrument_de_percuție	n	1	percussive_instrument	03915437-n
+joc_de_societate	n	1	party_game	00458800-n
+acid_nucleic	n	1	nucleic_acid	14964129-n
+non-ficțiune	n	1	nonfiction	06367571-n
+cămașă_de_noapte	n	1	nightdress	03824381-n
+lună_nouă	n	1	new_moon	15206943-n
+nouă	a	1	new	01640850-a
+fenomen_natural	n	1	natural_phenomenon	11408559-n
+venit_național	n	1	national_income	13256894-n
+compoziție_muzicală	n	1	musical_composition	07037465-n
+distrofie_musculară	n	1	muscular_dystrophy	14160365-n
+scleroză_multiplă	n	1	multiple_sclerosis	14094068-n
+greșeală_de_calcul	n	1	miscalculation	00072808-n
+maestru_de_ceremonii	n	1	master_of_ceremonies	10299250-n
+minuna	v	1	marvel	00925490-v
+căsători	v	1	marry	02488834-v
+lucru_manual	n	1	manual_labor	00623162-n
+în_principal	r	1	mainly	00073897-r
+câmp_magnetic	n	1	magnetic_field	11477384-n
+de_asemenea	r	1	likewise	00047534-r
+științele_vieții	n	1	life_science	06037298-n
+număr_de_înmatriculare	n	1	license_number	06425808-n
+preta	v	1	lend	02736391-v
+facultate_de_drept	n	1	law_school	08283051-n
+energie_cinetică	n	1	kinetic_energy	11470492-n
+formație_de_jazz	n	1	jazz_group	08250302-n
+face_cunoștință	v	1	introduce	00901103-v
+în_final	r	1	in_the_end	00047903-r
+în_sfârșit	r	1	in_the_end	00047903-r
+combustie_internă	n	1	internal_combustion	13501261-n
+în_secret	r	1	in_secret	00166608-r
+revoluție_industrială	n	1	industrial_revolution	15260277-n
+parc_industrial	n	1	industrial_park	08587985-n
+în_avans	r	1	in_advance	00067045-r
+durere_de_cap	n	1	headache	14326607-n
+jumătate_de_oră	n	1	half-hour	15228162-n
+foiță_de_aur	n	1	gold_leaf	03444838-n
+director_general	n	1	general_manager	10125697-n
+în_general	r	1	generally	00041954-r
+lampă_cu_gaz	n	1	gas_lamp	03423877-n
+din_când_în_când	r	1	from_time_to_time	00021212-r
+la_nesfârșit	r	1	forever	00087542-r
+notă_de_subsol	n	1	footnote	06764244-n
+barcă_de_pescuit	n	1	fishing_boat	03351262-n
+daună	a	1	first	01010862-a
+primă	a	1	first	01010862-a
+în_sfârșit	r	1	finally	00047903-r
+avea_chef	v	1	feel_like	01826184-v
+guvern_federal	n	1	federal_government	08052549-n
+îndrăgosti	v	1	fall_in_love	00148597-v
+secretar_executiv	n	1	executive_secretary	10069981-n
+da_naștere	v	1	engender	01649024-v
+pune_capăt	v	1	end	00352826-v
+îmbarca	v	1	embark	01979462-v
+scaun_electric	n	1	electric_chair	03271030-n
+șoc_electric	n	1	electrical_shock	00839292-n
+ordin_de_plată	n	1	draft	13377268-n
+în_jos	r	1	downward	00095320-r
+lumina_zilei	n	1	daylight	11444038-n
+școală_de_dans	n	1	dancing_school	08278822-n
+fi_de_acord	v	1	concur	00805376-v
+ceașcă_de_cafea	n	1	coffee_cup	03063073-n
+în_principal	r	1	chiefly	00073897-r
+muzică_de_cameră	n	1	chamber_music	07026239-n
+cu_siguranță	r	1	certainly	00144722-r
+corp_ceresc	n	1	celestial_body	09239740-n
+în_general	r	1	by_and_large	00155621-r
+linie_de_autobuz	n	1	bus_line	02925901-n
+om_de_afaceri	n	1	businessman	09882007-n
+parte_a_corpului	n	1	body_part	05220461-n
+costum_de_baie	n	1	bathing_suit	04371563-n
+în_spate	r	1	back	00074407-r
+bombă_atomică	n	1	atomic_bomb	02753044-n
+în_esență	r	1	at_heart	00104099-r
+în_jur	r	1	around	00072329-r
+ivi	v	1	arise	00339738-v
+din_nou	r	1	anew	00112843-r
+fi_de_acord	v	1	agree	00764222-v
+aventura	v	1	adventure	02544348-v
+de_asemenea	r	18	too	00047534-r
+chiar_și	r	15	even	00017445-r
+lungime_de_undă	n	12	wavelength	05086269-n
+design_interior	n	11	interior_design	00608354-n
+New_Deal	n	1		
+Vinerea_Mare	n	1		
