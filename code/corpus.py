@@ -207,7 +207,6 @@ class Sentence(object):
     def number_content_words(self):
         return len([word.sense for word in self.tokens.values() if word.sense])
 
-
     def to_json(self):
         return {'__class__': self.__class__.__name__,
                 '__kw__': {'id': self.id,

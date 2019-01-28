@@ -331,9 +331,23 @@ if __name__ == '__main__':
 
     add_alignments_to_corpus(en2jp_alignments, multilingual_corpus, eng_corpus.id, jpn_corpus.id)
 
+
+    for corpusid in mc.corpora:
+        for doc in mc[corpusid].documents:
+            for sent in mc[corpusid][doc].sentences:
+                if corpusid != 'jpn_sc':
+                    assert len(mc[corpusid][doc][sent]) == mc[corpusid][doc][sent].number_content_words()
+
+        # content words in JPN_SC are those with a link to ESC, so much fewer than the actual annotated words
+        if corpusid != 'jpn_sc':
+            assert mc[corpusid][doc].number_content_words_in_document() == sum([len(mc[corpusid][doc][sent]) for sent in mc[corpusid][doc].sentences])
+
+    print('finito')
+
     msi.apply_msi_to_corpus(multilingual_corpus, multilingual_corpus.languages, True)
     #msi.dump_missing_lemmas_recap()
     msi.evaluate_msi(multilingual_corpus)
+
     #print(render_multilingual_corpus(multilingual_corpus))
     #dump_multilingual_corpus_to_xml(multilingual_corpus)
 
