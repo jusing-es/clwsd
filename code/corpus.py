@@ -283,7 +283,7 @@ class MsiAnnotation(object):
     __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type', 'comments']
 
     possible_assignment_types = ('mfs_in_overlap', 'disambiguated_by_msi', 'mfs',
-                                 'rmfs_within_overlap', 'no_sense')
+                                 'rmfs_within_overlap', 'no_sense', 'random_in_overlap')
 
     def __init__(self, assigned_sense, contributing_languages, assignment_type, comments=None):
         self.assigned_sense = assigned_sense

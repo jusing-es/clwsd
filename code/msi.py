@@ -109,10 +109,15 @@ def get_mfs_offset(word):
     :param word:
     :return:
     """
-    if synset_lookup(word):
-        return [get_offset(synset_lookup(word)[0])]
-    return []
-
+    if word.lang == 'eng':
+        if synset_lookup(word):
+            return [get_offset(synset_lookup(word)[0])]
+        return []
+    # get relative mfs for other languages
+    elif get_relative_frequent_senses(word):
+        return [get_relative_frequent_senses(word)[0]]
+    else:
+        return []
 
 def synset_lookup(word):
     if word.lemma in generic_senses.values():
@@ -155,29 +160,35 @@ def get_offset(synset):
         import pdb; pdb.set_trace()
 
 
+def get_random_sense_in_overlap(overlap):
+    assigned_sense = list(overlap)[0]
+    assignment_type = 'random_in_overlap'
+
+    return assigned_sense, assignment_type
+
+
 def resort_to_mfs(target_word, overlap):
     """
-
     :param target_word:
     :param overlap:
     :return:
     """
     mfs = get_mfs_offset(target_word)
-    overlap = overlap.intersection(mfs)
-    if len(overlap) == 1:
-        assigned_sense = get_only_element_in_overlap(overlap)
-        assignment_type = 'mfs_in_overlap'
+    if mfs:
+        overlap_with_mfs = overlap.intersection(mfs)
+        if len(overlap_with_mfs) == 1:
+            assigned_sense = get_only_element_in_overlap(overlap_with_mfs)
+            assignment_type = 'mfs_in_overlap'
+        # empty
+        else:
+            # ex. d03, t_31_49 'giro' synset: 15270431, not among the original ITA senses after the mapping
+            if set(mfs).issubset((map(get_offset, synset_lookup(target_word)))):
+                assigned_sense = get_only_element_in_overlap(mfs)
+                assignment_type = 'mfs'
+            else:
+                assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
     else:
-        assert set(mfs).issubset((map(get_offset, synset_lookup(target_word))))
-        if len(mfs) == 0:
-            import pdb; pdb.set_trace()
-        # check if it was part of the original set
-        try:
-            assigned_sense = get_only_element_in_overlap(mfs)
-        except AssertionError:
-            import pdb; pdb.set_trace()
-            assigned_sense = None
-        assignment_type = 'mfs'
+        assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
 
     return assigned_sense, assignment_type
 
@@ -291,6 +302,7 @@ def evaluate_at_corpus_level(recap):
         finale[lang]['mfs'] = 0
         finale[lang]['rmfs_within_overlap'] = 0
         finale[lang]['no_sense'] = 0
+        finale[lang]['random_in_overlap'] = 0
 
 
         for doc_id in recap[lang]:
@@ -306,6 +318,7 @@ def evaluate_at_corpus_level(recap):
                 finale[lang]['mfs'] += recap[lang][doc_id].get('mfs', 0)
                 finale[lang]['rmfs_within_overlap']+= recap[lang][doc_id].get('rmfs_within_overlap', 0)
                 finale[lang]['no_sense'] += recap[lang][doc_id].get('no_sense', 0)
+                finale[lang]['random_in_overlap'] += recap[lang][doc_id].get('random_in_overlap', 0)
 
         finale[lang]['precision'] = round(finale[lang]['match'] / finale[lang]['number_annotable_words'], 3)
         finale[lang]['precision_mfs'] = round(finale[lang]['mfs_match'] / finale[lang]['number_annotable_words'], 3)
@@ -319,13 +332,15 @@ def evaluate_at_corpus_level(recap):
                                          finale[lang]['number_content_words'], 3)
 
         total_counts_possible_scenarios = finale[lang]['mfs_in_overlap'] + finale[lang]['disambiguated_by_msi'] + \
-                                          finale[lang]['mfs'] + finale[lang]['rmfs_within_overlap'] + finale[lang]['no_sense']
+                                          finale[lang]['mfs'] + finale[lang]['rmfs_within_overlap'] + \
+                                          finale[lang]['no_sense'] + finale[lang]['random_in_overlap']
 
         finale[lang]['overlap_scenarios'] = {'mfs_in_overlap': round(finale[lang]['mfs_in_overlap'] / total_counts_possible_scenarios * 100, 3),
                                              'disambiguated_by_msi': round(finale[lang]['disambiguated_by_msi'] / total_counts_possible_scenarios * 100, 3),
                                              'mfs' : round(finale[lang]['mfs'] / total_counts_possible_scenarios * 100, 3),
                                              'rmfs_within_overlap' : round(finale[lang]['rmfs_within_overlap'] / total_counts_possible_scenarios * 100, 3),
-                                             'no_sense' : round(finale[lang]['no_sense']/ total_counts_possible_scenarios * 100, 3)
+                                             'no_sense' : round(finale[lang]['no_sense']/ total_counts_possible_scenarios * 100, 3),
+                                             'random_in_overlap': round(finale[lang]['random_in_overlap'] / total_counts_possible_scenarios * 100, 3)
                                         }
 
     pprint(finale)
