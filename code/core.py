@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
     source_folder = sys.argv[3]
     target_folder = sys.argv[4]
-    ron_folder = '../files/training/corpus/rom'
+    ron_folder = '../files/training/corpus/ron'
     jpn_folder = '../files/training/corpus/jpn'
     with open(sys.argv[5]) as si:
         en2it_alignments = json.loads(si.read())

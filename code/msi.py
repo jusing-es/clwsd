@@ -53,10 +53,12 @@ def _load_corpora_sense_frequency_statistics(languages):
         if lang == 'ita':
             with open(os.path.join(path, 'sfs_ita.json')) as si:
                 sfs = json.loads(si.read())
-        elif lang == 'rom':
-            with open(os.path.join(path, 'sfs_rom.json')) as si:
+        elif lang == 'ron':
+            with open(os.path.join(path, 'sfs_ron.json')) as si:
                 sfs = json.loads(si.read())
-
+        elif lang == 'jpn':
+            with open(os.path.join(path, 'sfs_jpn.json')) as si:
+                sfs = json.loads(si.read())
         return sfs
 
     sfs = {}
@@ -64,8 +66,10 @@ def _load_corpora_sense_frequency_statistics(languages):
         sfs['eng'] = _load_wn_glosses_eng_sense_frequency_statistics()
     if 'ita' in languages:
         sfs['ita'] = _load_semcor_sense_frequency_statistics(lang='ita')
-    if 'rom' in languages:
-        sfs['rom'] = _load_semcor_sense_frequency_statistics(lang='rom')
+    if 'ron' in languages:
+        sfs['ron'] = _load_semcor_sense_frequency_statistics(lang='ron')
+    if 'jpn' in languages:
+        sfs['jpn'] = _load_semcor_sense_frequency_statistics(lang='jpn')
 
     return sfs
 
@@ -76,7 +80,7 @@ def get_relative_frequent_senses(word):
     :returns list:
     """
     rfss = []
-    if word.lang in general_mfs_statistics and word.lang in ('ita', 'rom'):
+    if word.lang in general_mfs_statistics and word.lang in ('ita', 'ron', 'jpn'):
         if word.lemma in general_mfs_statistics[word.lang]:
             # given the input lemma, for each sense s retrieves <sense, sum(occurrences in texts, excluded text)> pairs
             sid_scores = [(s, sum(general_mfs_statistics[word.lang][word.lemma][s].values()) -
@@ -163,7 +167,6 @@ def get_offset(synset):
 def get_random_sense_in_overlap(overlap):
     assigned_sense = list(overlap)[0]
     assignment_type = 'random_in_overlap'
-
     return assigned_sense, assignment_type
 
 
@@ -186,8 +189,10 @@ def resort_to_mfs(target_word, overlap):
                 assigned_sense = get_only_element_in_overlap(mfs)
                 assignment_type = 'mfs'
             else:
+                import pdb; pdb.set_trace()
                 assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
     else:
+        import pdb; pdb.set_trace()
         assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
 
     return assigned_sense, assignment_type
@@ -397,6 +402,7 @@ def evaluate_msi(multilingual_corpus):
                                 if word.msi_annotation.assigned_sense in coarse_senses_dict \
                                     and word.sense in coarse_senses_dict[word.msi_annotation.assigned_sense]:
                                     recap[corpus.lang][doc_id]['coarse_match'] += 1
+                                    recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
                                 else:
                                     recap[corpus.lang][doc_id]['coarse_mismatch'] += 1
 
