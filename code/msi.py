@@ -39,6 +39,7 @@ def dump_missing_lemmas_recap():
                 lemma, pos, translation, suggested_sense = item.split("$")
                 so.write(f'{lemma}\t{pos}\t{missing_lemmas_recap[lang][item]}\t{translation}\t{suggested_sense}\n')
 
+
 def _load_corpora_sense_frequency_statistics(languages):
     def _load_wn_glosses_eng_sense_frequency_statistics():
         path = '../resources/sense_frequencies'
@@ -72,6 +73,11 @@ def _load_corpora_sense_frequency_statistics(languages):
         sfs['jpn'] = _load_semcor_sense_frequency_statistics(lang='jpn')
 
     return sfs
+
+
+def compute_average_polysemy_reduction(polysemy_reduction_values):
+    return round(sum(polysemy_reduction_values) / len(polysemy_reduction_values), 3)
+
 
 def get_relative_frequent_senses(word):
     """Gives relative MFS by excluding sense occurrences in the current text.
@@ -136,7 +142,7 @@ def synset_lookup(word):
     except:
         import pdb; pdb.set_trace()
 
-def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type, comments=None):
+def assign_sense(target_word, assigned_sense, contributing_languages, assignment_type, polysemy_reduction=None):
     """
 
     :param target_word:
@@ -145,7 +151,7 @@ def assign_sense(target_word, assigned_sense, contributing_languages, assignment
     :param assignment_type:
     :return:
     """
-    target_word.add_msi_annotation(assigned_sense, list(contributing_languages), assignment_type, comments)
+    target_word.add_msi_annotation(assigned_sense, list(contributing_languages), assignment_type, polysemy_reduction)
 
 
 def get_only_element_in_overlap(overlap):
@@ -176,6 +182,7 @@ def resort_to_mfs(target_word, overlap):
     :param overlap:
     :return:
     """
+    polysemy_reduction = compute_ambiguity_reduction(synset_lookup(target_word), overlap)
     mfs = get_mfs_offset(target_word)
     if mfs:
         overlap_with_mfs = overlap.intersection(mfs)
@@ -189,13 +196,17 @@ def resort_to_mfs(target_word, overlap):
                 assigned_sense = get_only_element_in_overlap(mfs)
                 assignment_type = 'mfs'
             else:
-                import pdb; pdb.set_trace()
                 assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
     else:
-        import pdb; pdb.set_trace()
         assigned_sense, assignment_type = get_random_sense_in_overlap(overlap)
 
-    return assigned_sense, assignment_type
+    return assigned_sense, assignment_type, polysemy_reduction
+
+
+def compute_ambiguity_reduction(original_senses, overlap):
+    if original_senses:
+        return (len(original_senses) - len(overlap)) / len(original_senses)
+    return 0
 
 
 def make_decision(target_word, overlap, corpus_sense_frequencies=False):
@@ -209,6 +220,7 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=False):
     if len(overlap) == 1:
         assigned_sense = get_only_element_in_overlap(overlap)
         assignment_type = 'disambiguated_by_msi'
+        polysemy_reduction = compute_ambiguity_reduction(synset_lookup(target_word), overlap)
     else:
         if corpus_sense_frequencies:
             frequent_sense_bag = get_relative_frequent_senses(target_word)
@@ -220,16 +232,18 @@ def make_decision(target_word, overlap, corpus_sense_frequencies=False):
                 if len(overlap) == 1:
                     assigned_sense = get_only_element_in_overlap(overlap)
                     assignment_type = 'mfs_in_overlap'
+                    polysemy_reduction = compute_ambiguity_reduction(synset_lookup(target_word), overlap)
                 else:
                     # select sense with the highest frequency in frequent_sense_bag
                     assigned_sense = frequent_sense_bag[0]
                     assignment_type = 'rmfs_within_overlap'
+                    polysemy_reduction = compute_ambiguity_reduction(synset_lookup(target_word), overlap)
             else:
-                assigned_sense, assignment_type = resort_to_mfs(target_word, overlap)
+                assigned_sense, assignment_type, polysemy_reduction = resort_to_mfs(target_word, overlap)
         else:
-            assigned_sense, assignment_type = resort_to_mfs(target_word, overlap)
+            assigned_sense, assignment_type, polysemy_reduction = resort_to_mfs(target_word, overlap)
 
-    return assigned_sense, assignment_type
+    return assigned_sense, assignment_type, polysemy_reduction
 
 def print_recap_for_table(recap):
     with open('results.txt', 'w') as so:
@@ -237,7 +251,7 @@ def print_recap_for_table(recap):
             so.write(f"\t{lang}\t\t\t\t\n")
             so.write(f"doc_id\tMSI Precision\tMFS Precision\tCoarse MSI Precision\tCoarse MFS Precision\tCoverage\n")
             for column in sorted(recap[lang]):
-                if column not in ('contributing_languages', 'aligned_languages'):
+                if column not in ('contributing_languages', 'aligned_languages', 'polysemy_reduction'):
                     so.write(f"{column}\t{recap[lang][column]['precision']}\t{recap[lang][column]['precision_mfs']}\t"
                          f"{recap[lang][column]['precision_coarse']}\t{recap[lang][column]['precision_coarse_mfs']}\t"
                          f"{recap[lang][column]['coverage']}\n")
@@ -308,10 +322,11 @@ def evaluate_at_corpus_level(recap):
         finale[lang]['rmfs_within_overlap'] = 0
         finale[lang]['no_sense'] = 0
         finale[lang]['random_in_overlap'] = 0
+        finale[lang]['average_ambiguity_reduction'] = recap[lang]['polysemy_reduction']
 
 
         for doc_id in recap[lang]:
-            if doc_id not in ('contributing_languages', 'aligned_languages'):
+            if doc_id not in ('contributing_languages', 'aligned_languages', 'polysemy_reduction'):
                 finale[lang]['match'] += recap[lang][doc_id]['match']
                 finale[lang]['mfs_match'] += recap[lang][doc_id]['mfs_match']
                 finale[lang]['coarse_match'] += recap[lang][doc_id]['coarse_match']
@@ -352,10 +367,10 @@ def evaluate_at_corpus_level(recap):
 
 def evaluate_msi(multilingual_corpus):
     """"""
-
     with open('../resources/coarse_senses/sense_clustering_dict.json') as infile:
         coarse_senses_dict = json.loads(infile.read())
 
+    polysemy_reduction = {}
     recap = {lang : defaultdict(lambda: 0) for lang in multilingual_corpus.languages}
     for _, corpus in multilingual_corpus.corpora.items():
         recap[corpus.lang]['contributing_languages'] = Counter()
@@ -393,6 +408,9 @@ def evaluate_msi(multilingual_corpus):
                                 recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
                                 recap[corpus.lang]['contributing_languages'][len(word.msi_annotation.contributing_languages)] += 1
                                 recap[corpus.lang]['aligned_languages'][len(word.alignments)] += 1
+
+                                polysemy_reduction[corpus.lang] = polysemy_reduction.get(corpus.lang, []) + [word.msi_annotation.polysemy_reduction]
+
                             elif word.msi_annotation.assigned_sense is None:
                                 recap[corpus.lang][doc_id][word.msi_annotation.assignment_type] += 1
                             elif word.msi_annotation.assigned_sense and word.sense \
@@ -411,6 +429,8 @@ def evaluate_msi(multilingual_corpus):
             assert recap[corpus.lang][doc_id]['mismatch'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
             assert recap[corpus.lang][doc_id]['coarse_mismatch'] + recap[corpus.lang][doc_id]['coarse_match'] + recap[corpus.lang][doc_id]['no_sense'] + recap[corpus.lang][doc_id]['match'] == recap[corpus.lang][doc_id]['counts']
 
+
+            recap[corpus.lang]['polysemy_reduction'] = compute_average_polysemy_reduction(polysemy_reduction[corpus.lang])
 
             # content words (that had sense) with alignments, excluding those not having a sense in WN 3.0
             number_annotable_words = recap[corpus.lang][doc_id]['counts'] - recap[corpus.lang][doc_id]['no_sense']
@@ -487,8 +507,8 @@ def apply_msi_to_corpus(multilingual_corpus, langs, use_sense_frequencies=False)
                                     assign_sense(word, assigned_sense, set(word.alignments.keys()), assignment_type)
                                     continue
                         overlap, contributing_languages = perform_intersection(word, target_synsets, aligned_synset_bags)
-                        assigned_sense, assignment_type = make_decision(word, overlap, corpus_sense_frequencies)
-                        assign_sense(word, assigned_sense, contributing_languages, assignment_type)
+                        assigned_sense, assignment_type, polysemy_reduction = make_decision(word, overlap, corpus_sense_frequencies)
+                        assign_sense(word, assigned_sense, contributing_languages, assignment_type, polysemy_reduction)
 
 def show_supported_languages(input_lang):
     print(wn.langs())

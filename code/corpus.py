@@ -253,8 +253,8 @@ class Word(object):
         else:
             return None
 
-    def add_msi_annotation(self, assigned_sense, contributing_languages, assignment_type, comments=None):
-        self.msi_annotation = MsiAnnotation(assigned_sense, contributing_languages, assignment_type, comments)
+    def add_msi_annotation(self, assigned_sense, contributing_languages, assignment_type, polysemy_reduction=None):
+        self.msi_annotation = MsiAnnotation(assigned_sense, contributing_languages, assignment_type, polysemy_reduction)
 
     def to_string(self):
         return json.dumps(self.__dict__, default=serialization.pretty_print)
@@ -280,17 +280,17 @@ class Word(object):
 
 
 class MsiAnnotation(object):
-    __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type', 'comments']
+    __slots__ = ['assigned_sense', 'contributing_languages', 'assignment_type', 'polysemy_reduction']
 
     possible_assignment_types = ('mfs_in_overlap', 'disambiguated_by_msi', 'mfs',
                                  'rmfs_within_overlap', 'no_sense', 'random_in_overlap')
 
-    def __init__(self, assigned_sense, contributing_languages, assignment_type, comments=None):
+    def __init__(self, assigned_sense, contributing_languages, assignment_type, polysemy_reduction=None):
         self.assigned_sense = assigned_sense
         self.contributing_languages = contributing_languages
         assert assignment_type in MsiAnnotation.possible_assignment_types
         self.assignment_type = assignment_type
-        self.comments = comments
+        self.polysemy_reduction = polysemy_reduction
 
     def to_string(self):
         return json.dumps(self.__dict__, default=serialization.pretty_print)
@@ -300,7 +300,8 @@ class MsiAnnotation(object):
                 '__kw__': {'assigned_sense': self.assigned_sense,
                            'contributing_languages': self.contributing_languages,
                            'assignment_type': self.assignment_type,
-                           'comments' : self.comments},
+                           'polysemy_reduction' : self.polysemy_reduction
+                           },
                 '__args__': []}
 
     def dumps(self):
