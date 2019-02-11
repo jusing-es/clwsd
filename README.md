@@ -14,6 +14,8 @@ pip install < requirements.txt
 ```
 ## Getting Started
 
+### Launch MSI yourself
+
 
 * ```json_file_reader.py```: contains the JSON reader 
 * ```corpus.py```: contains the classes used by the other scripts
@@ -43,6 +45,16 @@ Parameters:
 * ```-e, --evaluate```: outputs evaluation results (verbose)
 * ```-d, --dump_xml_corpus```: produce the XML output corpus
 
+### Or follow the demo in the Python notebook:
+
+* run 
+```pip install jupyter``` and then type
+```jupyter notebook```
+
+* this will make Jupyter available in localhost: go to  ```http://localhost:8888``` and open the notebook ```MSI_demo.ipynb```
+
+* just read and enjoy... or run each step yourself!
+
 ## Todo List
 
 - [x] Monolingual corpus template, compliant to NTUMC.dtd
@@ -52,6 +64,7 @@ Parameters:
 - [x] include support for external sense frequencies
 - [x] include automatic alignments for each language pair
 - [x] JSON and XML reader for MSI
+- [x] Tutorial through a Python notebook: ```code/MSI_demo.ipynb```
 
 ## Related projects
 
