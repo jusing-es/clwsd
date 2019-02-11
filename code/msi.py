@@ -1,7 +1,7 @@
 import re
 import sys
 from pprint import pprint
-#import json_files_reader as jfr
+import json_files_reader as jfr
 import xml_file_reader as xr
 import argparse
 import nltk.corpus
@@ -9,6 +9,7 @@ from nltk.corpus import wordnet as wn
 import json
 import os
 from collections import defaultdict, Counter
+import msi_utils as msiu
 
 general_mfs_statistics = None
 
@@ -517,16 +518,18 @@ def show_supported_languages(input_lang):
 
 if __name__ == "__main__":
 
-    usage = "Correct usage: python msi.py -i <path_to_input_folder> [-s]"
+    usage = "Correct usage: python msi.py -i <path_to_input_folder> -l <lan1_lan2_lan3_lann> [-s]"
     parser = argparse.ArgumentParser(description="Performs Multilingual Sense Intersection ")
     parser.add_argument("-i", "--json_input_folder", help="")
     parser.add_argument("-x", "--xml_input_file", help="")
-    parser.add_argument("-l", "--languages", help="""Indicate valid ISO-639-2 language codes. 
+    parser.add_argument("-l", "--languages", help="""Indicate valid ISO-639-2 language codes separated by _.
+                                                    Example: eng_ita_ron_jpn 
                                                    Input corpora must be in languages having a wordnet in 
                                                    Open Multilingual Wordnet.
                                                    """)
-    parser.add_argument("-f", "--sense_frequencies", default=None)
-
+    parser.add_argument("-f", "--sense_frequencies", action='store_true')
+    parser.add_argument("-e", "--evaluate", help="Outputs evaluation (verbose)", action='store_true')
+    parser.add_argument("-d", "--dump_xml_corpus", help="Produce the XML output corpus", action='store_true')
     parser.add_argument("-a", "--automatic_alignments", help="Path to alignments folder.", default=None)
 
     options = parser.parse_args()
@@ -536,19 +539,19 @@ if __name__ == "__main__":
         if set(langs).issubset(wn.langs()) is not True:
             print(f"""Admitted languages are: {wn.langs()}""")
             sys.exit()
-        #
-        # if options.json_input_folder:
-        #     try:
-        #         multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
-        #     except BaseException as e:
-        #         jfr.folder_instructions()
-        #
-        # elif options.xml_input_file:
-        #     multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
-        # else:
-        #     print('Valid input formats are XML compliant to NTUMC DTD or input folder with json files as below')
-        #     jfr.folder_instructions()
-        #     sys.exit()
+
+        if options.json_input_folder:
+            try:
+                multilingual_corpus = jfr.read_input_files(options.json_input_folder, langs)
+            except BaseException as e:
+                jfr.folder_instructions()
+
+        elif options.xml_input_file:
+            multilingual_corpus = xr.load_multilingualcorpus_from_xml(options.xml_input_file)
+        else:
+            print('Valid input formats are XML compliant to NTUMC DTD or input folder with json files as below')
+            jfr.folder_instructions()
+            sys.exit()
 
         if options.automatic_alignments and \
                 options.automatic_alignments not in ["gs", "auto_grow", "auto_int", "sense", "all"]:
@@ -561,6 +564,10 @@ if __name__ == "__main__":
 
         apply_msi_to_corpus(multilingual_corpus, langs, use_general_mfs_statistics)
         print("Starting MSI...")
+        if options.evaluate:
+            evaluate_msi(multilingual_corpus)
+        if options.dump_xml_corpus:
+            msiu.dump_multilingual_corpus_to_xml(multilingual_corpus)
 
     elif options.languages and options.xml_input_file:
         pass
